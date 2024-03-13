@@ -16,23 +16,28 @@ memcached_service_info=$(kubectl get pods -o wide)
 # Extract MEMCACHED_IP
 MEMCACHED_IP=$(echo "$memcached_service_info" | awk '{print $6}' | tail -n 1)
 
+INTERNAL_AGENT_IP=$(kubectl get nodes -o wide | awk '/client-agent/ {print $6}')
+echo "Internal IP of the client-agent: $INTERNAL_AGENT_IP"
+
 
 # Display service information
-echo "Service information:"
-echo "$memcached_service_info"
-echo "MEMCACHED_IP: $MEMCACHED_IP"
 
-set password [lindex $argv 0]
-spawn sudo ls
-expect "password for"
-send "$password\r"
-expect eof
+#echo "Service information:"
+#echo "$memcached_service_info"
+#echo "MEMCACHED_IP: $MEMCACHED_IP"
+
+#set password [lindex $argv 0]
+#spawn sudo ls
+#expect "password for"
+#send "$password\r"
+#expect eof
+
 
 # Generate commands for client-agent
+#here, need to change agent for its name + maybe gange ssh command anr rm statement 
 client_commands(){
-    ~/google-cloud/google-cloud-sdk/bin/gcloud compute ssh --ssh-key-file ~/.ssh/cloud-computing ubuntu@client-agent-dhhh --zone europe-west3-a << EOF
+    gcloud compute ssh --ssh-key-file ~/.ssh/cloud-computing ubuntu@client-agent-0bd5 --zone europe-west3-a << EOF
     pwd &&
-    rm -r memcache-perf &&
     sudo apt-get update &&
     sudo apt-get install libevent-dev libzmq3-dev git make g++ --yes &&
     sudo cp /etc/apt/sources.list /etc/apt/sources.list~ &&
@@ -48,12 +53,11 @@ client_commands(){
     echo "Client is done!"
 EOF
 }
-
+#might need a sleep here before loading the memcached database
 measure_commands(){
-    ~/google-cloud/google-cloud-sdk/bin/gcloud compute ssh --ssh-key-file ~/.ssh/cloud-computing ubuntu@client-agent-dhhh --zone europe-west3-a << EOF
+    gcloud compute ssh --ssh-key-file ~/.ssh/cloud-computing ubuntu@client-measure-kw3j --zone europe-west3-a << EOF
     echo "Starting client measure..." &&
     pwd &&
-    rm -r memcache-perf &&
     sudo apt-get update &&
     sudo apt-get install libevent-dev libzmq3-dev git make g++ --yes &&
     sudo cp /etc/apt/sources.list /etc/apt/sources.list~ &&
@@ -67,7 +71,7 @@ measure_commands(){
     echo "Client measure is ready!" &&
     # Load memcached database &&
     ./mcperf -s $MEMCACHED_IP --loadonly &&
-    ./mcperf -s $MEMCACHED_IP -a $INTERNAL_AGENT_IP --noload -T 16 -C 4 -D 4 -Q 1000 -c 4 -t 5 -w 2 --scan 5000:10000:5000 | tee mcperf-output.txt &&
+    ./mcperf -s $MEMCACHED_IP -a $INTERNAL_AGENT_IP --noload -T 16 -C 4 -D 4 -Q 1000 -c 4 -t 5 -w 2 --scan 5000:10000:5000 &&
     echo "Client measure is done!"
 EOF
 }
