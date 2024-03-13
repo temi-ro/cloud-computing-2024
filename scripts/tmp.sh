@@ -1,4 +1,15 @@
 #!/bin/bash
+set -o xtrace
+
+# Run the kubectl command and extract the node names
+agent_name=$(kubectl get nodes -o wide | awk '/client-agent-/{print $1}')
+measure_name=$(kubectl get nodes -o wide | awk '/client-measure-/{print $1}')
+# Extract the required parts from the node names
+# extracted_names=$(echo "$node_names" | awk -F'-' '{print $(NF-1)}')
+
+# Print the extracted names
+echo "Agent name: $agent_name"
+echo "Measure name: $measure_name"
 
 kubectl create -f memcache-t1-cpuset.yaml
 kubectl expose pod some-memcached --name some-memcached-11211 --type LoadBalancer --port 11211 --protocol TCP
@@ -12,7 +23,7 @@ kubectl get service some-memcached-11211
 # Get MEMCACHED_IP dynamically
 MEMCACHED_IP=$(kubectl get pod some-memcached -o jsonpath="{.status.podIP}")
 
-INTERNAL_AGENT_IP=$(kubectl get nodes -o wide | awk '/client-agent-lt1h/{print $6}')
+INTERNAL_AGENT_IP=$(kubectl get nodes -o wide | awk -v agent="$agent_name" '$1 ~ agent {print $6}')
 echo "INTERNAL_AGENT_IP: $INTERNAL_AGENT_IP"
 
 # Display MEMCACHED_IP
@@ -20,7 +31,7 @@ echo "MEMCACHED_IP: $MEMCACHED_IP"
 
 # Define function to run commands on client-agent VM
 client_commands() {
-    ~/google-cloud/google-cloud-sdk/bin/gcloud compute ssh --ssh-key-file ~/.ssh/cloud-computing ubuntu@client-agent-lt1h --zone europe-west3-a --command "
+    ~/google-cloud/google-cloud-sdk/bin/gcloud compute ssh --ssh-key-file ~/.ssh/cloud-computing ubuntu@$agent_name --zone europe-west3-a --command "
         echo 'Starting setup on client-agent...' &&
         sudo apt-get update &&
         sudo apt-get install libevent-dev libzmq3-dev git make g++ --yes &&
@@ -40,7 +51,7 @@ client_commands() {
 
 # Define function to run commands on client-measure VM
 measure_commands() {
-    ~/google-cloud/google-cloud-sdk/bin/gcloud compute ssh --ssh-key-file ~/.ssh/cloud-computing ubuntu@client-measure-rlpb --zone europe-west3-a --command "
+    ~/google-cloud/google-cloud-sdk/bin/gcloud compute ssh --ssh-key-file ~/.ssh/cloud-computing ubuntu@$measure_name --zone europe-west3-a --command "
         echo 'Starting setup on client-measure...' &&
         sudo apt-get update &&
         sudo apt-get install libevent-dev libzmq3-dev git make g++ --yes &&
@@ -67,3 +78,4 @@ measure_commands &
 
 wait
 echo "All done!"
+set +o xtrace
