@@ -23,11 +23,11 @@ client_commands() {
 
 # Define function to run commands on client-measure VM
 measure_commands_index1() {
-    i = $1
+    i=$1
     #define 3 file names called mcperf-output-i.txt
-    file_name_1 = "mcperf-output-" + $i + "_0.txt"
-    file_name_2 = "mcperf-output-" + $i + "_1.txt"
-    file_name_3 = "mcperf-output-" + $i + "_2.txt"
+    file_name_1="mcperf-output-"$i"_0.txt"
+    file_name_2="mcperf-output-"$i"_1.txt"
+    file_name_3="mcperf-output-"$i"_2.txt"
     ~/google-cloud/google-cloud-sdk/bin/gcloud compute ssh --ssh-key-file ~/.ssh/cloud-computing ubuntu@$measure_name --zone europe-west3-a --command "
         cd &&
         cd memcache-perf &&
@@ -49,11 +49,11 @@ measure_commands_index1() {
 }
 
 measure_commands_index0() {
-    i = $1
+    i=$1
     #define 3 file names called mcperf-output-i.txt
-    file_name_1 = "mcperf-output-" + $i + "_0.txt"
-    file_name_2 = "mcperf-output-" + $i + "_1.txt"
-    file_name_3 = "mcperf-output-" + $i + "_2.txt"
+    file_name_1="mcperf-output-"$i"_0.txt"
+    file_name_2="mcperf-output-"$i"_1.txt"
+    file_name_3="mcperf-output-"$i"_2.txt"
     ~/google-cloud/google-cloud-sdk/bin/gcloud compute ssh --ssh-key-file ~/.ssh/cloud-computing ubuntu@$measure_name --zone europe-west3-a --command "
         echo 'Starting setup on client-measure...' &&
         sudo apt-get update &&
@@ -129,14 +129,14 @@ for benchmark in "${benchmarks[@]}"; do
         #do the client and measure commands
         client_commands &
         measure_commands_index0 $index_i &
-        sleep 300
-        echo "All done!"
+        sleep 500
+        echo "Index 0 done!"
     fi
 
 
     #if i!=0 introduce interferance :
     if [ $index_i -ne 0 ]; then
-        echo "get names" 
+        echo "Get names" 
          # Run the kubectl command and extract the node names
         agent_name=$(kubectl get nodes -o wide | awk '/client-agent-/{print $1}')
         measure_name=$(kubectl get nodes -o wide | awk '/client-measure-/{print $1}')
@@ -153,29 +153,29 @@ for benchmark in "${benchmarks[@]}"; do
 
 
         echo "Introducing interference..."
-        kubectl create -f interference/ibench-cpu.yaml
         #create interference/$benchmark.yaml
-        yml_file = "interference/" + $benchmark + ".yaml"
+        yml_file="interference/"$benchmark".yaml"
         kubectl create -f $yml_file
         sleep 60
 
+        echo "Measure interference $benchmark..."
         measure_commands_index1 $index_i &
-        sleep 300
-        echo "All done!"
-        echo delete benchmark
+        sleep 500
+        echo "Delete benchmark"
         kubectl delete pods $benchmark
     fi
 
-    echo "Cluster created successfully!"
+    #increment index
     ((index_i++))
+    echo "Index $index_i"
 done
-
-
-
-echo "Launching client-agent and client-measure..."
-client_commands &
-measure_commands &
 
 wait
 echo "All done!"
+
+# echo "Launching client-agent and client-measure..."
+# client_commands &
+# measure_commands &
+
+# wait
 set +o xtrace
