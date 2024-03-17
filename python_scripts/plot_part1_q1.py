@@ -11,11 +11,11 @@ p95_data = []
 
 # Read the file
 #do a lopp for i in range(7):
-for i in range(1):
+for i in range(7):
     qps_result_config_i =[]
     p95_result_config_i =[]
     for j in range(3):
-        filename = '../data/data_part1/part1_' + str(i) + '_' +str(j) +'.txt'
+        filename = '../data/data_part1/mcperf-output-' + str(i) + '_' +str(j) +'.txt'
         index=0
         with open(filename, 'r') as file:
             for line in file:
@@ -72,7 +72,7 @@ for i in range(len(qps_data)):
     p95_error = [p95_mean - p95_min, p95_max - p95_mean]
     
     # Plot each configuration as a separate line with error bars
-    plt.errorbar(qps_mean, p95_mean, xerr=qps_error, yerr=p95_error, fmt='-o', label=f'Configuration {i+1}, averaged across {len(qps_array)} runs')
+    plt.errorbar(qps_mean, p95_mean, xerr=qps_error, yerr=p95_error, fmt='-o', label=f'Configuration {i+1}, averaged across {len(qps_array[0])} runs')
 
 # Set the limits for the x and y axes
 plt.xlim(0, 55000)
