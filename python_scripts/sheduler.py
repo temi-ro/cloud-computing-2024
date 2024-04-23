@@ -1,5 +1,5 @@
 import docker
-
+from scheduler_logger import Job
 NORMAL = "normal"
 HIGH = "high"
 
@@ -200,7 +200,7 @@ class ContainerScheduler:
         cont.reload()
         if cont.status == "exited":
             # print(f"Removing {cont.name} because it is done.")
-            self.__logger.job_end(cont.name)
+            self.__logger.job_end(map_from_string_to_job( cont.name))
             self.remove_container(cont)
             return True
 
@@ -214,7 +214,7 @@ class ContainerScheduler:
         try:
             cont.reload()
             if cont.status in ["running", "restarting"]:
-                self.__logger.pause(cont.name)
+                self.__logger.pause(map_from_string_to_job( cont.name))
                 cont.pause()
                 self.__running[queue - 1] -= 1
         except:
@@ -225,7 +225,7 @@ class ContainerScheduler:
             return
         cont.reload()
         if cont.status == "paused":
-            self.__logger.unpause(cont.name)
+            self.__logger.unpause(map_from_string_to_job( cont.name))
             cont.unpause()
 
     def start_or_unpause_container(self, cont, cores, queue):
@@ -233,13 +233,13 @@ class ContainerScheduler:
             return
         cont.reload()
         if cont.status == "paused":
-            self.__logger.update_cores(cont.name, [int(num) for num in cores.split(',')])
-            self.__logger.job_unpause(cont.name)
+            self.__logger.update_cores(map_from_string_to_job( cont.name), [int(num) for num in cores.split(',')])
+            self.__logger.job_unpause(map_from_string_to_job( cont.name))
             cont.update(cpuset_cpus=cores)
             cont.unpause()
             print("unpause " + cont.name)
         elif cont.status == "created":
-            self.__logger.job_start(cont.name, [int(num) for num in cores.split(',')], queue)
+            self.__logger.job_start(map_from_string_to_job( cont.name), [int(num) for num in cores.split(',')], queue)
             print("start " + cont.name)
             cont.update(cpuset_cpus=cores)
             cont.start()
@@ -280,3 +280,19 @@ class ContainerScheduler:
             self.hard_remove_container(self.__client.containers.get("ferret"))
         except:
             print("Tried to remove Ferret, but didn't exist.")
+def map_from_string_to_job(name):
+    if name == "dedup":
+        return Job.DEDUP
+    if name == "radix":
+        return Job.RADIX
+    if name == "blackscholes":
+        return Job.BLACKSCHOLES
+    if name == "canneal":
+        return Job.CANNEAL
+    if name == "freqmine":
+        return Job.FREQMINE
+    if name == "ferret":
+        return Job.FERRET
+    if name == "vips":
+        return Job.VIPS
+    return None
