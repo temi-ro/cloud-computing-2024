@@ -261,9 +261,9 @@ class ContainerScheduler:
         except:
             print("Tried to remove Dedup, but didn't exist.")
         try:
-            self.hard_remove_container(self.__client.containers.get("splash2x-fft"))
+            self.hard_remove_container(self.__client.containers.get("splash2x-radix"))
         except:
-            print("Tried to remove FFT, but didn't exist.")
+            print("Tried to remove radix, but didn't exist.")
         try:
             self.hard_remove_container(self.__client.containers.get("blackscholes"))
         except:
@@ -280,6 +280,10 @@ class ContainerScheduler:
             self.hard_remove_container(self.__client.containers.get("ferret"))
         except:
             print("Tried to remove Ferret, but didn't exist.")
+        try:
+            self.hard_remove_container(self.__client.containers.get("vips"))
+        except:
+            print("Tried to remove vips, but didn't exist.")
 def map_from_string_to_job(name):
     if name == "dedup":
         return Job.DEDUP
