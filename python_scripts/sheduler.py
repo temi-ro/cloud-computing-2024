@@ -115,6 +115,16 @@ class ContainerScheduler:
             return 
 
     def reschedule(self, load):
+        #print all status
+        print("q1")
+        for cont in self.__queue1:
+            print(cont.name, cont.status)
+        print("q2")
+        for cont in self.__queue2:
+            print(cont.name, cont.status)
+        print("q3")
+        for cont in self.__queue3:
+            print(cont.name, cont.status)
         print("trying to reschedule with load ", load)
         distr, cores = self.get_best_distribution(load)
         print("best distr ", distr)
