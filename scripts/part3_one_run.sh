@@ -178,8 +178,8 @@ do
 
     # Check for end of all jobs to deploy results 
     if [ "$ferret" == "$complete" ] && [ "$freqmine" == "$complete" ] && [ "$canneal"=="$complete" ] && [ "$dedup"=="$complete" ] && [ "$blackscholes"=="$complete" ] && [ "$vips"=="$complete" ] && [ "$radix"=="$complete" ]; then
-		kubectl get pods -o json > results13.json
-		python3 get_time.py results13.json
+		kubectl get pods -o json > results1.json
+		python3 get_time.py results1.json
 		break
     fi
 
