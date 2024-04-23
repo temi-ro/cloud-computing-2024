@@ -244,7 +244,7 @@ class ContainerScheduler:
             cont.update(cpuset_cpus=cores)
             cont.start()
         else:
-            print("start_or_unpause didn't do anything.")
+            print("start_or_unpause didn't do anything. it's status was ", cont.status)
             return
 
     def update_container(self, cont, cpu_set):
