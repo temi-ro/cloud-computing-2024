@@ -23,10 +23,10 @@ gcloud compute ssh --ssh-key-file ~/.ssh/cloud-computing ubuntu@$parsec_server_n
 kubectl label nodes $parsec_server_name cca-project-nodetype=parsec
 
 
-# jobs=("dedup" "blackscholes" "canneal" "ferret" "freqmine" "radix" "vips")
-jobs=("radix" "vips")
+jobs=("dedup" "blackscholes" "canneal" "ferret" "freqmine" "radix" "vips")
+
 # Error when thread=1 because there is another occurence of 1 in the file
-for thread in 4 8; do
+for thread in 1 2 4 8; do
     for job in "${jobs[@]}"; do
         echo "Job $job with $thread threads"
 

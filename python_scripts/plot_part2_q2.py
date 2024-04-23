@@ -38,22 +38,29 @@ def get_speedups(directory):
 
 def plot_speedups(speedups):
     threads = [1, 2, 4, 8]
+    # formats = ["o", "x", "s", "d", "*", "^", "v"]
+
 
     plt.figure(figsize=(10, 6))
 
-    for job, speedup_values in speedups.items():
+    for i, (job, speedup_values) in enumerate(speedups.items()):
         plt.plot(threads, [speedup_values[thread] for thread in threads], marker='o', label=job)
 
-    plt.title("Speedup vs Number of Threads")
-    plt.xlabel("Number of Threads")
-    plt.ylabel("Speedup")
-    plt.legend()
+    plt.title("Speedup vs Number of Threads", fontsize=19, fontweight='bold')
+    plt.xlabel("Number of Threads", fontsize=18, fontweight='bold')
+    # plt.xticks([1, 2, 4, 8])
+    plt.ylabel("Speedup", fontsize=18, fontweight='bold')
+
+    plt.gca().xaxis.set_tick_params(labelsize=16)
+    plt.gca().yaxis.set_tick_params(labelsize=16)
+    
+    plt.legend(title="Jobs", fontsize=14, title_fontsize=16)
     plt.grid(True)
     plt.show()
 
 if __name__ == "__main__":
     print(os.getcwd())
-    directory = "../data/data_part2b"
+    directory = "data/data_part2b"
     speedups = get_speedups(directory)
     if speedups is not None:
         print(json.dumps(speedups, indent=4))
