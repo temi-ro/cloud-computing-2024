@@ -47,7 +47,7 @@ class ContainerScheduler:
         # Remove exited containers.
         pop_location = 0
         running = self.__running[0]
-        for x in range(0, running):
+        for x in range(0, self.can_schedule_queue1()):
             removed = self.remove_if_done_container(self.__queue1[pop_location])
             if removed:
                 self.__running[0] -= 1
@@ -57,7 +57,7 @@ class ContainerScheduler:
 
         pop_location = 0
         running = self.__running[1]
-        for x in range(0, running):
+        for x in range(0, self.can_schedule_queue2()):
             removed = self.remove_if_done_container(self.__queue2[pop_location])
             if removed:
                 self.__running[1] -= 1
@@ -67,7 +67,7 @@ class ContainerScheduler:
 
         pop_location = 0
         running = self.__running[2]
-        for x in range(0, running):
+        for x in range(0, self.can_schedule_queue3()):
             removed = self.remove_if_done_container(self.__queue3[pop_location])
             if removed:
                 self.__running[2] -= 1
@@ -148,8 +148,8 @@ class ContainerScheduler:
             self.pause_container(self.__queue2[j], 2)
             j+=1
         j=0
-        while(i<len(distr) and distr[i]==2):
-            self.start_or_unpause_container(self.__queue2[j], cores[i], 1)
+        while(i<len(distr) and distr[i]==1):
+            self.start_or_unpause_container(self.__queue1[j], cores[i], 1)
             self.__running[0] += 1
             i+=1
             j+=1
@@ -159,8 +159,7 @@ class ContainerScheduler:
 
 
     def DONE(self):
-        return self.__running == [0, 0,
-                                  0] and not self.__queue1 and not self.__queue2 and not self.__queue3
+        return not self.__queue1 and not self.__queue2 and not self.__queue3
 
     def print_queues(self):
         print("queue1", [c.name for c in self.__queue1], end="  ")
@@ -224,18 +223,18 @@ class ContainerScheduler:
         try:
             cont.reload()
             if cont.status in ["running", "restarting"]:
-                self.__logger.pause(map_from_string_to_job( cont.name))
+                self.__logger.job_pause(map_from_string_to_job( cont.name))
                 cont.pause()
                 self.__running[queue - 1] -= 1
-        except:
-            print("something seems to have gone wrong while PAUSING the container (But dont care)")
+        except Exception as e:
+            print("something seems to have gone wrong while PAUSING the container (But dont care)", e)
 
     def unpause_container(self, cont):
         if cont is None:
             return
         cont.reload()
         if cont.status == "paused":
-            self.__logger.unpause(map_from_string_to_job( cont.name))
+            self.__logger.job_unpause(map_from_string_to_job( cont.name))
             cont.unpause()
 
     def start_or_unpause_container(self, cont, cores, queue):
@@ -254,7 +253,7 @@ class ContainerScheduler:
             cont.update(cpuset_cpus=cores)
             cont.start()
         else:
-            print("start_or_unpause didn't do anything. it's status was ", cont.status)
+            print("start_or_unpause didn't do anything. it's status was ", cont.status, cont.name)
             return
 
     def update_container(self, cont, cpu_set):

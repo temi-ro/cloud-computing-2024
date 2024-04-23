@@ -30,6 +30,7 @@ sudo apt install -y python3-pip
 sudo pip3 install psutil
 sudo pip3 install docker
 
+sudo apt  install docker.io
 echo "Docker pulling"
 # docker pull
 sudo docker pull anakli/cca:parsec_blackscholes

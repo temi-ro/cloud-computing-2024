@@ -1,4 +1,3 @@
-import argparse
 import functools
 import subprocess
 from time import sleep
@@ -12,11 +11,6 @@ from scheduler_logger import Job
 
 HIGH = "high"
 NORMAL = "normal"
-
-parser = argparse.ArgumentParser()
-parser.add_argument("--log_path", dest='log_path')
-args = parser.parse_args()
-
 
 def handle_signal(sched, sig, frame):
     print("aborting...")
@@ -63,42 +57,44 @@ def set_memcached_core(pid, n_core, logger):
 dedup = ("0,1,2,3",
          "dedup",
          "anakli/cca:parsec_dedup",
-         "./run -a run -p dedup -i native -n 1")
+         "./run -a run -S parsec -p dedup -i native -n 1")
 radix = ("0,1,2,3",
          "radix",
          "anakli/cca:splash2x_radix",
-         "./run -a run -p radix -i native -n 1")
+         "./run -a run -S splash2x -p radix -i native -n 1")
 blackscholes = ("0,1,2,3",
                 "blackscholes",
                 "anakli/cca:parsec_blackscholes",
-                "./run -a run -S cca:parsec -p blackscholes -i native -n 2")
+                "./run -a run -S parsec -p blackscholes -i native -n 2")
 canneal = ("0,1,2,3",
            "canneal",
            "anakli/cca:parsec_canneal",
-           "./run -a run -p canneal -i native -n 2")
+           "./run -a run -S parsec -p canneal -i native -n 2")
 freqmine = ("0,1,2,3",
             "freqmine",
             "anakli/cca:parsec_freqmine",
-            "./run -a run -S cca:parsec -p freqmine -i native -n 3")
+            "./run -a run -S parsec -p freqmine -i native -n 3")
 ferret = ("0,1,2,3",
           "ferret",
           "anakli/cca:parsec_ferret",
-          "./run -a run -p ferret -i native -n 3")
+          "./run -a run -S parsec -p ferret -i native -n 3")
 vips = ("0,1,2,3",
         "vips",
         "anakli/cca:parsec_vips",
-        "./run -a run -p vips -i native -n 2")
+        "./run -a run -S parsec -p vips -i native -n 2")
 
 def main():
-    if not args.log_path or args.log_path is None:
-        raise ValueError("please provide --log_path PATH_TO_LOG_FILE.")
-
     #command = "sudo systemctl restart docker"
     #subprocess.run(command.split(" "), stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
 
+    # q1 = [dedup, radix]
+    # q2 = [canneal, blackscholes, vips]
+    # q3 = [ferret, freqmine]
+
     q1 = [dedup, radix]
-    q2 = [canneal, blackscholes, vips]
-    q3 = [ferret, freqmine]
+    q2 = []
+    q3 = []
+
 
     logger = scheduler_logger.SchedulerLogger()
     sched = scheduler.ContainerScheduler(q1, q2, q3, logger)
@@ -161,7 +157,7 @@ def main():
  
  
         # Remove containers if they are done.
-        # sched.REMOVE_EXITED_CONTAINERS()
+        sched.REMOVE_EXITED_CONTAINERS()
 
         # Start containers.
         # sched.SCHEDULE_NEXT()
@@ -169,7 +165,9 @@ def main():
         if sched.DONE():
             print("all other jobs have been completed")
             # set_memcached_core(mc_pid, 4, logger) # Should we give all core to memcached?
-            logger.log_end()
+            logger.end()
+            sleep(62)
+            logger.job_end(Job.MEMCACHED)
             break
 
         sleep(0.25)
