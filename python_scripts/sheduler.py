@@ -121,7 +121,7 @@ class ContainerScheduler:
         i=0
         j=0
         while(i<len(distr) and distr[i]==3):
-            self.start_or_unpause_container(self.__queue3[j], cores[i])
+            self.start_or_unpause_container(self.__queue3[j], cores[i], 3)
             self.__running[2] += 1
             i+=1
             j+=1
@@ -130,7 +130,7 @@ class ContainerScheduler:
             j+=1
         j=0
         while(i<len(distr) and distr[i]==2):
-            self.start_or_unpause_container(self.__queue2[j], cores[i])
+            self.start_or_unpause_container(self.__queue2[j], cores[i], 2)
             self.__running[1] += 1
             i+=1
             j+=1
@@ -139,7 +139,7 @@ class ContainerScheduler:
             j+=1
         j=0
         while(i<len(distr) and distr[i]==2):
-            self.start_or_unpause_container(self.__queue2[j], cores[i])
+            self.start_or_unpause_container(self.__queue2[j], cores[i], 1)
             self.__running[0] += 1
             i+=1
             j+=1
@@ -200,7 +200,7 @@ class ContainerScheduler:
         cont.reload()
         if cont.status == "exited":
             # print(f"Removing {cont.name} because it is done.")
-            self.__logger.log_container_event(cont.name, 'FINISH')
+            self.__logger.job_end(cont.name)
             self.remove_container(cont)
             return True
 
@@ -214,7 +214,7 @@ class ContainerScheduler:
         try:
             cont.reload()
             if cont.status in ["running", "restarting"]:
-                self.__logger.log_container_event(cont.name, 'PAUSE')
+                self.__logger.pause(cont.name)
                 cont.pause()
                 self.__running[queue - 1] -= 1
         except:
@@ -225,20 +225,21 @@ class ContainerScheduler:
             return
         cont.reload()
         if cont.status == "paused":
-            self.__logger.log_container_event(cont.name, 'UNPAUSE')
+            self.__logger.unpause(cont.name)
             cont.unpause()
 
-    def start_or_unpause_container(self, cont, cores):
+    def start_or_unpause_container(self, cont, cores, queue):
         if cont is None:
             return
         cont.reload()
         if cont.status == "paused":
-            self.__logger.log_container_event(cont.name, 'UNPAUSE')
+            self.__logger.update_cores(cont.name, [int(num) for num in cores.split(',')])
+            self.__logger.job_unpause(cont.name)
             cont.update(cpuset_cpus=cores)
             cont.unpause()
             print("unpause " + cont.name)
         elif cont.status == "created":
-            self.__logger.log_container_event(cont.name, 'START')
+            self.__logger.job_start(cont.name, [int(num) for num in cores.split(',')], queue)
             print("start " + cont.name)
             cont.update(cpuset_cpus=cores)
             cont.start()
