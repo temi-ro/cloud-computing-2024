@@ -12,7 +12,7 @@ N_THREADS=4
 sudo sed -i 's/^-m .*/-m 1024/' /etc/memcached.conf
 sudo sed -i "s/^-l .*/-l $INTERNAL_IP/" /etc/memcached.conf 
 sudo sed -i '/^-t/ d' /etc/memcached.conf  
-echo "-t $N_THREADS" | sudo tee -a /etc/memcached.conf  
+echo "-t $N_THREADS" 
 
 # Restart memcached service
 sudo systemctl restart memcached

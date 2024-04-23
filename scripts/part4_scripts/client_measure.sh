@@ -18,7 +18,7 @@ INTERNAL_AGENT_IP=$(kubectl get nodes -o wide | awk -v agent="$agent_name" '$1 ~
 INTERNAL_MEMCACHED_IP=$(kubectl get nodes -o wide | awk -v memcache="$memcache_server" '$1 ~ memcache {print $6}')
 
 ./mcperf -s $INTERNAL_MEMCACHED_IP --loadonly
-./mcperf -s $INTERNAL_MEMCACHED_IP -a $INTERNAL_AGENT_IP --noload -T 16 -C 4 -D 4 -Q 1000 -c 4 -t 10 --qps_interval 2 --qps_min 5000 --qps_max 100000
+./mcperf -s $INTERNAL_MEMCACHED_IP -a $INTERNAL_AGENT_IP --noload -T 16 -C 4 -D 4 -Q 1000 -c 4 -t 10 --qps_interval 2 --qps_min 5000 --qps_max 100000 | tee client_measure_log.txt
 echo 'Client-measure is done!'
 
 set +o xtrace
