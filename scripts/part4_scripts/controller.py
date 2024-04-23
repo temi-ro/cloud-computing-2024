@@ -5,7 +5,6 @@ from time import sleep
 
 import psutil
 import scheduler
-import docker
 import signal
 import sys
 import scheduler_logger
@@ -61,37 +60,36 @@ def set_memcached_core(pid, n_core, logger):
     
     return pid, n_core
 
-dedup = ("1",
+dedup = ("0,1,2,3",
          "dedup",
-         "anakli/parsec:dedup",
+         "anakli/cca:parsec_dedup",
          "./run -a run -p dedup -i native -n 1")
-radix = ("1",
+radix = ("0,1,2,3",
          "radix",
-         "anakli/parsec:radix",
+         "anakli/cca:splash2x_radix",
          "./run -a run -p radix -i native -n 1")
-blackscholes = ("2",
+blackscholes = ("0,1,2,3",
                 "blackscholes",
-                "anakli/parsec:blackscholes",
-                "./run -a run -S parsec -p blackscholes -i native -n 2")
-canneal = ("2",
+                "anakli/cca:parsec_blackscholes",
+                "./run -a run -S cca:parsec -p blackscholes -i native -n 2")
+canneal = ("0,1,2,3",
            "canneal",
-           "anakli/parsec:canneal",
+           "anakli/cca:parsec_canneal",
            "./run -a run -p canneal -i native -n 2")
-freqmine = ("3",
+freqmine = ("0,1,2,3",
             "freqmine",
-            "anakli/parsec:freqmine",
-            "./run -a run -S parsec -p freqmine -i native -n 3")
-ferret = ("3",
+            "anakli/cca:parsec_freqmine",
+            "./run -a run -S cca:parsec -p freqmine -i native -n 3")
+ferret = ("0,1,2,3",
           "ferret",
-          "anakli/parsec:ferret",
+          "anakli/cca:parsec_ferret",
           "./run -a run -p ferret -i native -n 3")
-vips = ("2",
+vips = ("0,1,2,3",
         "vips",
-        "anakli/parsec:vips",
+        "anakli/cca:parsec_vips",
         "./run -a run -p vips -i native -n 2")
 
 def main():
-    client = docker.from_env()
     if not args.log_path or args.log_path is None:
         raise ValueError("please provide --log_path PATH_TO_LOG_FILE.")
 
@@ -102,7 +100,7 @@ def main():
     q2 = [canneal, blackscholes, vips]
     q3 = [ferret, freqmine]
 
-    logger = scheduler_logger(args.log_path)
+    logger = scheduler_logger.SchedulerLogger()
     sched = scheduler.ContainerScheduler(q1, q2, q3, logger)
     signal.signal(signal.SIGINT, functools.partial(handle_signal, sched)) # Clean interrupt
 

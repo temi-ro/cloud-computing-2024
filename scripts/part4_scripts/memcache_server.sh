@@ -1,5 +1,11 @@
 #!/bin/bash
 
+sudo apt update
+sudo apt install -y memcached libmemcached-tools
+
+sleep 30
+sudo systemctl status memcached
+
 # Get the internal IP address of the memcached VM
 kubectl get nodes -o wide
 memcache_server=$(kubectl get nodes -o wide | awk '/memcache-server-/{print $1}')
@@ -21,15 +27,15 @@ sudo systemctl restart memcached
 echo "Installing pip and psutil"
 sudo apt update
 sudo apt install -y python3-pip
-pip3 install psutil
-pip3 install docker
+sudo pip3 install psutil
+sudo pip3 install docker
 
 echo "Docker pulling"
 # docker pull
-docker pull anakli/cca:parsec_blackscholes
-docker pull anakli/cca:parsec_canneal
-docker pull anakli/cca:parsec_dedup
-docker pull anakli/cca:parsec_ferret
-docker pull anakli/cca:parsec_freqmine
-docker pull anakli/cca:splash2x_radix
-docker pull anakli/cca:parsec_vips
+sudo docker pull anakli/cca:parsec_blackscholes
+sudo docker pull anakli/cca:parsec_canneal
+sudo docker pull anakli/cca:parsec_dedup
+sudo docker pull anakli/cca:parsec_ferret
+sudo docker pull anakli/cca:parsec_freqmine
+sudo docker pull anakli/cca:splash2x_radix
+sudo docker pull anakli/cca:parsec_vips

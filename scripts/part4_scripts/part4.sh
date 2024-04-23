@@ -30,21 +30,6 @@ memcache_server() {
         $remote_script"
 }
 
-
-
-export KOPS_STATE_STORE="gs://cca-eth-2024-group-020-tmessmer/"
-PROJECT='gcloud config get-value project'
-kops create -f part4.yaml
-
-kops update cluster --name part4.k8s.local --yes --admin
-kops validate cluster --wait 10m
-
-sudo apt update
-sudo apt install -y memcached libmemcached-tools
-
-sleep 30
-sudo systemctl status memcached
-
 client_agent_name=$(kubectl get nodes -o wide | awk '/client-agent-/{print $1}')
 client_measure_name=$(kubectl get nodes -o wide | awk '/client-measure-/{print $1}')
 memcache_server_name=$(kubectl get nodes -o wide | awk '/memcache-server-/{print $1}')
