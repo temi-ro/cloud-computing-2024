@@ -87,13 +87,11 @@ def main():
     #command = "sudo systemctl restart docker"
     #subprocess.run(command.split(" "), stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
 
-    # q1 = [dedup, radix]
-    # q2 = [canneal, blackscholes, vips]
-    # q3 = [ferret, freqmine]
-
     q1 = [dedup, radix]
-    q2 = []
-    q3 = []
+    q2 = [canneal, blackscholes, vips]
+    q3 = [ferret, freqmine]
+
+
 
 
     logger = scheduler_logger.SchedulerLogger()
