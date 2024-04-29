@@ -76,7 +76,7 @@ sudo python3 controller.py
 ## To delete containers
 sudo docker rm $(sudo docker ps -qa)
 
-./mcperf -s 10.0.16.2 --loadonly
-/mcperf -s 10.0.16.2 -a 10.0.16.3 \
+./mcperf -s 10.0.16.4 --loadonly
+./mcperf -s 10.0.16.4 -a 10.0.16.3 \
 --noload -T 16 -C 4 -D 4 -Q 1000 -c 4 -t 5 \
 --scan 5000:125000:5000
