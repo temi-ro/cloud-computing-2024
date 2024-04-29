@@ -21,8 +21,8 @@ COLS = 25
 RUNS = 3
 # Plot each configuration
 for idx, config in enumerate(configs):
-    T = config[3] # num of threads
-    C = config[1] # num of core
+    T = config[1] # num of threads
+    C = config[3] # num of core
 
     qps = [[0]*RUNS for _ in range(COLS)]
     p95 = [[0]*RUNS for _ in range(COLS)]
