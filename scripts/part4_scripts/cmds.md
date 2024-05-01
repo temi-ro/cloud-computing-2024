@@ -1,7 +1,7 @@
 # setup:
 
 ## CHANGE tmessmer
-export KOPS_STATE_STORE="gs://cca-eth-2024-group-020-tmessmer/" 
+export KOPS_STATE_STORE="gs://cca-eth-2024-group-020-aaigueperse/" 
 PROJECT='gcloud config get-value project'
 kops create -f part4.yaml
 
@@ -38,6 +38,9 @@ echo 'Setup complete on client-measure.'
 ./mcperf -s $INTERNAL_MEMCACHED_IP --loadonly
 ## Execute just before running the python file
 ./mcperf -s $INTERNAL_MEMCACHED_IP -a $INTERNAL_AGENT_IP --noload -T 16 -C 4 -D 4 -Q 1000 -c 4 -t 1800 --qps_interval 10 --qps_min 5000 --qps_max 100000 | tee client_measure_log.txt
+
+essayer ./mcperf -s $INTERNAL_MEMCACHED_IP -a $INTERNAL_AGENT_IP --noload -T 16 -C 4 -D 4 -Q 1000 -c 4 -t 1800 --qps_interval 10 --qps_min 5000 --qps_max 100000 | awk '{ print strftime("%Y-%m-%d %H:%M:%S"), $0; fflush(); }' | tee client_measure_log.txt
+
 
 # memecache:
 gcloud compute ssh --ssh-key-file ~/.ssh/cloud-computing ubuntu@[name] --zone europe-west3-a
