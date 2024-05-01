@@ -42,15 +42,6 @@ for i in range(7):
     qps_data.append(qps_result_config_i)
     p95_data.append(p95_result_config_i)
                     
-"""                
-plot : 
-Queries per second (QPS) on the x-axis (the x-axis should range from 0 to 55K).
-(note: the actual achieved QPS, not the target QPS)
-• 95th percentile latency on the y-axis (the y-axis should range from 0 to 8 ms).
-• Label your axes.
-• 7 lines, one for each configuration. Add a legend.
-• State how many runs you averaged across and include error bars at each point in both
-dimensions."""
 
 max_global_p95 = 0
 

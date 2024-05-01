@@ -17,7 +17,14 @@ def handle_signal(sched, sig, frame):
     sched.hard_remove_everything()
     sys.exit(0)
 
-
+def print_memcached_cores(pid):
+    try:
+        memcached_process = psutil.Process(pid)
+        cores = memcached_process.cpu_affinity()
+        print(f"Memcached is currently running on cores: {cores}")
+    except psutil.NoSuchProcess:
+        print("Memcached process not found.")
+        
 # Returns tuple with pid of memcached and number of cpus (=1)
 def init_memcached_config(logger):
     process_name = "memcache"
@@ -46,9 +53,11 @@ def init_memcached_config(logger):
 #     return pid, no_of_cpus
 
 def set_memcached_core(pid, n_core, logger):
+    n_core =1
     n_core_format = ",".join(map(str, range(0, n_core)))
-    cmd = f"sudo taskset -cp {n_core_format} {pid}"
+    cmd = f"sudo taskset -a -cp {n_core_format} {pid}"
     subprocess.run(cmd.split(" "), stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+    print_memcached_cores(pid)
     
     logger.update_cores(Job.MEMCACHED, [str(i) for i in range(0, n_core)])
     
@@ -57,23 +66,23 @@ def set_memcached_core(pid, n_core, logger):
 dedup = ("0,1,2,3",
          "dedup",
          "anakli/cca:parsec_dedup",
-         "./run -a run -S parsec -p dedup -i native -n 1")
+         "./run -a run -S parsec -p dedup -i native -n 2")
 radix = ("0,1,2,3",
          "radix",
          "anakli/cca:splash2x_radix",
-         "./run -a run -S splash2x -p radix -i native -n 1")
+         "./run -a run -S splash2x -p radix -i native -n 2")
 blackscholes = ("0,1,2,3",
                 "blackscholes",
                 "anakli/cca:parsec_blackscholes",
-                "./run -a run -S parsec -p blackscholes -i native -n 2")
+                "./run -a run -S parsec -p blackscholes -i native -n 3")
 canneal = ("0,1,2,3",
            "canneal",
            "anakli/cca:parsec_canneal",
-           "./run -a run -S parsec -p canneal -i native -n 2")
+           "./run -a run -S parsec -p canneal -i native -n 3")
 freqmine = ("0,1,2,3",
             "freqmine",
             "anakli/cca:parsec_freqmine",
-            "./run -a run -S parsec -p freqmine -i native -n 3")
+            "./run -a run -S parsec -p freqmine -i native -n 2")
 ferret = ("0,1,2,3",
           "ferret",
           "anakli/cca:parsec_ferret",
@@ -90,13 +99,16 @@ def main():
     q1 = [dedup, radix]
     q2 = [canneal, blackscholes, vips]
     q3 = [ferret, freqmine]
-
+    
+    q2=[radix, dedup, freqmine, vips]
+    q3=[blackscholes, canneal, ferret]
+    q1=[]
 
 
 
     logger = scheduler_logger.SchedulerLogger()
-    sched = scheduler.ContainerScheduler(q1, q2, q3, logger)
-    signal.signal(signal.SIGINT, functools.partial(handle_signal, sched)) # Clean interrupt
+    #sched = scheduler.ContainerScheduler(q1, q2, q3, logger)
+    #signal.signal(signal.SIGINT, functools.partial(handle_signal, sched)) # Clean interrupt
 
 
     # Discard first measurement, since it is always wrong.
@@ -108,16 +120,18 @@ def main():
     loadLevel = NORMAL
 
     while True:
-        if i == 0:
-            sched.print_queues()
-            print("running from queues", sched.get_running())
+        #if i == 0:
+            #sched.print_queues()
+            #print("running from queues", sched.get_running())
         i = (i + 1) % 20
 
         # mc_utilization = mc_process.cpu_percent() # Does it give the total cpu utilization of memcached?
         cpu_utilizations = psutil.cpu_percent(interval=None, percpu=True)
         cpu_utilization_0 = cpu_utilizations[0] # utilization of core 0
         cpu_utilization_1 = cpu_utilizations[1] # utilization of core 1
-
+        cpu_utilization_2 = cpu_utilizations[2]
+        cpu_utilization_3 = cpu_utilizations[3]
+        print("CPU utilizations", cpu_utilization_0, cpu_utilization_1, cpu_utilization_2, cpu_utilization_3)
         # memcache can run only on core 0
         if cpu_utilization_0 + cpu_utilization_1 < 120 and loadLevel == HIGH:
             loadLevel = NORMAL
@@ -148,27 +162,20 @@ def main():
         #         sched.remove(sched.get_core_usage() - 2)
 
 
-        sched.reschedule(loadLevel)
+        #sched.reschedule(loadLevel)
         # if we just changed the load from NORMAL to HIGH, set memcache n_core to 2 after rescheduling
         if loadLevel == HIGH and mc_n_core == 1:
             pid, mc_n_core = set_memcached_core(mc_pid, 2, logger)
  
  
         # Remove containers if they are done.
-        sched.REMOVE_EXITED_CONTAINERS()
+        #sched.REMOVE_EXITED_CONTAINERS()
 
         # Start containers.
         # sched.SCHEDULE_NEXT()
 
-        if sched.DONE():
-            print("all other jobs have been completed")
-            # set_memcached_core(mc_pid, 4, logger) # Should we give all core to memcached?
-            logger.end()
-            sleep(62)
-            logger.job_end(Job.MEMCACHED)
-            break
 
-        sleep(0.25)
+        sleep(1)
 
 
 if __name__ == "__main__":

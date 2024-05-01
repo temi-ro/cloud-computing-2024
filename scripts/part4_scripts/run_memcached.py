@@ -1,14 +1,10 @@
-import functools
 import subprocess
-from time import sleep
-
 import psutil
-import signal
-import sys
 
+# Run this script to run memcached with the specified number of cores
 
 # Returns tuple with pid of memcached and number of cpus (=1)
-def init_memcached_config():
+def init_memcached_config(n_core):
     process_name = "memcache"
     pid = None
 
@@ -18,14 +14,11 @@ def init_memcached_config():
             pid = process.pid
             break
     
-    #command = f"sudo renice -n -19 -p {pid}"
-    #subprocess.run(command.split(" "), stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
-    # Set the cpu affinity of memcached to CPU 0
-    return set_memcached_core(pid, 2)
+    return set_memcached_core(pid, n_core)
 
 def set_memcached_core(pid, n_core):
     n_core_format = ",".join(map(str, range(0, n_core)))
-    cmd = f"sudo taskset -cp {n_core_format} {pid}"
+    cmd = f"sudo taskset -a -cp {n_core_format} {pid}"
     subprocess.run(cmd.split(" "), stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
         
     return pid, n_core
@@ -34,6 +27,6 @@ def set_memcached_core(pid, n_core):
 def main():
     pid, n_core = init_memcached_config()
     print(f"Memcached is running with pid: {pid} and cpu affinity: {n_core}")
-
+        
 if __name__ == "__main__":
-    main()
+    main(2)
