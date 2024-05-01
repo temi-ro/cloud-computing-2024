@@ -86,7 +86,7 @@ freqmine = ("0,1,2,3",
 ferret = ("0,1,2,3",
           "ferret",
           "anakli/cca:parsec_ferret",
-          "./run -a run -S parsec -p ferret -i native -n 3")
+          "./run -a run -S parsec -p ferret -i native -n 2")
 vips = ("0,1,2,3",
         "vips",
         "anakli/cca:parsec_vips",
@@ -95,38 +95,36 @@ vips = ("0,1,2,3",
 def main():
     #command = "sudo systemctl restart docker"
     #subprocess.run(command.split(" "), stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
-    nb_normal = 0
-    nb_high = 0
+
     q1 = [dedup, radix]
     q2 = [canneal, blackscholes, vips]
     q3 = [ferret, freqmine]
-    q2=[vips, canneal, dedup, freqmine, radix]
-    q3=[blackscholes, ferret]
+    q2=[vips, ferret, dedup, freqmine, radix]
+    q3=[blackscholes, canneal]
     q1=[]
 
 
 
-    file_path = "loads.txt"
-    with open(file_path, 'w') as file:
-
-        logger = scheduler_logger.SchedulerLogger()
-        sched = scheduler.ContainerScheduler(logger, q2, q3)
-        signal.signal(signal.SIGINT, functools.partial(handle_signal, sched)) # Clean interrupt
+    logger = scheduler_logger.SchedulerLogger()
+    sched = scheduler.ContainerScheduler(q1, q2, q3, logger)
+    signal.signal(signal.SIGINT, functools.partial(handle_signal, sched)) # Clean interrupt
 
 
-        # Discard first measurement, since it is always wrong.
-        psutil.cpu_percent(interval=None, percpu=True)
-        mc_pid, mc_n_core = init_memcached_config(logger)
+    # Discard first measurement, since it is always wrong.
+    psutil.cpu_percent(interval=None, percpu=True)
+    mc_pid, mc_n_core = init_memcached_config(logger)
 
-        # mc_process = psutil.Process(mc_pid)
-        i = 0
-        loadLevel = NORMAL
-
+    # mc_process = psutil.Process(mc_pid)
+    i = 0
+    loadLevel = NORMAL
+    file_path = 'example.txt'
+    nb_high = 0
+    nb_normal = 0
+    with open(file_path, 'w') as f:
         while True:
             if i == 0:
-                sched.print_content_queues()
-                file.write("high: " + str(nb_high) + "\n")
-                file.write("normal: " + str(nb_normal) + "\n")
+                sched.print_queues()
+                print("running from queues", sched.get_running())
             i = (i + 1) % 20
 
             # mc_utilization = mc_process.cpu_percent() # Does it give the total cpu utilization of memcached?
@@ -135,24 +133,16 @@ def main():
             cpu_utilization_1 = cpu_utilizations[1] # utilization of core 1
 
             # memcache can run only on core 0
-            if cpu_utilization_0 + cpu_utilization_1 < 90 and loadLevel == HIGH: #testé 115, 80
+            if cpu_utilization_0 + cpu_utilization_1 < 31.5 and loadLevel == HIGH:
                 loadLevel = NORMAL
                 # set memcache n_core to 1
                 pid, mc_n_core = set_memcached_core(mc_pid, 1, logger)
     
             # memcache needs to be on core 0 and 1
-            if cpu_utilization_0 > 55 and loadLevel == NORMAL: #a 35 et 75 ca passe bien 
+            if cpu_utilization_0 > 10.5 and loadLevel == NORMAL:
                 loadLevel = HIGH
 
-            if loadLevel == NORMAL:
-                #write in file "normal":
-                nb_normal += 1
-                #write nb normal in file
-                
-            else:
-                #write in file "high":
-                nb_high += 1
-                
+
             # if cpu_utilization_0 < 100 and sched.get_core_usage() <= 1:
             #     sched.add(4)
 
@@ -180,15 +170,21 @@ def main():
     
     
             # Remove containers if they are done.
-            sched.clean_all_queues()
+            sched.REMOVE_EXITED_CONTAINERS()
+            if(loadLevel == NORMAL):
+                nb_normal += 1
+            if(loadLevel == HIGH):
+                nb_high += 1
+
+            f.write(f"{nb_normal} {nb_high}\n")
 
             # Start containers.
             # sched.SCHEDULE_NEXT()
 
-            if sched.end():
+            if sched.DONE():
                 print("all other jobs have been completed")
-                pid, mc_n_core = set_memcached_core(mc_pid, 2, logger)
                 # set_memcached_core(mc_pid, 4, logger) # Should we give all core to memcached?
+
                 sleep(62)
                 logger.job_end(Job.MEMCACHED)
                 logger.end()
