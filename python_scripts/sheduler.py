@@ -93,7 +93,7 @@ class ContainerScheduler:
                     return [],[]
             else:
                 if(self.can_schedule_queue2() >=2):
-                    return [2,2],["2,3","1"]
+                    return [2,2],["1","2,3"]
                 elif(self.can_schedule_queue2() == 1):
                     return [2],["1,2,3"]
                 elif(self.can_schedule_queue2() == 0):

@@ -47,7 +47,7 @@ def init_memcached_config(logger):
 
 def set_memcached_core(pid, n_core, logger):
     n_core_format = ",".join(map(str, range(0, n_core)))
-    cmd = f"sudo taskset -cp {n_core_format} {pid}"
+    cmd = f"sudo taskset -a -cp {n_core_format} {pid}"
     subprocess.run(cmd.split(" "), stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
     
     logger.update_cores(Job.MEMCACHED, [str(i) for i in range(0, n_core)])
@@ -86,89 +86,106 @@ vips = ("0,1,2,3",
 def main():
     #command = "sudo systemctl restart docker"
     #subprocess.run(command.split(" "), stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
-
+    nb_normal = 0
+    nb_high = 0
     q1 = [dedup, radix]
     q2 = [canneal, blackscholes, vips]
     q3 = [ferret, freqmine]
+    q2=[vips, canneal, dedup, freqmine, radix]
+    q3=[blackscholes, ferret]
+    q1=[]
 
 
 
+    file_path = "loads.txt"
+    with open(file_path, 'w') as file:
 
-    logger = scheduler_logger.SchedulerLogger()
-    sched = scheduler.ContainerScheduler(q1, q2, q3, logger)
-    signal.signal(signal.SIGINT, functools.partial(handle_signal, sched)) # Clean interrupt
-
-
-    # Discard first measurement, since it is always wrong.
-    psutil.cpu_percent(interval=None, percpu=True)
-    mc_pid, mc_n_core = init_memcached_config(logger)
-
-    # mc_process = psutil.Process(mc_pid)
-    i = 0
-    loadLevel = NORMAL
-
-    while True:
-        if i == 0:
-            sched.print_queues()
-            print("running from queues", sched.get_running())
-        i = (i + 1) % 20
-
-        # mc_utilization = mc_process.cpu_percent() # Does it give the total cpu utilization of memcached?
-        cpu_utilizations = psutil.cpu_percent(interval=None, percpu=True)
-        cpu_utilization_0 = cpu_utilizations[0] # utilization of core 0
-        cpu_utilization_1 = cpu_utilizations[1] # utilization of core 1
-
-        # memcache can run only on core 0
-        if cpu_utilization_0 + cpu_utilization_1 < 120 and loadLevel == HIGH:
-            loadLevel = NORMAL
-            # set memcache n_core to 1
-            pid, mc_n_core = set_memcached_core(mc_pid, 1, logger)
- 
-        # memcache needs to be on core 0 and 1
-        if cpu_utilization_0 > 60 and loadLevel == NORMAL:
-            loadLevel = HIGH
-
-        # if cpu_utilization_0 < 100 and sched.get_core_usage() <= 1:
-        #     sched.add(4)
-
-        # elif cpu_utilization_0 < 200 and sched.get_core_usage() <= 2:
-        #     sched.add(3)
-
-        # elif cpu_utilization_0 < 300 and sched.get_core_usage() <= 3:
-        #     sched.add(2)
-        # elif cpu_utilization_0 < 350 and sched.get_core_usage() <= 4:
-        #     sched.add(1)
-
-        # elif cpu_utilization_0 > 380:
-        #     if mc_utilization > 60:
-        #         # reduce to 2 cores
-        #         sched.remove(sched.get_core_usage() - 3)
-        #     if mc_utilization > 150:
-        #         # reduce to 1 core
-        #         sched.remove(sched.get_core_usage() - 2)
+        logger = scheduler_logger.SchedulerLogger()
+        sched = scheduler.ContainerScheduler(logger, q2, q3)
+        signal.signal(signal.SIGINT, functools.partial(handle_signal, sched)) # Clean interrupt
 
 
-        sched.reschedule(loadLevel)
-        # if we just changed the load from NORMAL to HIGH, set memcache n_core to 2 after rescheduling
-        if loadLevel == HIGH and mc_n_core == 1:
-            pid, mc_n_core = set_memcached_core(mc_pid, 2, logger)
- 
- 
-        # Remove containers if they are done.
-        sched.REMOVE_EXITED_CONTAINERS()
+        # Discard first measurement, since it is always wrong.
+        psutil.cpu_percent(interval=None, percpu=True)
+        mc_pid, mc_n_core = init_memcached_config(logger)
 
-        # Start containers.
-        # sched.SCHEDULE_NEXT()
+        # mc_process = psutil.Process(mc_pid)
+        i = 0
+        loadLevel = NORMAL
 
-        if sched.DONE():
-            print("all other jobs have been completed")
-            # set_memcached_core(mc_pid, 4, logger) # Should we give all core to memcached?
-            logger.end()
-            sleep(62)
-            logger.job_end(Job.MEMCACHED)
-            break
+        while True:
+            if i == 0:
+                sched.print_content_queues()
+                file.write("high: " + str(nb_high) + "\n")
+                file.write("normal: " + str(nb_normal) + "\n")
+            i = (i + 1) % 20
 
-        sleep(0.25)
+            # mc_utilization = mc_process.cpu_percent() # Does it give the total cpu utilization of memcached?
+            cpu_utilizations = psutil.cpu_percent(interval=None, percpu=True)
+            cpu_utilization_0 = cpu_utilizations[0] # utilization of core 0
+            cpu_utilization_1 = cpu_utilizations[1] # utilization of core 1
+
+            # memcache can run only on core 0
+            if cpu_utilization_0 + cpu_utilization_1 < 90 and loadLevel == HIGH: #testé 115, 80
+                loadLevel = NORMAL
+                # set memcache n_core to 1
+                pid, mc_n_core = set_memcached_core(mc_pid, 1, logger)
+    
+            # memcache needs to be on core 0 and 1
+            if cpu_utilization_0 > 55 and loadLevel == NORMAL: #a 35 et 75 ca passe bien 
+                loadLevel = HIGH
+
+            if loadLevel == NORMAL:
+                #write in file "normal":
+                nb_normal += 1
+                #write nb normal in file
+                
+            else:
+                #write in file "high":
+                nb_high += 1
+                
+            # if cpu_utilization_0 < 100 and sched.get_core_usage() <= 1:
+            #     sched.add(4)
+
+            # elif cpu_utilization_0 < 200 and sched.get_core_usage() <= 2:
+            #     sched.add(3)
+
+            # elif cpu_utilization_0 < 300 and sched.get_core_usage() <= 3:
+            #     sched.add(2)
+            # elif cpu_utilization_0 < 350 and sched.get_core_usage() <= 4:
+            #     sched.add(1)
+
+            # elif cpu_utilization_0 > 380:
+            #     if mc_utilization > 60:
+            #         # reduce to 2 cores
+            #         sched.remove(sched.get_core_usage() - 3)
+            #     if mc_utilization > 150:
+            #         # reduce to 1 core
+            #         sched.remove(sched.get_core_usage() - 2)
+
+
+            sched.reschedule(loadLevel)
+            # if we just changed the load from NORMAL to HIGH, set memcache n_core to 2 after rescheduling
+            if loadLevel == HIGH and mc_n_core == 1:
+                pid, mc_n_core = set_memcached_core(mc_pid, 2, logger)
+    
+    
+            # Remove containers if they are done.
+            sched.clean_all_queues()
+
+            # Start containers.
+            # sched.SCHEDULE_NEXT()
+
+            if sched.end():
+                print("all other jobs have been completed")
+                pid, mc_n_core = set_memcached_core(mc_pid, 2, logger)
+                # set_memcached_core(mc_pid, 4, logger) # Should we give all core to memcached?
+                sleep(62)
+                logger.job_end(Job.MEMCACHED)
+                logger.end()
+                break
+
+            sleep(0.25)
 
 
 if __name__ == "__main__":

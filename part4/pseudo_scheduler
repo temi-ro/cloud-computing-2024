@@ -1,0 +1,24 @@
+q1:dedup, radix
+q2:canneal, black, vips
+q3: freqmine, ferret
+
+meaning of the queues : qi => jobs in there will prefer running on i cores and they have i threads
+
+scheduling:
+
+memcached runs on core 0 and if needs more (above a certain cpu utilization threshol, give it also core 1)
+
+for the rest:
+if 3 cores available:
+	case q3 full => q3
+	case q2,q1 both full => run one of each (q2 on 2 cores, q1 on 1 core)
+	case q2 empty => run as many 1 as possible
+	case q1 empty => run 2 q2 (with one on 1 core) if |q2|>1 else one q2 on all cores
+	
+if 2 availabe:
+	case q2 full => run q2
+	case |q1|>1 => 2 q1 
+	case q3 full => q3 on 2 threads
+	case => q1 on all threads
+	
+can run all => decision [3,1,1,0] [set 1, set 2, set 3] => for q in distr, start or unpause with given set et regarde next dans decision (si c'est different, alors pause tout ce qui suit dans ta queue)
