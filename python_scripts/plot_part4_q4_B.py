@@ -7,25 +7,18 @@ from collections import defaultdict
 import ast
 import matplotlib.patches as mpatches
 
-# Function to read data from a file and return QPS and 95th percentile values
-def read_data(filename):
-    data = np.loadtxt(filename, skiprows=1, usecols=(0,1), dtype=float)
-    print(data)
-    t = data[:, 0]
-    cpu_utils = data[:, 1]
-    return t, cpu_utils
-
 # Function to read end and start time values from a file (mcperf)
 def read_time(filename):
     with open(filename, 'r') as f:
         lines = f.readlines()
         l_start = lines[3]
         l_end = lines[4]
-        start_time = int(l_start.split()[-1]) // 1000
-        end_time = int(l_end.split()[-1]) // 1000
+        start_time = l_start.split()[-1] / 1000
+        end_time = l_end.split()[-1] / 1000
 
     return start_time, end_time
 
+# Function to read QPS values and p95 latency from a file (mcperf)
 def read_time_qps(filename, n):
     data = np.loadtxt(filename, skiprows=6, usecols=(12, 16), max_rows=n, dtype=float)
     p95 = list(map(lambda x: x/1000, data[:, 0]))
