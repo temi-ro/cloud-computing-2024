@@ -55,13 +55,13 @@ def adjust_timestamps(mcperf_data, pods_data):
 def plot_latency(mcperf_data, pods_data, run_number):
     plt.figure(figsize=(20, 7))
     color_map = {
-        'blackscholes': '#cca000',  # Beige
-        'canneal': '#cccca9',  # Yellow-grey
-        'dedup': '#ccacca',  # Light purple (Lavender)
-        'ferret': '#a9ccca',  # Light blue-grey (Light Steel Blue)
-        'freqmine': '#09ca00',  # Green
-        'radix': '#00cc9f',  # Mint (Pale green)
-        'vips': '#cc0b00'  # Red
+        'blackscholes': '#CCA000',  # Beige
+        'canneal': '#CCCCAA',  # Yellow-grey
+        'dedup': '#CCACCA',  # Light purple (Lavender)
+        'ferret': '#AACCCA',  # Light blue-grey (Light Steel Blue)
+        'freqmine': '#0CCA00',  # Green
+        'radix': '#00CCA0',  # Mint (Pale green)
+        'vips': '#CC0A00'  # Red
     }
 
     # Plotting the latency data as a bar plot
