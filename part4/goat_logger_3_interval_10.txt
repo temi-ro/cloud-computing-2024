@@ -1,0 +1,2020 @@
+2024-05-06T16:12:50.717392 start scheduler
+2024-05-06T16:12:50.905892 start memcached [0] 2
+2024-05-06T16:12:50.920554 update_cores memcached [0,1]
+2024-05-06T16:12:50.927090 start canneal [2,3] 2
+2024-05-06T16:12:51.989804 update_cores memcached [0]
+2024-05-06T16:12:51.991762 start blackscholes [1,2,3] 3
+2024-05-06T16:12:52.238306 pause canneal
+2024-05-06T16:12:52.520053 pause blackscholes
+2024-05-06T16:12:52.549481 update_cores canneal [2,3]
+2024-05-06T16:12:52.549505 unpause canneal
+2024-05-06T16:12:52.603297 update_cores memcached [0,1]
+2024-05-06T16:12:53.150094 update_cores memcached [0]
+2024-05-06T16:12:53.152091 update_cores blackscholes [1,2,3]
+2024-05-06T16:12:53.152105 unpause blackscholes
+2024-05-06T16:12:53.195717 pause canneal
+2024-05-06T16:13:02.339243 pause blackscholes
+2024-05-06T16:13:02.368239 update_cores canneal [2,3]
+2024-05-06T16:13:02.368266 unpause canneal
+2024-05-06T16:13:02.447756 update_cores memcached [0,1]
+2024-05-06T16:13:32.670567 update_cores memcached [0]
+2024-05-06T16:13:32.673943 update_cores blackscholes [1,2,3]
+2024-05-06T16:13:32.673972 unpause blackscholes
+2024-05-06T16:13:32.723802 pause canneal
+2024-05-06T16:13:33.011445 pause blackscholes
+2024-05-06T16:13:33.035326 update_cores canneal [2,3]
+2024-05-06T16:13:33.035349 unpause canneal
+2024-05-06T16:13:33.099174 update_cores memcached [0,1]
+2024-05-06T16:13:33.650116 update_cores memcached [0]
+2024-05-06T16:13:33.652380 update_cores blackscholes [1,2,3]
+2024-05-06T16:13:33.652400 unpause blackscholes
+2024-05-06T16:13:33.700715 pause canneal
+2024-05-06T16:13:33.985991 pause blackscholes
+2024-05-06T16:13:34.007892 update_cores canneal [2,3]
+2024-05-06T16:13:34.007914 unpause canneal
+2024-05-06T16:13:34.070419 update_cores memcached [0,1]
+2024-05-06T16:13:35.702532 update_cores memcached [0]
+2024-05-06T16:13:35.704913 update_cores blackscholes [1,2,3]
+2024-05-06T16:13:35.704947 unpause blackscholes
+2024-05-06T16:13:35.751508 pause canneal
+2024-05-06T16:13:36.036656 pause blackscholes
+2024-05-06T16:13:36.058821 update_cores canneal [2,3]
+2024-05-06T16:13:36.058841 unpause canneal
+2024-05-06T16:13:36.122200 update_cores memcached [0,1]
+2024-05-06T16:13:36.670776 update_cores memcached [0]
+2024-05-06T16:13:36.673190 update_cores blackscholes [1,2,3]
+2024-05-06T16:13:36.673209 unpause blackscholes
+2024-05-06T16:13:36.721210 pause canneal
+2024-05-06T16:13:37.006552 pause blackscholes
+2024-05-06T16:13:37.029006 update_cores canneal [2,3]
+2024-05-06T16:13:37.029028 unpause canneal
+2024-05-06T16:13:37.090763 update_cores memcached [0,1]
+2024-05-06T16:13:37.637440 update_cores memcached [0]
+2024-05-06T16:13:37.639768 update_cores blackscholes [1,2,3]
+2024-05-06T16:13:37.639792 unpause blackscholes
+2024-05-06T16:13:37.684293 pause canneal
+2024-05-06T16:13:37.978179 pause blackscholes
+2024-05-06T16:13:38.002819 update_cores canneal [2,3]
+2024-05-06T16:13:38.002839 unpause canneal
+2024-05-06T16:13:38.068242 update_cores memcached [0,1]
+2024-05-06T16:13:38.616143 update_cores memcached [0]
+2024-05-06T16:13:38.618884 update_cores blackscholes [1,2,3]
+2024-05-06T16:13:38.618903 unpause blackscholes
+2024-05-06T16:13:38.668258 pause canneal
+2024-05-06T16:13:38.962816 pause blackscholes
+2024-05-06T16:13:38.987906 update_cores canneal [2,3]
+2024-05-06T16:13:38.987931 unpause canneal
+2024-05-06T16:13:39.049578 update_cores memcached [0,1]
+2024-05-06T16:13:39.599187 update_cores memcached [0]
+2024-05-06T16:13:39.601697 update_cores blackscholes [1,2,3]
+2024-05-06T16:13:39.601715 unpause blackscholes
+2024-05-06T16:13:39.650396 pause canneal
+2024-05-06T16:13:39.934826 pause blackscholes
+2024-05-06T16:13:39.963414 update_cores canneal [2,3]
+2024-05-06T16:13:39.963439 unpause canneal
+2024-05-06T16:13:40.027546 update_cores memcached [0,1]
+2024-05-06T16:13:40.573454 update_cores memcached [0]
+2024-05-06T16:13:40.575368 update_cores blackscholes [1,2,3]
+2024-05-06T16:13:40.575382 unpause blackscholes
+2024-05-06T16:13:40.622457 pause canneal
+2024-05-06T16:13:40.922306 pause blackscholes
+2024-05-06T16:13:40.945229 update_cores canneal [2,3]
+2024-05-06T16:13:40.945252 unpause canneal
+2024-05-06T16:13:41.006589 update_cores memcached [0,1]
+2024-05-06T16:13:41.556611 update_cores memcached [0]
+2024-05-06T16:13:41.558591 update_cores blackscholes [1,2,3]
+2024-05-06T16:13:41.558610 unpause blackscholes
+2024-05-06T16:13:41.607625 pause canneal
+2024-05-06T16:13:41.907985 pause blackscholes
+2024-05-06T16:13:41.930551 update_cores canneal [2,3]
+2024-05-06T16:13:41.930573 unpause canneal
+2024-05-06T16:13:41.989788 update_cores memcached [0,1]
+2024-05-06T16:13:52.687589 update_cores memcached [0]
+2024-05-06T16:13:52.689606 update_cores blackscholes [1,2,3]
+2024-05-06T16:13:52.689630 unpause blackscholes
+2024-05-06T16:13:52.736212 pause canneal
+2024-05-06T16:13:53.019182 pause blackscholes
+2024-05-06T16:13:53.051089 update_cores canneal [2,3]
+2024-05-06T16:13:53.051111 unpause canneal
+2024-05-06T16:13:53.105506 update_cores memcached [0,1]
+2024-05-06T16:13:53.379915 update_cores memcached [0]
+2024-05-06T16:13:53.381748 update_cores blackscholes [1,2,3]
+2024-05-06T16:13:53.381762 unpause blackscholes
+2024-05-06T16:13:53.423741 pause canneal
+2024-05-06T16:13:53.988893 pause blackscholes
+2024-05-06T16:13:54.020159 update_cores canneal [2,3]
+2024-05-06T16:13:54.020177 unpause canneal
+2024-05-06T16:13:54.074301 update_cores memcached [0,1]
+2024-05-06T16:13:54.618248 update_cores memcached [0]
+2024-05-06T16:13:54.620275 update_cores blackscholes [1,2,3]
+2024-05-06T16:13:54.620290 unpause blackscholes
+2024-05-06T16:13:54.664401 pause canneal
+2024-05-06T16:13:55.222151 pause blackscholes
+2024-05-06T16:13:55.243726 update_cores canneal [2,3]
+2024-05-06T16:13:55.243745 unpause canneal
+2024-05-06T16:13:55.299644 update_cores memcached [0,1]
+2024-05-06T16:13:55.574054 update_cores memcached [0]
+2024-05-06T16:13:55.576214 update_cores blackscholes [1,2,3]
+2024-05-06T16:13:55.576229 unpause blackscholes
+2024-05-06T16:13:55.618471 pause canneal
+2024-05-06T16:13:55.906001 pause blackscholes
+2024-05-06T16:13:55.938252 update_cores canneal [2,3]
+2024-05-06T16:13:55.938271 unpause canneal
+2024-05-06T16:13:55.993837 update_cores memcached [0,1]
+2024-05-06T16:13:56.535478 update_cores memcached [0]
+2024-05-06T16:13:56.537361 update_cores blackscholes [1,2,3]
+2024-05-06T16:13:56.537378 unpause blackscholes
+2024-05-06T16:13:56.580523 pause canneal
+2024-05-06T16:13:56.882103 pause blackscholes
+2024-05-06T16:13:56.905203 update_cores canneal [2,3]
+2024-05-06T16:13:56.905231 unpause canneal
+2024-05-06T16:13:56.965234 update_cores memcached [0,1]
+2024-05-06T16:13:57.242533 update_cores memcached [0]
+2024-05-06T16:13:57.244662 update_cores blackscholes [1,2,3]
+2024-05-06T16:13:57.244679 unpause blackscholes
+2024-05-06T16:13:57.301219 pause canneal
+2024-05-06T16:13:57.597663 pause blackscholes
+2024-05-06T16:13:57.630620 update_cores canneal [2,3]
+2024-05-06T16:13:57.630638 unpause canneal
+2024-05-06T16:13:57.684587 update_cores memcached [0,1]
+2024-05-06T16:13:58.230773 update_cores memcached [0]
+2024-05-06T16:13:58.232949 update_cores blackscholes [1,2,3]
+2024-05-06T16:13:58.232966 unpause blackscholes
+2024-05-06T16:13:58.303860 pause canneal
+2024-05-06T16:13:58.591784 pause blackscholes
+2024-05-06T16:13:58.614378 update_cores canneal [2,3]
+2024-05-06T16:13:58.614397 unpause canneal
+2024-05-06T16:13:58.665462 update_cores memcached [0,1]
+2024-05-06T16:13:58.941316 update_cores memcached [0]
+2024-05-06T16:13:58.943367 update_cores blackscholes [1,2,3]
+2024-05-06T16:13:58.943408 unpause blackscholes
+2024-05-06T16:13:59.000546 pause canneal
+2024-05-06T16:13:59.281139 pause blackscholes
+2024-05-06T16:13:59.304563 update_cores canneal [2,3]
+2024-05-06T16:13:59.304582 unpause canneal
+2024-05-06T16:13:59.362563 update_cores memcached [0,1]
+2024-05-06T16:13:59.639085 update_cores memcached [0]
+2024-05-06T16:13:59.641094 update_cores blackscholes [1,2,3]
+2024-05-06T16:13:59.641110 unpause blackscholes
+2024-05-06T16:13:59.703540 pause canneal
+2024-05-06T16:13:59.985002 pause blackscholes
+2024-05-06T16:14:00.006041 update_cores canneal [2,3]
+2024-05-06T16:14:00.006060 unpause canneal
+2024-05-06T16:14:00.059910 update_cores memcached [0,1]
+2024-05-06T16:14:00.605495 update_cores memcached [0]
+2024-05-06T16:14:00.607562 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:00.607579 unpause blackscholes
+2024-05-06T16:14:00.663716 pause canneal
+2024-05-06T16:14:00.948060 pause blackscholes
+2024-05-06T16:14:00.969241 update_cores canneal [2,3]
+2024-05-06T16:14:00.969260 unpause canneal
+2024-05-06T16:14:01.025754 update_cores memcached [0,1]
+2024-05-06T16:14:01.301743 update_cores memcached [0]
+2024-05-06T16:14:01.303717 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:01.303733 unpause blackscholes
+2024-05-06T16:14:01.356136 pause canneal
+2024-05-06T16:14:01.639613 pause blackscholes
+2024-05-06T16:14:01.671661 update_cores canneal [2,3]
+2024-05-06T16:14:01.671680 unpause canneal
+2024-05-06T16:14:01.723947 update_cores memcached [0,1]
+2024-05-06T16:14:02.000581 update_cores memcached [0]
+2024-05-06T16:14:02.002839 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:02.002858 unpause blackscholes
+2024-05-06T16:14:02.061124 pause canneal
+2024-05-06T16:14:02.365243 pause blackscholes
+2024-05-06T16:14:02.393573 update_cores canneal [2,3]
+2024-05-06T16:14:02.393596 unpause canneal
+2024-05-06T16:14:02.468776 update_cores memcached [0,1]
+2024-05-06T16:14:12.634830 update_cores memcached [0]
+2024-05-06T16:14:12.636784 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:12.636800 unpause blackscholes
+2024-05-06T16:14:12.681343 pause canneal
+2024-05-06T16:14:12.974671 pause blackscholes
+2024-05-06T16:14:12.996977 update_cores canneal [2,3]
+2024-05-06T16:14:12.996998 unpause canneal
+2024-05-06T16:14:13.052094 update_cores memcached [0,1]
+2024-05-06T16:14:13.328488 update_cores memcached [0]
+2024-05-06T16:14:13.330541 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:13.330557 unpause blackscholes
+2024-05-06T16:14:13.376810 pause canneal
+2024-05-06T16:14:13.667789 pause blackscholes
+2024-05-06T16:14:13.689821 update_cores canneal [2,3]
+2024-05-06T16:14:13.689844 unpause canneal
+2024-05-06T16:14:13.744188 update_cores memcached [0,1]
+2024-05-06T16:14:14.021249 update_cores memcached [0]
+2024-05-06T16:14:14.023549 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:14.023566 unpause blackscholes
+2024-05-06T16:14:14.083141 pause canneal
+2024-05-06T16:14:14.375018 pause blackscholes
+2024-05-06T16:14:14.397317 update_cores canneal [2,3]
+2024-05-06T16:14:14.397335 unpause canneal
+2024-05-06T16:14:14.452622 update_cores memcached [0,1]
+2024-05-06T16:14:14.999283 update_cores memcached [0]
+2024-05-06T16:14:15.001722 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:15.001747 unpause blackscholes
+2024-05-06T16:14:15.055617 pause canneal
+2024-05-06T16:14:15.336717 pause blackscholes
+2024-05-06T16:14:15.358117 update_cores canneal [2,3]
+2024-05-06T16:14:15.358137 unpause canneal
+2024-05-06T16:14:15.414774 update_cores memcached [0,1]
+2024-05-06T16:14:15.694509 update_cores memcached [0]
+2024-05-06T16:14:15.696589 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:15.696605 unpause blackscholes
+2024-05-06T16:14:15.766333 pause canneal
+2024-05-06T16:14:16.062071 pause blackscholes
+2024-05-06T16:14:16.083417 update_cores canneal [2,3]
+2024-05-06T16:14:16.083433 unpause canneal
+2024-05-06T16:14:16.140317 update_cores memcached [0,1]
+2024-05-06T16:14:16.416909 update_cores memcached [0]
+2024-05-06T16:14:16.418867 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:16.418881 unpause blackscholes
+2024-05-06T16:14:16.463549 pause canneal
+2024-05-06T16:14:16.758078 pause blackscholes
+2024-05-06T16:14:16.780613 update_cores canneal [2,3]
+2024-05-06T16:14:16.780633 unpause canneal
+2024-05-06T16:14:16.836902 update_cores memcached [0,1]
+2024-05-06T16:14:17.113263 update_cores memcached [0]
+2024-05-06T16:14:17.116981 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:17.117001 unpause blackscholes
+2024-05-06T16:14:17.175464 pause canneal
+2024-05-06T16:14:17.468681 pause blackscholes
+2024-05-06T16:14:17.489276 update_cores canneal [2,3]
+2024-05-06T16:14:17.489293 unpause canneal
+2024-05-06T16:14:17.547504 update_cores memcached [0,1]
+2024-05-06T16:14:17.825336 update_cores memcached [0]
+2024-05-06T16:14:17.827297 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:17.827309 unpause blackscholes
+2024-05-06T16:14:17.870053 pause canneal
+2024-05-06T16:14:18.159381 pause blackscholes
+2024-05-06T16:14:18.183065 update_cores canneal [2,3]
+2024-05-06T16:14:18.183085 unpause canneal
+2024-05-06T16:14:18.241326 update_cores memcached [0,1]
+2024-05-06T16:14:18.793603 update_cores memcached [0]
+2024-05-06T16:14:18.795609 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:18.795625 unpause blackscholes
+2024-05-06T16:14:18.851616 pause canneal
+2024-05-06T16:14:19.134343 pause blackscholes
+2024-05-06T16:14:19.175438 update_cores canneal [2,3]
+2024-05-06T16:14:19.175458 unpause canneal
+2024-05-06T16:14:19.230316 update_cores memcached [0,1]
+2024-05-06T16:14:19.775687 update_cores memcached [0]
+2024-05-06T16:14:19.778349 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:19.778364 unpause blackscholes
+2024-05-06T16:14:19.831012 pause canneal
+2024-05-06T16:14:20.122069 pause blackscholes
+2024-05-06T16:14:20.153560 update_cores canneal [2,3]
+2024-05-06T16:14:20.153578 unpause canneal
+2024-05-06T16:14:20.208986 update_cores memcached [0,1]
+2024-05-06T16:14:20.485184 update_cores memcached [0]
+2024-05-06T16:14:20.487306 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:20.487321 unpause blackscholes
+2024-05-06T16:14:20.530244 pause canneal
+2024-05-06T16:14:20.842499 pause blackscholes
+2024-05-06T16:14:20.864549 update_cores canneal [2,3]
+2024-05-06T16:14:20.864567 unpause canneal
+2024-05-06T16:14:20.921887 update_cores memcached [0,1]
+2024-05-06T16:14:21.199045 update_cores memcached [0]
+2024-05-06T16:14:21.201372 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:21.201406 unpause blackscholes
+2024-05-06T16:14:21.256523 pause canneal
+2024-05-06T16:14:21.555573 pause blackscholes
+2024-05-06T16:14:21.578590 update_cores canneal [2,3]
+2024-05-06T16:14:21.578610 unpause canneal
+2024-05-06T16:14:21.634503 update_cores memcached [0,1]
+2024-05-06T16:14:21.913996 update_cores memcached [0]
+2024-05-06T16:14:21.916161 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:21.916178 unpause blackscholes
+2024-05-06T16:14:21.976907 pause canneal
+2024-05-06T16:14:22.272077 pause blackscholes
+2024-05-06T16:14:22.295721 update_cores canneal [2,3]
+2024-05-06T16:14:22.295744 unpause canneal
+2024-05-06T16:14:22.357120 update_cores memcached [0,1]
+2024-05-06T16:14:22.906880 update_cores memcached [0]
+2024-05-06T16:14:22.910172 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:22.910189 unpause blackscholes
+2024-05-06T16:14:22.964836 pause canneal
+2024-05-06T16:14:23.276854 pause blackscholes
+2024-05-06T16:14:23.307947 update_cores canneal [2,3]
+2024-05-06T16:14:23.307964 unpause canneal
+2024-05-06T16:14:23.367230 update_cores memcached [0,1]
+2024-05-06T16:14:24.190223 update_cores memcached [0]
+2024-05-06T16:14:24.192989 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:24.193014 unpause blackscholes
+2024-05-06T16:14:24.271281 pause canneal
+2024-05-06T16:14:24.567952 pause blackscholes
+2024-05-06T16:14:24.591265 update_cores canneal [2,3]
+2024-05-06T16:14:24.591292 unpause canneal
+2024-05-06T16:14:24.653462 update_cores memcached [0,1]
+2024-05-06T16:14:24.932703 update_cores memcached [0]
+2024-05-06T16:14:24.936044 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:24.936062 unpause blackscholes
+2024-05-06T16:14:24.995850 pause canneal
+2024-05-06T16:14:25.300782 pause blackscholes
+2024-05-06T16:14:25.325113 update_cores canneal [2,3]
+2024-05-06T16:14:25.325136 unpause canneal
+2024-05-06T16:14:25.386345 update_cores memcached [0,1]
+2024-05-06T16:14:25.937356 update_cores memcached [0]
+2024-05-06T16:14:25.939483 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:25.939498 unpause blackscholes
+2024-05-06T16:14:25.997533 pause canneal
+2024-05-06T16:14:26.290854 pause blackscholes
+2024-05-06T16:14:26.315782 update_cores canneal [2,3]
+2024-05-06T16:14:26.315802 unpause canneal
+2024-05-06T16:14:26.377770 update_cores memcached [0,1]
+2024-05-06T16:14:26.658114 update_cores memcached [0]
+2024-05-06T16:14:26.660707 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:26.660828 unpause blackscholes
+2024-05-06T16:14:26.721635 pause canneal
+2024-05-06T16:14:27.017681 pause blackscholes
+2024-05-06T16:14:27.044214 update_cores canneal [2,3]
+2024-05-06T16:14:27.044235 unpause canneal
+2024-05-06T16:14:27.108358 update_cores memcached [0,1]
+2024-05-06T16:14:27.660900 update_cores memcached [0]
+2024-05-06T16:14:27.663629 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:27.663647 unpause blackscholes
+2024-05-06T16:14:27.721748 pause canneal
+2024-05-06T16:14:28.021086 pause blackscholes
+2024-05-06T16:14:28.045687 update_cores canneal [2,3]
+2024-05-06T16:14:28.045706 unpause canneal
+2024-05-06T16:14:28.107800 update_cores memcached [0,1]
+2024-05-06T16:14:28.660029 update_cores memcached [0]
+2024-05-06T16:14:28.662240 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:28.662258 unpause blackscholes
+2024-05-06T16:14:28.725032 pause canneal
+2024-05-06T16:14:29.022153 pause blackscholes
+2024-05-06T16:14:29.046168 update_cores canneal [2,3]
+2024-05-06T16:14:29.046205 unpause canneal
+2024-05-06T16:14:29.104913 update_cores memcached [0,1]
+2024-05-06T16:14:29.656519 update_cores memcached [0]
+2024-05-06T16:14:29.659265 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:29.659290 unpause blackscholes
+2024-05-06T16:14:29.705069 pause canneal
+2024-05-06T16:14:30.003712 pause blackscholes
+2024-05-06T16:14:30.029653 update_cores canneal [2,3]
+2024-05-06T16:14:30.029675 unpause canneal
+2024-05-06T16:14:30.091309 update_cores memcached [0,1]
+2024-05-06T16:14:30.640980 update_cores memcached [0]
+2024-05-06T16:14:30.644462 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:30.644479 unpause blackscholes
+2024-05-06T16:14:30.710301 pause canneal
+2024-05-06T16:14:31.014582 pause blackscholes
+2024-05-06T16:14:31.039600 update_cores canneal [2,3]
+2024-05-06T16:14:31.039626 unpause canneal
+2024-05-06T16:14:31.102161 update_cores memcached [0,1]
+2024-05-06T16:14:31.658849 update_cores memcached [0]
+2024-05-06T16:14:31.662513 update_cores blackscholes [1,2,3]
+2024-05-06T16:14:31.662530 unpause blackscholes
+2024-05-06T16:14:31.722060 pause canneal
+2024-05-06T16:14:32.018674 pause blackscholes
+2024-05-06T16:14:32.044613 update_cores canneal [2,3]
+2024-05-06T16:14:32.044634 unpause canneal
+2024-05-06T16:14:32.108241 update_cores memcached [0,1]
+2024-05-06T16:15:02.536613 update_cores memcached [0]
+2024-05-06T16:15:02.538726 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:02.538744 unpause blackscholes
+2024-05-06T16:15:02.601594 pause canneal
+2024-05-06T16:15:02.894320 pause blackscholes
+2024-05-06T16:15:02.920372 update_cores canneal [2,3]
+2024-05-06T16:15:02.920391 unpause canneal
+2024-05-06T16:15:02.982437 update_cores memcached [0,1]
+2024-05-06T16:15:03.532378 update_cores memcached [0]
+2024-05-06T16:15:03.535287 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:03.535304 unpause blackscholes
+2024-05-06T16:15:03.598023 pause canneal
+2024-05-06T16:15:03.881961 pause blackscholes
+2024-05-06T16:15:03.908319 update_cores canneal [2,3]
+2024-05-06T16:15:03.908345 unpause canneal
+2024-05-06T16:15:03.965188 update_cores memcached [0,1]
+2024-05-06T16:15:04.518942 update_cores memcached [0]
+2024-05-06T16:15:04.521481 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:04.521504 unpause blackscholes
+2024-05-06T16:15:04.582028 pause canneal
+2024-05-06T16:15:04.876110 pause blackscholes
+2024-05-06T16:15:04.900668 update_cores canneal [2,3]
+2024-05-06T16:15:04.900693 unpause canneal
+2024-05-06T16:15:04.965156 update_cores memcached [0,1]
+2024-05-06T16:15:05.786284 update_cores memcached [0]
+2024-05-06T16:15:05.788489 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:05.788506 unpause blackscholes
+2024-05-06T16:15:05.847482 pause canneal
+2024-05-06T16:15:06.133600 pause blackscholes
+2024-05-06T16:15:06.158394 update_cores canneal [2,3]
+2024-05-06T16:15:06.158416 unpause canneal
+2024-05-06T16:15:06.216941 update_cores memcached [0,1]
+2024-05-06T16:15:06.771325 update_cores memcached [0]
+2024-05-06T16:15:06.773301 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:06.773350 unpause blackscholes
+2024-05-06T16:15:06.831885 pause canneal
+2024-05-06T16:15:07.120099 pause blackscholes
+2024-05-06T16:15:07.145282 update_cores canneal [2,3]
+2024-05-06T16:15:07.145301 unpause canneal
+2024-05-06T16:15:07.208479 update_cores memcached [0,1]
+2024-05-06T16:15:07.756548 update_cores memcached [0]
+2024-05-06T16:15:07.759290 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:07.759331 unpause blackscholes
+2024-05-06T16:15:07.808907 pause canneal
+2024-05-06T16:15:08.101341 pause blackscholes
+2024-05-06T16:15:08.129312 update_cores canneal [2,3]
+2024-05-06T16:15:08.129332 unpause canneal
+2024-05-06T16:15:08.192991 update_cores memcached [0,1]
+2024-05-06T16:15:08.744496 update_cores memcached [0]
+2024-05-06T16:15:08.746547 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:08.746563 unpause blackscholes
+2024-05-06T16:15:08.812104 pause canneal
+2024-05-06T16:15:09.105292 pause blackscholes
+2024-05-06T16:15:09.128204 update_cores canneal [2,3]
+2024-05-06T16:15:09.128224 unpause canneal
+2024-05-06T16:15:09.188667 update_cores memcached [0,1]
+2024-05-06T16:15:09.741042 update_cores memcached [0]
+2024-05-06T16:15:09.744605 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:09.744622 unpause blackscholes
+2024-05-06T16:15:09.805175 pause canneal
+2024-05-06T16:15:10.122636 pause blackscholes
+2024-05-06T16:15:10.149001 update_cores canneal [2,3]
+2024-05-06T16:15:10.149029 unpause canneal
+2024-05-06T16:15:10.212652 update_cores memcached [0,1]
+2024-05-06T16:15:10.758093 update_cores memcached [0]
+2024-05-06T16:15:10.760347 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:10.760363 unpause blackscholes
+2024-05-06T16:15:10.809711 pause canneal
+2024-05-06T16:15:11.106199 pause blackscholes
+2024-05-06T16:15:11.130443 update_cores canneal [2,3]
+2024-05-06T16:15:11.130463 unpause canneal
+2024-05-06T16:15:11.193313 update_cores memcached [0,1]
+2024-05-06T16:15:12.017258 update_cores memcached [0]
+2024-05-06T16:15:12.019509 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:12.019544 unpause blackscholes
+2024-05-06T16:15:12.074913 pause canneal
+2024-05-06T16:15:12.356218 pause blackscholes
+2024-05-06T16:15:12.378193 update_cores canneal [2,3]
+2024-05-06T16:15:12.378211 unpause canneal
+2024-05-06T16:15:12.437091 update_cores memcached [0,1]
+2024-05-06T16:15:12.716686 update_cores memcached [0]
+2024-05-06T16:15:12.718581 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:12.718605 unpause blackscholes
+2024-05-06T16:15:12.780194 pause canneal
+2024-05-06T16:15:13.071844 pause blackscholes
+2024-05-06T16:15:13.093330 update_cores canneal [2,3]
+2024-05-06T16:15:13.093347 unpause canneal
+2024-05-06T16:15:13.150246 update_cores memcached [0,1]
+2024-05-06T16:15:13.694924 update_cores memcached [0]
+2024-05-06T16:15:13.696940 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:13.696954 unpause blackscholes
+2024-05-06T16:15:13.747531 pause canneal
+2024-05-06T16:15:14.033062 pause blackscholes
+2024-05-06T16:15:14.054428 update_cores canneal [2,3]
+2024-05-06T16:15:14.054445 unpause canneal
+2024-05-06T16:15:14.110378 update_cores memcached [0,1]
+2024-05-06T16:15:14.657403 update_cores memcached [0]
+2024-05-06T16:15:14.659261 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:14.659277 unpause blackscholes
+2024-05-06T16:15:14.720497 pause canneal
+2024-05-06T16:15:15.011408 pause blackscholes
+2024-05-06T16:15:15.033621 update_cores canneal [2,3]
+2024-05-06T16:15:15.033644 unpause canneal
+2024-05-06T16:15:15.088370 update_cores memcached [0,1]
+2024-05-06T16:15:15.637379 update_cores memcached [0]
+2024-05-06T16:15:15.639587 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:15.639603 unpause blackscholes
+2024-05-06T16:15:15.695515 pause canneal
+2024-05-06T16:15:15.993341 pause blackscholes
+2024-05-06T16:15:16.014588 update_cores canneal [2,3]
+2024-05-06T16:15:16.014607 unpause canneal
+2024-05-06T16:15:16.068591 update_cores memcached [0,1]
+2024-05-06T16:15:16.619385 update_cores memcached [0]
+2024-05-06T16:15:16.621295 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:16.621307 unpause blackscholes
+2024-05-06T16:15:16.680393 pause canneal
+2024-05-06T16:15:16.974740 pause blackscholes
+2024-05-06T16:15:17.008045 update_cores canneal [2,3]
+2024-05-06T16:15:17.008069 unpause canneal
+2024-05-06T16:15:17.065894 update_cores memcached [0,1]
+2024-05-06T16:15:17.614012 update_cores memcached [0]
+2024-05-06T16:15:17.616053 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:17.616066 unpause blackscholes
+2024-05-06T16:15:17.680829 pause canneal
+2024-05-06T16:15:17.978267 pause blackscholes
+2024-05-06T16:15:18.009649 update_cores canneal [2,3]
+2024-05-06T16:15:18.009666 unpause canneal
+2024-05-06T16:15:18.068458 update_cores memcached [0,1]
+2024-05-06T16:15:18.615314 update_cores memcached [0]
+2024-05-06T16:15:18.618510 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:18.618528 unpause blackscholes
+2024-05-06T16:15:18.666314 pause canneal
+2024-05-06T16:15:18.958113 pause blackscholes
+2024-05-06T16:15:18.989246 update_cores canneal [2,3]
+2024-05-06T16:15:18.989264 unpause canneal
+2024-05-06T16:15:19.042911 update_cores memcached [0,1]
+2024-05-06T16:15:19.590021 update_cores memcached [0]
+2024-05-06T16:15:19.592626 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:19.592643 unpause blackscholes
+2024-05-06T16:15:19.648542 pause canneal
+2024-05-06T16:15:19.944490 pause blackscholes
+2024-05-06T16:15:19.966042 update_cores canneal [2,3]
+2024-05-06T16:15:19.966062 unpause canneal
+2024-05-06T16:15:20.025406 update_cores memcached [0,1]
+2024-05-06T16:15:20.303789 update_cores memcached [0]
+2024-05-06T16:15:20.306781 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:20.306797 unpause blackscholes
+2024-05-06T16:15:20.352790 pause canneal
+2024-05-06T16:15:21.183384 pause blackscholes
+2024-05-06T16:15:21.205924 update_cores canneal [2,3]
+2024-05-06T16:15:21.205946 unpause canneal
+2024-05-06T16:15:21.265834 update_cores memcached [0,1]
+2024-05-06T16:15:21.545041 update_cores memcached [0]
+2024-05-06T16:15:21.547802 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:21.547818 unpause blackscholes
+2024-05-06T16:15:21.591550 pause canneal
+2024-05-06T16:15:21.888535 pause blackscholes
+2024-05-06T16:15:21.920734 update_cores canneal [2,3]
+2024-05-06T16:15:21.920778 unpause canneal
+2024-05-06T16:15:21.975419 update_cores memcached [0,1]
+2024-05-06T16:15:22.255226 update_cores memcached [0]
+2024-05-06T16:15:22.258235 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:22.258253 unpause blackscholes
+2024-05-06T16:15:22.307174 pause canneal
+2024-05-06T16:15:22.595219 pause blackscholes
+2024-05-06T16:15:22.621635 update_cores canneal [2,3]
+2024-05-06T16:15:22.621654 unpause canneal
+2024-05-06T16:15:22.682740 update_cores memcached [0,1]
+2024-05-06T16:15:23.503644 update_cores memcached [0]
+2024-05-06T16:15:23.507195 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:23.507212 unpause blackscholes
+2024-05-06T16:15:23.575964 pause canneal
+2024-05-06T16:15:23.866634 pause blackscholes
+2024-05-06T16:15:23.896427 update_cores canneal [2,3]
+2024-05-06T16:15:23.896445 unpause canneal
+2024-05-06T16:15:23.960564 update_cores memcached [0,1]
+2024-05-06T16:15:24.510602 update_cores memcached [0]
+2024-05-06T16:15:24.514008 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:24.514025 unpause blackscholes
+2024-05-06T16:15:24.567557 pause canneal
+2024-05-06T16:15:24.854435 pause blackscholes
+2024-05-06T16:15:24.879991 update_cores canneal [2,3]
+2024-05-06T16:15:24.880010 unpause canneal
+2024-05-06T16:15:24.940850 update_cores memcached [0,1]
+2024-05-06T16:15:25.491272 update_cores memcached [0]
+2024-05-06T16:15:25.494844 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:25.494863 unpause blackscholes
+2024-05-06T16:15:25.554024 pause canneal
+2024-05-06T16:15:25.858515 pause blackscholes
+2024-05-06T16:15:25.884982 update_cores canneal [2,3]
+2024-05-06T16:15:25.884999 unpause canneal
+2024-05-06T16:15:25.944716 update_cores memcached [0,1]
+2024-05-06T16:15:26.495543 update_cores memcached [0]
+2024-05-06T16:15:26.497914 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:26.497931 unpause blackscholes
+2024-05-06T16:15:26.560056 pause canneal
+2024-05-06T16:15:26.854286 pause blackscholes
+2024-05-06T16:15:26.876960 update_cores canneal [2,3]
+2024-05-06T16:15:26.876979 unpause canneal
+2024-05-06T16:15:26.940129 update_cores memcached [0,1]
+2024-05-06T16:15:28.033692 update_cores memcached [0]
+2024-05-06T16:15:28.036123 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:28.036149 unpause blackscholes
+2024-05-06T16:15:28.084985 pause canneal
+2024-05-06T16:15:28.377912 pause blackscholes
+2024-05-06T16:15:28.412369 update_cores canneal [2,3]
+2024-05-06T16:15:28.412410 unpause canneal
+2024-05-06T16:15:28.469791 update_cores memcached [0,1]
+2024-05-06T16:15:29.566503 update_cores memcached [0]
+2024-05-06T16:15:29.568737 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:29.568833 unpause blackscholes
+2024-05-06T16:15:29.632044 pause canneal
+2024-05-06T16:15:29.918396 pause blackscholes
+2024-05-06T16:15:29.942217 update_cores canneal [2,3]
+2024-05-06T16:15:29.942234 unpause canneal
+2024-05-06T16:15:30.001924 update_cores memcached [0,1]
+2024-05-06T16:15:30.554419 update_cores memcached [0]
+2024-05-06T16:15:30.556682 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:30.556699 unpause blackscholes
+2024-05-06T16:15:30.622189 pause canneal
+2024-05-06T16:15:30.906117 pause blackscholes
+2024-05-06T16:15:30.945708 update_cores canneal [2,3]
+2024-05-06T16:15:30.945731 unpause canneal
+2024-05-06T16:15:31.005393 update_cores memcached [0,1]
+2024-05-06T16:15:31.557805 update_cores memcached [0]
+2024-05-06T16:15:31.561097 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:31.561115 unpause blackscholes
+2024-05-06T16:15:31.608566 pause canneal
+2024-05-06T16:15:31.894767 pause blackscholes
+2024-05-06T16:15:31.919176 update_cores canneal [2,3]
+2024-05-06T16:15:31.919202 unpause canneal
+2024-05-06T16:15:31.985726 update_cores memcached [0,1]
+2024-05-06T16:15:42.359788 update_cores memcached [0]
+2024-05-06T16:15:42.362004 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:42.362020 unpause blackscholes
+2024-05-06T16:15:42.423793 pause canneal
+2024-05-06T16:15:42.705222 pause blackscholes
+2024-05-06T16:15:42.733076 update_cores canneal [2,3]
+2024-05-06T16:15:42.733094 unpause canneal
+2024-05-06T16:15:42.792929 update_cores memcached [0,1]
+2024-05-06T16:15:43.343618 update_cores memcached [0]
+2024-05-06T16:15:43.345563 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:43.345578 unpause blackscholes
+2024-05-06T16:15:43.413247 pause canneal
+2024-05-06T16:15:43.715299 pause blackscholes
+2024-05-06T16:15:43.741366 update_cores canneal [2,3]
+2024-05-06T16:15:43.741385 unpause canneal
+2024-05-06T16:15:43.800908 update_cores memcached [0,1]
+2024-05-06T16:15:44.623717 update_cores memcached [0]
+2024-05-06T16:15:44.626685 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:44.626701 unpause blackscholes
+2024-05-06T16:15:44.686866 pause canneal
+2024-05-06T16:15:44.981979 pause blackscholes
+2024-05-06T16:15:45.005357 update_cores canneal [2,3]
+2024-05-06T16:15:45.005411 unpause canneal
+2024-05-06T16:15:45.064951 update_cores memcached [0,1]
+2024-05-06T16:15:45.618835 update_cores memcached [0]
+2024-05-06T16:15:45.622300 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:45.622318 unpause blackscholes
+2024-05-06T16:15:45.683888 pause canneal
+2024-05-06T16:15:45.977590 pause blackscholes
+2024-05-06T16:15:46.009025 update_cores canneal [2,3]
+2024-05-06T16:15:46.009048 unpause canneal
+2024-05-06T16:15:46.073137 update_cores memcached [0,1]
+2024-05-06T16:15:46.626926 update_cores memcached [0]
+2024-05-06T16:15:46.630949 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:46.631074 unpause blackscholes
+2024-05-06T16:15:46.691111 pause canneal
+2024-05-06T16:15:46.981551 pause blackscholes
+2024-05-06T16:15:47.003388 update_cores canneal [2,3]
+2024-05-06T16:15:47.003406 unpause canneal
+2024-05-06T16:15:47.060347 update_cores memcached [0,1]
+2024-05-06T16:15:47.605740 update_cores memcached [0]
+2024-05-06T16:15:47.609386 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:47.609403 unpause blackscholes
+2024-05-06T16:15:47.656988 pause canneal
+2024-05-06T16:15:47.951875 pause blackscholes
+2024-05-06T16:15:47.973050 update_cores canneal [2,3]
+2024-05-06T16:15:47.973108 unpause canneal
+2024-05-06T16:15:48.034802 update_cores memcached [0,1]
+2024-05-06T16:15:48.588441 update_cores memcached [0]
+2024-05-06T16:15:48.591941 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:48.591960 unpause blackscholes
+2024-05-06T16:15:48.643805 pause canneal
+2024-05-06T16:15:48.936162 pause blackscholes
+2024-05-06T16:15:48.958079 update_cores canneal [2,3]
+2024-05-06T16:15:48.958098 unpause canneal
+2024-05-06T16:15:49.019456 update_cores memcached [0,1]
+2024-05-06T16:15:49.842050 update_cores memcached [0]
+2024-05-06T16:15:49.844057 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:49.844074 unpause blackscholes
+2024-05-06T16:15:49.887823 pause canneal
+2024-05-06T16:15:50.182321 pause blackscholes
+2024-05-06T16:15:50.205011 update_cores canneal [2,3]
+2024-05-06T16:15:50.205031 unpause canneal
+2024-05-06T16:15:50.265032 update_cores memcached [0,1]
+2024-05-06T16:15:50.817011 update_cores memcached [0]
+2024-05-06T16:15:50.819315 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:50.819347 unpause blackscholes
+2024-05-06T16:15:50.861340 pause canneal
+2024-05-06T16:15:51.149679 pause blackscholes
+2024-05-06T16:15:51.170836 update_cores canneal [2,3]
+2024-05-06T16:15:51.170856 unpause canneal
+2024-05-06T16:15:51.234308 update_cores memcached [0,1]
+2024-05-06T16:15:51.786274 update_cores memcached [0]
+2024-05-06T16:15:51.789359 update_cores blackscholes [1,2,3]
+2024-05-06T16:15:51.789377 unpause blackscholes
+2024-05-06T16:15:51.835504 pause canneal
+2024-05-06T16:15:52.125612 pause blackscholes
+2024-05-06T16:15:52.148453 update_cores canneal [2,3]
+2024-05-06T16:15:52.148473 unpause canneal
+2024-05-06T16:15:52.210324 update_cores memcached [0,1]
+2024-05-06T16:16:22.560559 end canneal
+2024-05-06T16:16:22.870597 start ferret [2,3] 2
+2024-05-06T16:16:38.061928 update_cores memcached [0]
+2024-05-06T16:16:38.064101 update_cores blackscholes [1,2,3]
+2024-05-06T16:16:38.064118 unpause blackscholes
+2024-05-06T16:16:38.129278 pause ferret
+2024-05-06T16:16:38.432831 pause blackscholes
+2024-05-06T16:16:38.454553 update_cores ferret [2,3]
+2024-05-06T16:16:38.454573 unpause ferret
+2024-05-06T16:16:38.523823 update_cores memcached [0,1]
+2024-05-06T16:16:40.429913 update_cores memcached [0]
+2024-05-06T16:16:40.432020 update_cores blackscholes [1,2,3]
+2024-05-06T16:16:40.432051 unpause blackscholes
+2024-05-06T16:16:40.483922 pause ferret
+2024-05-06T16:16:40.770358 pause blackscholes
+2024-05-06T16:16:40.795398 update_cores ferret [2,3]
+2024-05-06T16:16:40.795423 unpause ferret
+2024-05-06T16:16:40.857753 update_cores memcached [0,1]
+2024-05-06T16:16:42.490899 update_cores memcached [0]
+2024-05-06T16:16:42.493398 update_cores blackscholes [1,2,3]
+2024-05-06T16:16:42.493414 unpause blackscholes
+2024-05-06T16:16:42.543988 pause ferret
+2024-05-06T16:16:42.827935 pause blackscholes
+2024-05-06T16:16:42.859224 update_cores ferret [2,3]
+2024-05-06T16:16:42.859248 unpause ferret
+2024-05-06T16:16:42.918157 update_cores memcached [0,1]
+2024-05-06T16:16:43.738765 update_cores memcached [0]
+2024-05-06T16:16:43.742754 update_cores blackscholes [1,2,3]
+2024-05-06T16:16:43.742771 unpause blackscholes
+2024-05-06T16:16:43.788914 pause ferret
+2024-05-06T16:16:44.081754 pause blackscholes
+2024-05-06T16:16:44.104676 update_cores ferret [2,3]
+2024-05-06T16:16:44.104695 unpause ferret
+2024-05-06T16:16:44.168717 update_cores memcached [0,1]
+2024-05-06T16:16:44.717652 update_cores memcached [0]
+2024-05-06T16:16:44.721218 update_cores blackscholes [1,2,3]
+2024-05-06T16:16:44.721237 unpause blackscholes
+2024-05-06T16:16:44.767141 pause ferret
+2024-05-06T16:16:45.061048 pause blackscholes
+2024-05-06T16:16:45.084275 update_cores ferret [2,3]
+2024-05-06T16:16:45.084296 unpause ferret
+2024-05-06T16:16:45.147610 update_cores memcached [0,1]
+2024-05-06T16:16:45.973745 update_cores memcached [0]
+2024-05-06T16:16:45.976645 update_cores blackscholes [1,2,3]
+2024-05-06T16:16:45.976661 unpause blackscholes
+2024-05-06T16:16:46.037714 pause ferret
+2024-05-06T16:16:46.322690 pause blackscholes
+2024-05-06T16:16:46.344338 update_cores ferret [2,3]
+2024-05-06T16:16:46.344359 unpause ferret
+2024-05-06T16:16:46.404975 update_cores memcached [0,1]
+2024-05-06T16:16:47.490832 update_cores memcached [0]
+2024-05-06T16:16:47.494382 update_cores blackscholes [1,2,3]
+2024-05-06T16:16:47.494400 unpause blackscholes
+2024-05-06T16:16:47.549094 pause ferret
+2024-05-06T16:16:47.832247 pause blackscholes
+2024-05-06T16:16:47.864356 update_cores ferret [2,3]
+2024-05-06T16:16:47.864375 unpause ferret
+2024-05-06T16:16:47.925244 update_cores memcached [0,1]
+2024-05-06T16:16:48.474476 update_cores memcached [0]
+2024-05-06T16:16:48.476934 update_cores blackscholes [1,2,3]
+2024-05-06T16:16:48.476953 unpause blackscholes
+2024-05-06T16:16:48.526013 pause ferret
+2024-05-06T16:16:48.813577 pause blackscholes
+2024-05-06T16:16:48.834391 update_cores ferret [2,3]
+2024-05-06T16:16:48.834409 unpause ferret
+2024-05-06T16:16:48.895643 update_cores memcached [0,1]
+2024-05-06T16:16:49.442921 update_cores memcached [0]
+2024-05-06T16:16:49.446571 update_cores blackscholes [1,2,3]
+2024-05-06T16:16:49.446588 unpause blackscholes
+2024-05-06T16:16:49.492930 pause ferret
+2024-05-06T16:16:49.777055 pause blackscholes
+2024-05-06T16:16:49.798015 update_cores ferret [2,3]
+2024-05-06T16:16:49.798034 unpause ferret
+2024-05-06T16:16:49.859607 update_cores memcached [0,1]
+2024-05-06T16:16:50.942126 update_cores memcached [0]
+2024-05-06T16:16:50.944258 update_cores blackscholes [1,2,3]
+2024-05-06T16:16:50.944274 unpause blackscholes
+2024-05-06T16:16:51.006419 pause ferret
+2024-05-06T16:16:51.288674 pause blackscholes
+2024-05-06T16:16:51.311294 update_cores ferret [2,3]
+2024-05-06T16:16:51.311355 unpause ferret
+2024-05-06T16:16:51.370068 update_cores memcached [0,1]
+2024-05-06T16:16:51.918833 update_cores memcached [0]
+2024-05-06T16:16:51.921391 update_cores blackscholes [1,2,3]
+2024-05-06T16:16:51.921462 unpause blackscholes
+2024-05-06T16:16:51.973051 pause ferret
+2024-05-06T16:16:52.273777 pause blackscholes
+2024-05-06T16:16:52.297492 update_cores ferret [2,3]
+2024-05-06T16:16:52.297510 unpause ferret
+2024-05-06T16:16:52.366125 update_cores memcached [0,1]
+2024-05-06T16:17:02.625224 update_cores memcached [0]
+2024-05-06T16:17:02.627494 update_cores blackscholes [1,2,3]
+2024-05-06T16:17:02.627518 unpause blackscholes
+2024-05-06T16:17:02.680515 pause ferret
+2024-05-06T16:17:02.964652 pause blackscholes
+2024-05-06T16:17:02.994842 update_cores ferret [2,3]
+2024-05-06T16:17:02.994861 unpause ferret
+2024-05-06T16:17:03.053514 update_cores memcached [0,1]
+2024-05-06T16:17:03.331363 update_cores memcached [0]
+2024-05-06T16:17:03.333796 update_cores blackscholes [1,2,3]
+2024-05-06T16:17:03.333853 unpause blackscholes
+2024-05-06T16:17:03.385664 pause ferret
+2024-05-06T16:17:03.669641 pause blackscholes
+2024-05-06T16:17:03.692347 update_cores ferret [2,3]
+2024-05-06T16:17:03.692368 unpause ferret
+2024-05-06T16:17:03.753688 update_cores memcached [0,1]
+2024-05-06T16:17:04.301277 update_cores memcached [0]
+2024-05-06T16:17:04.303759 update_cores blackscholes [1,2,3]
+2024-05-06T16:17:04.303780 unpause blackscholes
+2024-05-06T16:17:04.353866 pause ferret
+2024-05-06T16:17:05.867942 update_cores ferret [2,3]
+2024-05-06T16:17:05.867966 unpause ferret
+2024-05-06T16:17:05.929174 update_cores memcached [0,1]
+2024-05-06T16:17:05.936154 end blackscholes
+2024-05-06T16:17:06.425075 update_cores memcached [0]
+2024-05-06T16:17:06.427457 start vips [1,2,3] 3
+2024-05-06T16:17:06.744724 pause ferret
+2024-05-06T16:17:07.023207 pause vips
+2024-05-06T16:17:07.055183 update_cores ferret [2,3]
+2024-05-06T16:17:07.055209 unpause ferret
+2024-05-06T16:17:07.115192 update_cores memcached [0,1]
+2024-05-06T16:17:07.658190 update_cores memcached [0]
+2024-05-06T16:17:07.661067 update_cores vips [1,2,3]
+2024-05-06T16:17:07.661083 unpause vips
+2024-05-06T16:17:07.707970 pause ferret
+2024-05-06T16:17:07.998980 pause vips
+2024-05-06T16:17:08.019496 update_cores ferret [2,3]
+2024-05-06T16:17:08.019515 unpause ferret
+2024-05-06T16:17:08.080030 update_cores memcached [0,1]
+2024-05-06T16:17:08.620447 update_cores memcached [0]
+2024-05-06T16:17:08.622893 update_cores vips [1,2,3]
+2024-05-06T16:17:08.622909 unpause vips
+2024-05-06T16:17:08.686101 pause ferret
+2024-05-06T16:17:08.969647 pause vips
+2024-05-06T16:17:08.991289 update_cores ferret [2,3]
+2024-05-06T16:17:08.991307 unpause ferret
+2024-05-06T16:17:09.053554 update_cores memcached [0,1]
+2024-05-06T16:17:09.330528 update_cores memcached [0]
+2024-05-06T16:17:09.333570 update_cores vips [1,2,3]
+2024-05-06T16:17:09.333586 unpause vips
+2024-05-06T16:17:09.382696 pause ferret
+2024-05-06T16:17:09.670817 pause vips
+2024-05-06T16:17:09.695270 update_cores ferret [2,3]
+2024-05-06T16:17:09.695290 unpause ferret
+2024-05-06T16:17:09.757777 update_cores memcached [0,1]
+2024-05-06T16:17:10.306343 update_cores memcached [0]
+2024-05-06T16:17:10.309063 update_cores vips [1,2,3]
+2024-05-06T16:17:10.309087 unpause vips
+2024-05-06T16:17:10.360536 pause ferret
+2024-05-06T16:17:10.652278 pause vips
+2024-05-06T16:17:10.671969 update_cores ferret [2,3]
+2024-05-06T16:17:10.671990 unpause ferret
+2024-05-06T16:17:10.730629 update_cores memcached [0,1]
+2024-05-06T16:17:11.007187 update_cores memcached [0]
+2024-05-06T16:17:11.009172 update_cores vips [1,2,3]
+2024-05-06T16:17:11.009188 unpause vips
+2024-05-06T16:17:11.056713 pause ferret
+2024-05-06T16:17:11.337433 pause vips
+2024-05-06T16:17:11.359874 update_cores ferret [2,3]
+2024-05-06T16:17:11.359896 unpause ferret
+2024-05-06T16:17:11.416129 update_cores memcached [0,1]
+2024-05-06T16:17:11.958735 update_cores memcached [0]
+2024-05-06T16:17:11.961353 update_cores vips [1,2,3]
+2024-05-06T16:17:11.961374 unpause vips
+2024-05-06T16:17:12.012680 pause ferret
+2024-05-06T16:17:12.294229 pause vips
+2024-05-06T16:17:12.313863 update_cores ferret [2,3]
+2024-05-06T16:17:12.313885 unpause ferret
+2024-05-06T16:17:12.365928 update_cores memcached [0,1]
+2024-05-06T16:17:12.905605 update_cores memcached [0]
+2024-05-06T16:17:12.908391 update_cores vips [1,2,3]
+2024-05-06T16:17:12.908408 unpause vips
+2024-05-06T16:17:13.246313 pause ferret
+2024-05-06T16:17:13.523654 pause vips
+2024-05-06T16:17:13.542339 update_cores ferret [2,3]
+2024-05-06T16:17:13.542359 unpause ferret
+2024-05-06T16:17:13.598465 update_cores memcached [0,1]
+2024-05-06T16:17:14.139873 update_cores memcached [0]
+2024-05-06T16:17:14.142616 update_cores vips [1,2,3]
+2024-05-06T16:17:14.142643 unpause vips
+2024-05-06T16:17:14.219980 pause ferret
+2024-05-06T16:17:14.514292 pause vips
+2024-05-06T16:17:14.546034 update_cores ferret [2,3]
+2024-05-06T16:17:14.546053 unpause ferret
+2024-05-06T16:17:14.603252 update_cores memcached [0,1]
+2024-05-06T16:17:15.143992 update_cores memcached [0]
+2024-05-06T16:17:15.146514 update_cores vips [1,2,3]
+2024-05-06T16:17:15.146527 unpause vips
+2024-05-06T16:17:15.208494 pause ferret
+2024-05-06T16:17:15.498223 pause vips
+2024-05-06T16:17:15.524610 update_cores ferret [2,3]
+2024-05-06T16:17:15.524634 unpause ferret
+2024-05-06T16:17:15.578356 update_cores memcached [0,1]
+2024-05-06T16:17:16.120290 update_cores memcached [0]
+2024-05-06T16:17:16.122751 update_cores vips [1,2,3]
+2024-05-06T16:17:16.122767 unpause vips
+2024-05-06T16:17:16.181458 pause ferret
+2024-05-06T16:17:16.485317 pause vips
+2024-05-06T16:17:16.507028 update_cores ferret [2,3]
+2024-05-06T16:17:16.507107 unpause ferret
+2024-05-06T16:17:16.565888 update_cores memcached [0,1]
+2024-05-06T16:17:17.106547 update_cores memcached [0]
+2024-05-06T16:17:17.109045 update_cores vips [1,2,3]
+2024-05-06T16:17:17.109069 unpause vips
+2024-05-06T16:17:17.167650 pause ferret
+2024-05-06T16:17:17.981211 pause vips
+2024-05-06T16:17:18.004298 update_cores ferret [2,3]
+2024-05-06T16:17:18.004316 unpause ferret
+2024-05-06T16:17:18.062801 update_cores memcached [0,1]
+2024-05-06T16:17:18.607603 update_cores memcached [0]
+2024-05-06T16:17:18.609943 update_cores vips [1,2,3]
+2024-05-06T16:17:18.609960 unpause vips
+2024-05-06T16:17:20.641475 pause ferret
+2024-05-06T16:17:21.848915 pause vips
+2024-05-06T16:17:22.714188 update_cores ferret [2,3]
+2024-05-06T16:17:22.714209 unpause ferret
+2024-05-06T16:17:24.166378 update_cores memcached [0,1]
+2024-05-06T16:18:12.694969 update_cores memcached [0]
+2024-05-06T16:18:12.698473 update_cores vips [1,2,3]
+2024-05-06T16:18:12.698489 unpause vips
+2024-05-06T16:18:12.755518 pause ferret
+2024-05-06T16:18:13.052639 pause vips
+2024-05-06T16:18:13.073520 update_cores ferret [2,3]
+2024-05-06T16:18:13.073574 unpause ferret
+2024-05-06T16:18:13.149820 update_cores memcached [0,1]
+2024-05-06T16:18:13.693267 update_cores memcached [0]
+2024-05-06T16:18:13.696189 update_cores vips [1,2,3]
+2024-05-06T16:18:13.696207 unpause vips
+2024-05-06T16:18:13.752368 pause ferret
+2024-05-06T16:18:14.038418 pause vips
+2024-05-06T16:18:14.064245 update_cores ferret [2,3]
+2024-05-06T16:18:14.064270 unpause ferret
+2024-05-06T16:18:14.122543 update_cores memcached [0,1]
+2024-05-06T16:18:14.664982 update_cores memcached [0]
+2024-05-06T16:18:14.668135 update_cores vips [1,2,3]
+2024-05-06T16:18:14.668177 unpause vips
+2024-05-06T16:18:14.727564 pause ferret
+2024-05-06T16:18:15.010052 pause vips
+2024-05-06T16:18:15.036616 update_cores ferret [2,3]
+2024-05-06T16:18:15.036641 unpause ferret
+2024-05-06T16:18:15.097803 update_cores memcached [0,1]
+2024-05-06T16:18:15.639083 update_cores memcached [0]
+2024-05-06T16:18:15.641756 update_cores vips [1,2,3]
+2024-05-06T16:18:15.641797 unpause vips
+2024-05-06T16:18:15.713253 pause ferret
+2024-05-06T16:18:16.001948 pause vips
+2024-05-06T16:18:16.034459 update_cores ferret [2,3]
+2024-05-06T16:18:16.034478 unpause ferret
+2024-05-06T16:18:16.094453 update_cores memcached [0,1]
+2024-05-06T16:18:16.636939 update_cores memcached [0]
+2024-05-06T16:18:16.640240 update_cores vips [1,2,3]
+2024-05-06T16:18:16.640258 unpause vips
+2024-05-06T16:18:16.702814 pause ferret
+2024-05-06T16:18:16.999174 pause vips
+2024-05-06T16:18:17.022724 update_cores ferret [2,3]
+2024-05-06T16:18:17.022744 unpause ferret
+2024-05-06T16:18:17.087579 update_cores memcached [0,1]
+2024-05-06T16:18:17.627674 update_cores memcached [0]
+2024-05-06T16:18:17.630418 update_cores vips [1,2,3]
+2024-05-06T16:18:17.630434 unpause vips
+2024-05-06T16:18:17.700113 pause ferret
+2024-05-06T16:18:17.994670 pause vips
+2024-05-06T16:18:18.034392 update_cores ferret [2,3]
+2024-05-06T16:18:18.034410 unpause ferret
+2024-05-06T16:18:18.095735 update_cores memcached [0,1]
+2024-05-06T16:18:19.175303 update_cores memcached [0]
+2024-05-06T16:18:19.177590 update_cores vips [1,2,3]
+2024-05-06T16:18:19.177606 unpause vips
+2024-05-06T16:18:19.235204 pause ferret
+2024-05-06T16:18:19.532004 pause vips
+2024-05-06T16:18:19.557154 update_cores ferret [2,3]
+2024-05-06T16:18:19.557172 unpause ferret
+2024-05-06T16:18:19.620162 update_cores memcached [0,1]
+2024-05-06T16:18:20.166524 update_cores memcached [0]
+2024-05-06T16:18:20.169366 update_cores vips [1,2,3]
+2024-05-06T16:18:20.169384 unpause vips
+2024-05-06T16:18:20.230747 pause ferret
+2024-05-06T16:18:20.535546 pause vips
+2024-05-06T16:18:20.559531 update_cores ferret [2,3]
+2024-05-06T16:18:20.559551 unpause ferret
+2024-05-06T16:18:20.625013 update_cores memcached [0,1]
+2024-05-06T16:18:21.167546 update_cores memcached [0]
+2024-05-06T16:18:21.170017 update_cores vips [1,2,3]
+2024-05-06T16:18:21.170034 unpause vips
+2024-05-06T16:18:21.235659 pause ferret
+2024-05-06T16:18:21.534064 pause vips
+2024-05-06T16:18:21.564577 update_cores ferret [2,3]
+2024-05-06T16:18:21.564597 unpause ferret
+2024-05-06T16:18:21.626710 update_cores memcached [0,1]
+2024-05-06T16:18:52.992197 update_cores memcached [0]
+2024-05-06T16:18:52.994486 update_cores vips [1,2,3]
+2024-05-06T16:18:52.994502 unpause vips
+2024-05-06T16:18:53.052830 pause ferret
+2024-05-06T16:18:53.339063 pause vips
+2024-05-06T16:18:53.363952 update_cores ferret [2,3]
+2024-05-06T16:18:53.363993 unpause ferret
+2024-05-06T16:18:53.424403 update_cores memcached [0,1]
+2024-05-06T16:18:53.970403 update_cores memcached [0]
+2024-05-06T16:18:53.973709 update_cores vips [1,2,3]
+2024-05-06T16:18:53.973725 unpause vips
+2024-05-06T16:18:54.030805 pause ferret
+2024-05-06T16:18:54.317546 pause vips
+2024-05-06T16:18:54.343324 update_cores ferret [2,3]
+2024-05-06T16:18:54.343346 unpause ferret
+2024-05-06T16:18:54.400979 update_cores memcached [0,1]
+2024-05-06T16:18:55.473941 update_cores memcached [0]
+2024-05-06T16:18:55.476056 update_cores vips [1,2,3]
+2024-05-06T16:18:55.476071 unpause vips
+2024-05-06T16:18:55.536673 pause ferret
+2024-05-06T16:18:55.818015 pause vips
+2024-05-06T16:18:55.841520 update_cores ferret [2,3]
+2024-05-06T16:18:55.841539 unpause ferret
+2024-05-06T16:18:55.904025 update_cores memcached [0,1]
+2024-05-06T16:18:56.715043 update_cores memcached [0]
+2024-05-06T16:18:56.717283 update_cores vips [1,2,3]
+2024-05-06T16:18:56.717299 unpause vips
+2024-05-06T16:18:56.775149 pause ferret
+2024-05-06T16:18:57.073896 pause vips
+2024-05-06T16:18:57.101652 update_cores ferret [2,3]
+2024-05-06T16:18:57.101674 unpause ferret
+2024-05-06T16:18:57.166648 update_cores memcached [0,1]
+2024-05-06T16:18:58.794701 update_cores memcached [0]
+2024-05-06T16:18:58.796926 update_cores vips [1,2,3]
+2024-05-06T16:18:58.796943 unpause vips
+2024-05-06T16:18:58.855801 pause ferret
+2024-05-06T16:18:59.145747 pause vips
+2024-05-06T16:18:59.175403 update_cores ferret [2,3]
+2024-05-06T16:18:59.175427 unpause ferret
+2024-05-06T16:18:59.238779 update_cores memcached [0,1]
+2024-05-06T16:19:00.316564 update_cores memcached [0]
+2024-05-06T16:19:00.319382 update_cores vips [1,2,3]
+2024-05-06T16:19:00.319399 unpause vips
+2024-05-06T16:19:00.382385 pause ferret
+2024-05-06T16:19:00.670226 pause vips
+2024-05-06T16:19:00.696924 update_cores ferret [2,3]
+2024-05-06T16:19:00.696941 unpause ferret
+2024-05-06T16:19:00.753375 update_cores memcached [0,1]
+2024-05-06T16:19:01.826428 update_cores memcached [0]
+2024-05-06T16:19:01.828720 update_cores vips [1,2,3]
+2024-05-06T16:19:01.828739 unpause vips
+2024-05-06T16:19:01.894049 pause ferret
+2024-05-06T16:19:02.193981 pause vips
+2024-05-06T16:19:02.229436 update_cores ferret [2,3]
+2024-05-06T16:19:02.229454 unpause ferret
+2024-05-06T16:19:02.302825 update_cores memcached [0,1]
+2024-05-06T16:19:22.659114 update_cores memcached [0]
+2024-05-06T16:19:22.661522 update_cores vips [1,2,3]
+2024-05-06T16:19:22.661546 unpause vips
+2024-05-06T16:19:22.723707 pause ferret
+2024-05-06T16:19:23.021590 pause vips
+2024-05-06T16:19:23.044182 update_cores ferret [2,3]
+2024-05-06T16:19:23.044202 unpause ferret
+2024-05-06T16:19:23.103261 update_cores memcached [0,1]
+2024-05-06T16:19:23.645297 update_cores memcached [0]
+2024-05-06T16:19:23.647320 update_cores vips [1,2,3]
+2024-05-06T16:19:23.647336 unpause vips
+2024-05-06T16:19:23.710626 pause ferret
+2024-05-06T16:19:24.002780 pause vips
+2024-05-06T16:19:24.254556 update_cores ferret [2,3]
+2024-05-06T16:19:24.254574 unpause ferret
+2024-05-06T16:19:24.307705 update_cores memcached [0,1]
+2024-05-06T16:19:24.584264 update_cores memcached [0]
+2024-05-06T16:19:24.587430 update_cores vips [1,2,3]
+2024-05-06T16:19:24.587453 unpause vips
+2024-05-06T16:19:24.646944 pause ferret
+2024-05-06T16:19:24.945528 pause vips
+2024-05-06T16:19:24.979504 update_cores ferret [2,3]
+2024-05-06T16:19:24.979523 unpause ferret
+2024-05-06T16:19:25.038481 update_cores memcached [0,1]
+2024-05-06T16:19:25.579082 update_cores memcached [0]
+2024-05-06T16:19:25.581293 update_cores vips [1,2,3]
+2024-05-06T16:19:25.581309 unpause vips
+2024-05-06T16:19:25.633496 pause ferret
+2024-05-06T16:19:25.917637 pause vips
+2024-05-06T16:19:25.948995 update_cores ferret [2,3]
+2024-05-06T16:19:25.949013 unpause ferret
+2024-05-06T16:19:26.009039 update_cores memcached [0,1]
+2024-05-06T16:19:26.550210 update_cores memcached [0]
+2024-05-06T16:19:26.553152 update_cores vips [1,2,3]
+2024-05-06T16:19:26.553169 unpause vips
+2024-05-06T16:19:26.597688 pause ferret
+2024-05-06T16:19:26.894808 pause vips
+2024-05-06T16:19:26.918848 update_cores ferret [2,3]
+2024-05-06T16:19:26.918867 unpause ferret
+2024-05-06T16:19:26.979791 update_cores memcached [0,1]
+2024-05-06T16:19:27.519986 update_cores memcached [0]
+2024-05-06T16:19:27.522950 update_cores vips [1,2,3]
+2024-05-06T16:19:27.523054 unpause vips
+2024-05-06T16:19:27.584784 pause ferret
+2024-05-06T16:19:27.886871 pause vips
+2024-05-06T16:19:27.911569 update_cores ferret [2,3]
+2024-05-06T16:19:27.911608 unpause ferret
+2024-05-06T16:19:27.971300 update_cores memcached [0,1]
+2024-05-06T16:19:28.514096 update_cores memcached [0]
+2024-05-06T16:19:28.516549 update_cores vips [1,2,3]
+2024-05-06T16:19:28.516566 unpause vips
+2024-05-06T16:19:28.577077 pause ferret
+2024-05-06T16:19:28.873901 pause vips
+2024-05-06T16:19:28.896603 update_cores ferret [2,3]
+2024-05-06T16:19:28.896630 unpause ferret
+2024-05-06T16:19:28.953891 update_cores memcached [0,1]
+2024-05-06T16:19:29.494086 update_cores memcached [0]
+2024-05-06T16:19:29.496828 update_cores vips [1,2,3]
+2024-05-06T16:19:29.496844 unpause vips
+2024-05-06T16:19:29.555901 pause ferret
+2024-05-06T16:19:29.853771 pause vips
+2024-05-06T16:19:29.874805 update_cores ferret [2,3]
+2024-05-06T16:19:29.874823 unpause ferret
+2024-05-06T16:19:29.931792 update_cores memcached [0,1]
+2024-05-06T16:19:30.473553 update_cores memcached [0]
+2024-05-06T16:19:30.475501 update_cores vips [1,2,3]
+2024-05-06T16:19:30.475514 unpause vips
+2024-05-06T16:19:30.534106 pause ferret
+2024-05-06T16:19:30.832745 pause vips
+2024-05-06T16:19:30.856656 update_cores ferret [2,3]
+2024-05-06T16:19:30.856679 unpause ferret
+2024-05-06T16:19:30.914196 update_cores memcached [0,1]
+2024-05-06T16:19:31.190104 update_cores memcached [0]
+2024-05-06T16:19:31.193087 update_cores vips [1,2,3]
+2024-05-06T16:19:31.193108 unpause vips
+2024-05-06T16:19:31.255389 pause ferret
+2024-05-06T16:19:31.550839 pause vips
+2024-05-06T16:19:31.586337 update_cores ferret [2,3]
+2024-05-06T16:19:31.586355 unpause ferret
+2024-05-06T16:19:31.641144 update_cores memcached [0,1]
+2024-05-06T16:19:32.185791 update_cores memcached [0]
+2024-05-06T16:19:32.190536 update_cores vips [1,2,3]
+2024-05-06T16:19:32.190556 unpause vips
+2024-05-06T16:19:32.278716 pause ferret
+2024-05-06T16:19:32.605706 pause vips
+2024-05-06T16:19:32.638259 update_cores ferret [2,3]
+2024-05-06T16:19:32.638308 unpause ferret
+2024-05-06T16:19:32.721239 update_cores memcached [0,1]
+2024-05-06T16:20:12.662300 update_cores memcached [0]
+2024-05-06T16:20:12.664325 update_cores vips [1,2,3]
+2024-05-06T16:20:12.664342 unpause vips
+2024-05-06T16:20:12.728415 pause ferret
+2024-05-06T16:20:13.020250 pause vips
+2024-05-06T16:20:13.042187 update_cores ferret [2,3]
+2024-05-06T16:20:13.042205 unpause ferret
+2024-05-06T16:20:13.101224 update_cores memcached [0,1]
+2024-05-06T16:20:13.380054 update_cores memcached [0]
+2024-05-06T16:20:13.383147 update_cores vips [1,2,3]
+2024-05-06T16:20:13.383165 unpause vips
+2024-05-06T16:20:13.438756 pause ferret
+2024-05-06T16:20:13.725661 pause vips
+2024-05-06T16:20:13.758403 update_cores ferret [2,3]
+2024-05-06T16:20:13.758421 unpause ferret
+2024-05-06T16:20:13.813822 update_cores memcached [0,1]
+2024-05-06T16:20:14.353885 update_cores memcached [0]
+2024-05-06T16:20:14.356056 update_cores vips [1,2,3]
+2024-05-06T16:20:14.356069 unpause vips
+2024-05-06T16:20:14.419077 pause ferret
+2024-05-06T16:20:14.711372 pause vips
+2024-05-06T16:20:14.736976 update_cores ferret [2,3]
+2024-05-06T16:20:14.736995 unpause ferret
+2024-05-06T16:20:14.793146 update_cores memcached [0,1]
+2024-05-06T16:20:15.334976 update_cores memcached [0]
+2024-05-06T16:20:15.337418 update_cores vips [1,2,3]
+2024-05-06T16:20:15.337441 unpause vips
+2024-05-06T16:20:15.401150 pause ferret
+2024-05-06T16:20:15.696825 pause vips
+2024-05-06T16:20:15.718117 update_cores ferret [2,3]
+2024-05-06T16:20:15.718136 unpause ferret
+2024-05-06T16:20:15.771645 update_cores memcached [0,1]
+2024-05-06T16:20:16.315062 update_cores memcached [0]
+2024-05-06T16:20:16.318198 update_cores vips [1,2,3]
+2024-05-06T16:20:16.318212 unpause vips
+2024-05-06T16:20:16.371435 pause ferret
+2024-05-06T16:20:16.659557 pause vips
+2024-05-06T16:20:16.681745 update_cores ferret [2,3]
+2024-05-06T16:20:16.681768 unpause ferret
+2024-05-06T16:20:16.735701 update_cores memcached [0,1]
+2024-05-06T16:20:17.010772 update_cores memcached [0]
+2024-05-06T16:20:17.012935 update_cores vips [1,2,3]
+2024-05-06T16:20:17.012951 unpause vips
+2024-05-06T16:20:17.073646 pause ferret
+2024-05-06T16:20:17.402003 pause vips
+2024-05-06T16:20:17.422908 update_cores ferret [2,3]
+2024-05-06T16:20:17.422927 unpause ferret
+2024-05-06T16:20:17.475876 update_cores memcached [0,1]
+2024-05-06T16:20:17.750344 update_cores memcached [0]
+2024-05-06T16:20:17.752558 update_cores vips [1,2,3]
+2024-05-06T16:20:17.752572 unpause vips
+2024-05-06T16:20:17.815312 pause ferret
+2024-05-06T16:20:18.118119 pause vips
+2024-05-06T16:20:18.139424 update_cores ferret [2,3]
+2024-05-06T16:20:18.139443 unpause ferret
+2024-05-06T16:20:18.195610 update_cores memcached [0,1]
+2024-05-06T16:20:18.474026 update_cores memcached [0]
+2024-05-06T16:20:18.476715 update_cores vips [1,2,3]
+2024-05-06T16:20:18.476731 unpause vips
+2024-05-06T16:20:18.532492 pause ferret
+2024-05-06T16:20:18.820687 pause vips
+2024-05-06T16:20:18.842185 update_cores ferret [2,3]
+2024-05-06T16:20:18.842203 unpause ferret
+2024-05-06T16:20:18.896968 update_cores memcached [0,1]
+2024-05-06T16:20:19.436348 update_cores memcached [0]
+2024-05-06T16:20:19.438684 update_cores vips [1,2,3]
+2024-05-06T16:20:19.438705 unpause vips
+2024-05-06T16:20:19.497761 pause ferret
+2024-05-06T16:20:19.791917 pause vips
+2024-05-06T16:20:19.814658 update_cores ferret [2,3]
+2024-05-06T16:20:19.814675 unpause ferret
+2024-05-06T16:20:19.873050 update_cores memcached [0,1]
+2024-05-06T16:20:20.415358 update_cores memcached [0]
+2024-05-06T16:20:20.417682 update_cores vips [1,2,3]
+2024-05-06T16:20:20.417700 unpause vips
+2024-05-06T16:20:20.462671 pause ferret
+2024-05-06T16:20:20.757411 pause vips
+2024-05-06T16:20:20.782888 update_cores ferret [2,3]
+2024-05-06T16:20:20.782906 unpause ferret
+2024-05-06T16:20:20.844248 update_cores memcached [0,1]
+2024-05-06T16:20:21.384808 update_cores memcached [0]
+2024-05-06T16:20:21.386686 update_cores vips [1,2,3]
+2024-05-06T16:20:21.386701 unpause vips
+2024-05-06T16:20:21.434471 pause ferret
+2024-05-06T16:20:21.726599 pause vips
+2024-05-06T16:20:21.748349 update_cores ferret [2,3]
+2024-05-06T16:20:21.748367 unpause ferret
+2024-05-06T16:20:21.803734 update_cores memcached [0,1]
+2024-05-06T16:20:25.810250 end ferret
+2024-05-06T16:20:26.313086 start freqmine [2,3] 2
+2024-05-06T16:21:22.579244 update_cores memcached [0]
+2024-05-06T16:21:22.581610 update_cores vips [1,2,3]
+2024-05-06T16:21:22.581628 unpause vips
+2024-05-06T16:21:22.640823 pause freqmine
+2024-05-06T16:21:22.929671 pause vips
+2024-05-06T16:21:22.955408 update_cores freqmine [2,3]
+2024-05-06T16:21:22.955427 unpause freqmine
+2024-05-06T16:21:23.013999 update_cores memcached [0,1]
+2024-05-06T16:21:23.549420 update_cores memcached [0]
+2024-05-06T16:21:23.551602 update_cores vips [1,2,3]
+2024-05-06T16:21:23.551618 unpause vips
+2024-05-06T16:21:23.608357 pause freqmine
+2024-05-06T16:21:23.895670 pause vips
+2024-05-06T16:21:23.918230 update_cores freqmine [2,3]
+2024-05-06T16:21:23.918261 unpause freqmine
+2024-05-06T16:21:23.973531 update_cores memcached [0,1]
+2024-05-06T16:21:24.774834 update_cores memcached [0]
+2024-05-06T16:21:24.776903 update_cores vips [1,2,3]
+2024-05-06T16:21:24.776918 unpause vips
+2024-05-06T16:21:24.831619 pause freqmine
+2024-05-06T16:21:25.111510 pause vips
+2024-05-06T16:21:25.143148 update_cores freqmine [2,3]
+2024-05-06T16:21:25.143167 unpause freqmine
+2024-05-06T16:21:25.200477 update_cores memcached [0,1]
+2024-05-06T16:21:25.477129 update_cores memcached [0]
+2024-05-06T16:21:25.480221 update_cores vips [1,2,3]
+2024-05-06T16:21:25.480242 unpause vips
+2024-05-06T16:21:25.526607 pause freqmine
+2024-05-06T16:21:25.817590 pause vips
+2024-05-06T16:21:25.844347 update_cores freqmine [2,3]
+2024-05-06T16:21:25.844366 unpause freqmine
+2024-05-06T16:21:25.903513 update_cores memcached [0,1]
+2024-05-06T16:21:26.442488 update_cores memcached [0]
+2024-05-06T16:21:26.445030 update_cores vips [1,2,3]
+2024-05-06T16:21:26.445053 unpause vips
+2024-05-06T16:21:26.504123 pause freqmine
+2024-05-06T16:21:26.783007 pause vips
+2024-05-06T16:21:26.806638 update_cores freqmine [2,3]
+2024-05-06T16:21:26.806659 unpause freqmine
+2024-05-06T16:21:26.863893 update_cores memcached [0,1]
+2024-05-06T16:21:27.138625 update_cores memcached [0]
+2024-05-06T16:21:27.140644 update_cores vips [1,2,3]
+2024-05-06T16:21:27.140661 unpause vips
+2024-05-06T16:21:27.196980 pause freqmine
+2024-05-06T16:21:27.496454 pause vips
+2024-05-06T16:21:27.529339 update_cores freqmine [2,3]
+2024-05-06T16:21:27.529356 unpause freqmine
+2024-05-06T16:21:27.581193 update_cores memcached [0,1]
+2024-05-06T16:21:27.854346 update_cores memcached [0]
+2024-05-06T16:21:27.856682 update_cores vips [1,2,3]
+2024-05-06T16:21:27.856700 unpause vips
+2024-05-06T16:21:27.912124 pause freqmine
+2024-05-06T16:21:28.505064 pause vips
+2024-05-06T16:21:28.526214 update_cores freqmine [2,3]
+2024-05-06T16:21:28.526231 unpause freqmine
+2024-05-06T16:21:28.582864 update_cores memcached [0,1]
+2024-05-06T16:21:29.120520 update_cores memcached [0]
+2024-05-06T16:21:29.122493 update_cores vips [1,2,3]
+2024-05-06T16:21:29.122509 unpause vips
+2024-05-06T16:21:29.183463 pause freqmine
+2024-05-06T16:21:29.474472 pause vips
+2024-05-06T16:21:29.496565 update_cores freqmine [2,3]
+2024-05-06T16:21:29.496611 unpause freqmine
+2024-05-06T16:21:29.553071 update_cores memcached [0,1]
+2024-05-06T16:21:29.827528 update_cores memcached [0]
+2024-05-06T16:21:29.829566 update_cores vips [1,2,3]
+2024-05-06T16:21:29.829581 unpause vips
+2024-05-06T16:21:29.887332 pause freqmine
+2024-05-06T16:21:30.167563 pause vips
+2024-05-06T16:21:30.200913 update_cores freqmine [2,3]
+2024-05-06T16:21:30.200933 unpause freqmine
+2024-05-06T16:21:30.254283 update_cores memcached [0,1]
+2024-05-06T16:21:30.792700 update_cores memcached [0]
+2024-05-06T16:21:30.794704 update_cores vips [1,2,3]
+2024-05-06T16:21:30.794721 unpause vips
+2024-05-06T16:21:30.852141 pause freqmine
+2024-05-06T16:21:31.149923 pause vips
+2024-05-06T16:21:31.171874 update_cores freqmine [2,3]
+2024-05-06T16:21:31.171893 unpause freqmine
+2024-05-06T16:21:31.228278 update_cores memcached [0,1]
+2024-05-06T16:21:31.768235 update_cores memcached [0]
+2024-05-06T16:21:31.770503 update_cores vips [1,2,3]
+2024-05-06T16:21:31.770522 unpause vips
+2024-05-06T16:21:31.830685 pause freqmine
+2024-05-06T16:21:32.125005 pause vips
+2024-05-06T16:21:32.159334 update_cores freqmine [2,3]
+2024-05-06T16:21:32.159369 unpause freqmine
+2024-05-06T16:21:32.224224 update_cores memcached [0,1]
+2024-05-06T16:21:42.561436 update_cores memcached [0]
+2024-05-06T16:21:42.563543 update_cores vips [1,2,3]
+2024-05-06T16:21:42.563560 unpause vips
+2024-05-06T16:21:42.623578 pause freqmine
+2024-05-06T16:21:42.916510 pause vips
+2024-05-06T16:21:42.938885 update_cores freqmine [2,3]
+2024-05-06T16:21:42.938903 unpause freqmine
+2024-05-06T16:21:42.994923 update_cores memcached [0,1]
+2024-05-06T16:21:43.534546 update_cores memcached [0]
+2024-05-06T16:21:43.536686 update_cores vips [1,2,3]
+2024-05-06T16:21:43.536705 unpause vips
+2024-05-06T16:21:43.595377 pause freqmine
+2024-05-06T16:21:43.881505 pause vips
+2024-05-06T16:21:43.902224 update_cores freqmine [2,3]
+2024-05-06T16:21:43.902242 unpause freqmine
+2024-05-06T16:21:43.958003 update_cores memcached [0,1]
+2024-05-06T16:21:44.498201 update_cores memcached [0]
+2024-05-06T16:21:44.501034 update_cores vips [1,2,3]
+2024-05-06T16:21:44.501050 unpause vips
+2024-05-06T16:21:44.550782 pause freqmine
+2024-05-06T16:21:44.826142 pause vips
+2024-05-06T16:21:44.847660 update_cores freqmine [2,3]
+2024-05-06T16:21:44.847683 unpause freqmine
+2024-05-06T16:21:44.903802 update_cores memcached [0,1]
+2024-05-06T16:21:45.179343 update_cores memcached [0]
+2024-05-06T16:21:45.181342 update_cores vips [1,2,3]
+2024-05-06T16:21:45.181358 unpause vips
+2024-05-06T16:21:45.238791 pause freqmine
+2024-05-06T16:21:45.529694 pause vips
+2024-05-06T16:21:45.550829 update_cores freqmine [2,3]
+2024-05-06T16:21:45.550848 unpause freqmine
+2024-05-06T16:21:45.606589 update_cores memcached [0,1]
+2024-05-06T16:21:45.881833 update_cores memcached [0]
+2024-05-06T16:21:45.883874 update_cores vips [1,2,3]
+2024-05-06T16:21:45.883892 unpause vips
+2024-05-06T16:21:45.940381 pause freqmine
+2024-05-06T16:21:46.232428 pause vips
+2024-05-06T16:21:46.254304 update_cores freqmine [2,3]
+2024-05-06T16:21:46.254323 unpause freqmine
+2024-05-06T16:21:46.306350 update_cores memcached [0,1]
+2024-05-06T16:21:46.579920 update_cores memcached [0]
+2024-05-06T16:21:46.582221 update_cores vips [1,2,3]
+2024-05-06T16:21:46.582245 unpause vips
+2024-05-06T16:21:46.630673 pause freqmine
+2024-05-06T16:21:46.914078 pause vips
+2024-05-06T16:21:46.945110 update_cores freqmine [2,3]
+2024-05-06T16:21:46.945128 unpause freqmine
+2024-05-06T16:21:46.998859 update_cores memcached [0,1]
+2024-05-06T16:21:47.534375 update_cores memcached [0]
+2024-05-06T16:21:47.536993 update_cores vips [1,2,3]
+2024-05-06T16:21:47.537018 unpause vips
+2024-05-06T16:21:47.591770 pause freqmine
+2024-05-06T16:21:47.879644 pause vips
+2024-05-06T16:21:47.901405 update_cores freqmine [2,3]
+2024-05-06T16:21:47.901425 unpause freqmine
+2024-05-06T16:21:47.956677 update_cores memcached [0,1]
+2024-05-06T16:21:48.231651 update_cores memcached [0]
+2024-05-06T16:21:48.234076 update_cores vips [1,2,3]
+2024-05-06T16:21:48.234092 unpause vips
+2024-05-06T16:21:48.291854 pause freqmine
+2024-05-06T16:21:48.580098 pause vips
+2024-05-06T16:21:48.601516 update_cores freqmine [2,3]
+2024-05-06T16:21:48.601534 unpause freqmine
+2024-05-06T16:21:48.658686 update_cores memcached [0,1]
+2024-05-06T16:21:49.193460 update_cores memcached [0]
+2024-05-06T16:21:49.195405 update_cores vips [1,2,3]
+2024-05-06T16:21:49.195437 unpause vips
+2024-05-06T16:21:49.237394 pause freqmine
+2024-05-06T16:21:49.514996 pause vips
+2024-05-06T16:21:49.536673 update_cores freqmine [2,3]
+2024-05-06T16:21:49.536690 unpause freqmine
+2024-05-06T16:21:49.590324 update_cores memcached [0,1]
+2024-05-06T16:21:49.864721 update_cores memcached [0]
+2024-05-06T16:21:49.867309 update_cores vips [1,2,3]
+2024-05-06T16:21:49.867327 unpause vips
+2024-05-06T16:21:49.937341 pause freqmine
+2024-05-06T16:21:50.219161 pause vips
+2024-05-06T16:21:50.244122 update_cores freqmine [2,3]
+2024-05-06T16:21:50.244139 unpause freqmine
+2024-05-06T16:21:50.297603 update_cores memcached [0,1]
+2024-05-06T16:21:50.571797 update_cores memcached [0]
+2024-05-06T16:21:50.574087 update_cores vips [1,2,3]
+2024-05-06T16:21:50.574110 unpause vips
+2024-05-06T16:21:50.630811 pause freqmine
+2024-05-06T16:21:50.907421 pause vips
+2024-05-06T16:21:50.928080 update_cores freqmine [2,3]
+2024-05-06T16:21:50.928096 unpause freqmine
+2024-05-06T16:21:50.978065 update_cores memcached [0,1]
+2024-05-06T16:21:51.250631 update_cores memcached [0]
+2024-05-06T16:21:51.252687 update_cores vips [1,2,3]
+2024-05-06T16:21:51.252704 unpause vips
+2024-05-06T16:21:51.308041 pause freqmine
+2024-05-06T16:21:51.596932 pause vips
+2024-05-06T16:21:51.617368 update_cores freqmine [2,3]
+2024-05-06T16:21:51.617386 unpause freqmine
+2024-05-06T16:21:51.670305 update_cores memcached [0,1]
+2024-05-06T16:21:51.943942 update_cores memcached [0]
+2024-05-06T16:21:51.946047 update_cores vips [1,2,3]
+2024-05-06T16:21:51.946063 unpause vips
+2024-05-06T16:21:52.001888 pause freqmine
+2024-05-06T16:21:52.290569 pause vips
+2024-05-06T16:21:52.315382 update_cores freqmine [2,3]
+2024-05-06T16:21:52.315423 unpause freqmine
+2024-05-06T16:21:52.370565 update_cores memcached [0,1]
+2024-05-06T16:21:52.909786 update_cores memcached [0]
+2024-05-06T16:21:52.912147 update_cores vips [1,2,3]
+2024-05-06T16:21:52.912164 unpause vips
+2024-05-06T16:21:52.969111 pause freqmine
+2024-05-06T16:21:53.249292 pause vips
+2024-05-06T16:21:53.273870 update_cores freqmine [2,3]
+2024-05-06T16:21:53.273887 unpause freqmine
+2024-05-06T16:21:53.331155 update_cores memcached [0,1]
+2024-05-06T16:21:53.871470 update_cores memcached [0]
+2024-05-06T16:21:53.873727 update_cores vips [1,2,3]
+2024-05-06T16:21:53.873743 unpause vips
+2024-05-06T16:21:53.930862 pause freqmine
+2024-05-06T16:21:54.216364 pause vips
+2024-05-06T16:21:54.238693 update_cores freqmine [2,3]
+2024-05-06T16:21:54.238709 unpause freqmine
+2024-05-06T16:21:54.302542 update_cores memcached [0,1]
+2024-05-06T16:21:54.841989 update_cores memcached [0]
+2024-05-06T16:21:54.845134 update_cores vips [1,2,3]
+2024-05-06T16:21:54.845150 unpause vips
+2024-05-06T16:21:54.903507 pause freqmine
+2024-05-06T16:21:55.192686 pause vips
+2024-05-06T16:21:55.217168 update_cores freqmine [2,3]
+2024-05-06T16:21:55.217188 unpause freqmine
+2024-05-06T16:21:55.277532 update_cores memcached [0,1]
+2024-05-06T16:21:55.814919 update_cores memcached [0]
+2024-05-06T16:21:55.818664 update_cores vips [1,2,3]
+2024-05-06T16:21:55.818681 unpause vips
+2024-05-06T16:21:55.887929 pause freqmine
+2024-05-06T16:21:56.176334 pause vips
+2024-05-06T16:21:56.203526 update_cores freqmine [2,3]
+2024-05-06T16:21:56.203552 unpause freqmine
+2024-05-06T16:21:56.262037 update_cores memcached [0,1]
+2024-05-06T16:21:56.803407 update_cores memcached [0]
+2024-05-06T16:21:56.805360 update_cores vips [1,2,3]
+2024-05-06T16:21:56.805376 unpause vips
+2024-05-06T16:21:56.850591 pause freqmine
+2024-05-06T16:21:57.146701 pause vips
+2024-05-06T16:21:57.166681 update_cores freqmine [2,3]
+2024-05-06T16:21:57.166700 unpause freqmine
+2024-05-06T16:21:57.228447 update_cores memcached [0,1]
+2024-05-06T16:21:57.770487 update_cores memcached [0]
+2024-05-06T16:21:57.772809 update_cores vips [1,2,3]
+2024-05-06T16:21:57.772826 unpause vips
+2024-05-06T16:21:57.833864 pause freqmine
+2024-05-06T16:21:58.115891 pause vips
+2024-05-06T16:21:58.139521 update_cores freqmine [2,3]
+2024-05-06T16:21:58.139541 unpause freqmine
+2024-05-06T16:21:58.200829 update_cores memcached [0,1]
+2024-05-06T16:21:58.738862 update_cores memcached [0]
+2024-05-06T16:21:58.741668 update_cores vips [1,2,3]
+2024-05-06T16:21:58.741683 unpause vips
+2024-05-06T16:21:58.799566 pause freqmine
+2024-05-06T16:21:59.084172 pause vips
+2024-05-06T16:21:59.107567 update_cores freqmine [2,3]
+2024-05-06T16:21:59.107590 unpause freqmine
+2024-05-06T16:21:59.167834 update_cores memcached [0,1]
+2024-05-06T16:21:59.706972 update_cores memcached [0]
+2024-05-06T16:21:59.709527 update_cores vips [1,2,3]
+2024-05-06T16:21:59.709544 unpause vips
+2024-05-06T16:21:59.766080 pause freqmine
+2024-05-06T16:22:00.046833 pause vips
+2024-05-06T16:22:00.081563 update_cores freqmine [2,3]
+2024-05-06T16:22:00.081584 unpause freqmine
+2024-05-06T16:22:00.141042 update_cores memcached [0,1]
+2024-05-06T16:22:00.943378 update_cores memcached [0]
+2024-05-06T16:22:00.945820 update_cores vips [1,2,3]
+2024-05-06T16:22:00.945836 unpause vips
+2024-05-06T16:22:00.993162 pause freqmine
+2024-05-06T16:22:01.269849 pause vips
+2024-05-06T16:22:01.302106 update_cores freqmine [2,3]
+2024-05-06T16:22:01.302125 unpause freqmine
+2024-05-06T16:22:01.359689 update_cores memcached [0,1]
+2024-05-06T16:22:01.898799 update_cores memcached [0]
+2024-05-06T16:22:01.901440 update_cores vips [1,2,3]
+2024-05-06T16:22:01.901455 unpause vips
+2024-05-06T16:22:01.956439 pause freqmine
+2024-05-06T16:22:02.246762 pause vips
+2024-05-06T16:22:02.275099 update_cores freqmine [2,3]
+2024-05-06T16:22:02.275122 unpause freqmine
+2024-05-06T16:22:02.331364 update_cores memcached [0,1]
+2024-05-06T16:22:02.868725 update_cores memcached [0]
+2024-05-06T16:22:02.872476 update_cores vips [1,2,3]
+2024-05-06T16:22:02.872499 unpause vips
+2024-05-06T16:22:02.940818 pause freqmine
+2024-05-06T16:22:03.229039 pause vips
+2024-05-06T16:22:03.471927 update_cores freqmine [2,3]
+2024-05-06T16:22:03.471975 unpause freqmine
+2024-05-06T16:22:03.606233 update_cores memcached [0,1]
+2024-05-06T16:22:03.879374 update_cores memcached [0]
+2024-05-06T16:22:03.882767 update_cores vips [1,2,3]
+2024-05-06T16:22:03.882796 unpause vips
+2024-05-06T16:22:03.940665 pause freqmine
+2024-05-06T16:22:04.238276 pause vips
+2024-05-06T16:22:04.264117 update_cores freqmine [2,3]
+2024-05-06T16:22:04.264136 unpause freqmine
+2024-05-06T16:22:04.323551 update_cores memcached [0,1]
+2024-05-06T16:22:04.859591 update_cores memcached [0]
+2024-05-06T16:22:04.861671 update_cores vips [1,2,3]
+2024-05-06T16:22:04.861690 unpause vips
+2024-05-06T16:22:04.916431 pause freqmine
+2024-05-06T16:22:05.219830 pause vips
+2024-05-06T16:22:05.242162 update_cores freqmine [2,3]
+2024-05-06T16:22:05.242180 unpause freqmine
+2024-05-06T16:22:05.301151 update_cores memcached [0,1]
+2024-05-06T16:22:05.577102 update_cores memcached [0]
+2024-05-06T16:22:05.579233 update_cores vips [1,2,3]
+2024-05-06T16:22:05.579333 unpause vips
+2024-05-06T16:22:05.638828 pause freqmine
+2024-05-06T16:22:05.941571 pause vips
+2024-05-06T16:22:05.961203 update_cores freqmine [2,3]
+2024-05-06T16:22:05.961220 unpause freqmine
+2024-05-06T16:22:06.016687 update_cores memcached [0,1]
+2024-05-06T16:22:06.290531 update_cores memcached [0]
+2024-05-06T16:22:06.293624 update_cores vips [1,2,3]
+2024-05-06T16:22:06.293641 unpause vips
+2024-05-06T16:22:06.351075 pause freqmine
+2024-05-06T16:22:06.646126 pause vips
+2024-05-06T16:22:06.667186 update_cores freqmine [2,3]
+2024-05-06T16:22:06.667208 unpause freqmine
+2024-05-06T16:22:06.721795 update_cores memcached [0,1]
+2024-05-06T16:22:07.258847 update_cores memcached [0]
+2024-05-06T16:22:07.261513 update_cores vips [1,2,3]
+2024-05-06T16:22:07.261567 unpause vips
+2024-05-06T16:22:07.322840 pause freqmine
+2024-05-06T16:22:07.633587 pause vips
+2024-05-06T16:22:07.656554 update_cores freqmine [2,3]
+2024-05-06T16:22:07.656578 unpause freqmine
+2024-05-06T16:22:07.713579 update_cores memcached [0,1]
+2024-05-06T16:22:07.988442 update_cores memcached [0]
+2024-05-06T16:22:07.990542 update_cores vips [1,2,3]
+2024-05-06T16:22:07.990559 unpause vips
+2024-05-06T16:22:08.055609 pause freqmine
+2024-05-06T16:22:08.356015 pause vips
+2024-05-06T16:22:08.378999 update_cores freqmine [2,3]
+2024-05-06T16:22:08.379072 unpause freqmine
+2024-05-06T16:22:08.434176 update_cores memcached [0,1]
+2024-05-06T16:22:08.970863 update_cores memcached [0]
+2024-05-06T16:22:08.972962 update_cores vips [1,2,3]
+2024-05-06T16:22:08.972979 unpause vips
+2024-05-06T16:22:10.553516 pause freqmine
+2024-05-06T16:22:10.847362 pause vips
+2024-05-06T16:22:10.879839 update_cores freqmine [2,3]
+2024-05-06T16:22:10.879882 unpause freqmine
+2024-05-06T16:22:10.937920 update_cores memcached [0,1]
+2024-05-06T16:22:11.214444 update_cores memcached [0]
+2024-05-06T16:22:11.217440 update_cores vips [1,2,3]
+2024-05-06T16:22:11.217458 unpause vips
+2024-05-06T16:22:11.279137 pause freqmine
+2024-05-06T16:22:11.575202 pause vips
+2024-05-06T16:22:11.597616 update_cores freqmine [2,3]
+2024-05-06T16:22:11.597636 unpause freqmine
+2024-05-06T16:22:11.655880 update_cores memcached [0,1]
+2024-05-06T16:22:12.198109 update_cores memcached [0]
+2024-05-06T16:22:12.202368 update_cores vips [1,2,3]
+2024-05-06T16:22:12.202385 unpause vips
+2024-05-06T16:22:12.286834 pause freqmine
+2024-05-06T16:22:12.604644 pause vips
+2024-05-06T16:22:12.648982 update_cores freqmine [2,3]
+2024-05-06T16:22:12.649002 unpause freqmine
+2024-05-06T16:22:12.727376 update_cores memcached [0,1]
+2024-05-06T16:22:42.779656 update_cores memcached [0]
+2024-05-06T16:22:42.782867 update_cores vips [1,2,3]
+2024-05-06T16:22:42.782883 unpause vips
+2024-05-06T16:22:42.835741 pause freqmine
+2024-05-06T16:22:43.124558 pause vips
+2024-05-06T16:22:43.147493 update_cores freqmine [2,3]
+2024-05-06T16:22:43.147512 unpause freqmine
+2024-05-06T16:22:43.209511 update_cores memcached [0,1]
+2024-05-06T16:22:44.278082 update_cores memcached [0]
+2024-05-06T16:22:44.281235 update_cores vips [1,2,3]
+2024-05-06T16:22:44.281252 unpause vips
+2024-05-06T16:22:44.338039 pause freqmine
+2024-05-06T16:22:44.625316 pause vips
+2024-05-06T16:22:44.663088 update_cores freqmine [2,3]
+2024-05-06T16:22:44.663109 unpause freqmine
+2024-05-06T16:22:44.723128 update_cores memcached [0,1]
+2024-05-06T16:22:45.265865 update_cores memcached [0]
+2024-05-06T16:22:45.268707 update_cores vips [1,2,3]
+2024-05-06T16:22:45.268730 unpause vips
+2024-05-06T16:22:45.327692 pause freqmine
+2024-05-06T16:22:45.624519 pause vips
+2024-05-06T16:22:45.648879 update_cores freqmine [2,3]
+2024-05-06T16:22:45.648928 unpause freqmine
+2024-05-06T16:22:45.709105 update_cores memcached [0,1]
+2024-05-06T16:22:46.249188 update_cores memcached [0]
+2024-05-06T16:22:46.251617 update_cores vips [1,2,3]
+2024-05-06T16:22:46.251647 unpause vips
+2024-05-06T16:22:46.309456 pause freqmine
+2024-05-06T16:22:46.591795 pause vips
+2024-05-06T16:22:46.613958 update_cores freqmine [2,3]
+2024-05-06T16:22:46.613977 unpause freqmine
+2024-05-06T16:22:46.671984 update_cores memcached [0,1]
+2024-05-06T16:22:47.218009 update_cores memcached [0]
+2024-05-06T16:22:47.221004 update_cores vips [1,2,3]
+2024-05-06T16:22:47.221022 unpause vips
+2024-05-06T16:22:47.286085 pause freqmine
+2024-05-06T16:22:47.579310 pause vips
+2024-05-06T16:22:47.602667 update_cores freqmine [2,3]
+2024-05-06T16:22:47.602686 unpause freqmine
+2024-05-06T16:22:47.664185 update_cores memcached [0,1]
+2024-05-06T16:22:48.204384 update_cores memcached [0]
+2024-05-06T16:22:48.207368 update_cores vips [1,2,3]
+2024-05-06T16:22:48.207386 unpause vips
+2024-05-06T16:22:48.276415 pause freqmine
+2024-05-06T16:22:48.579725 pause vips
+2024-05-06T16:22:48.604910 update_cores freqmine [2,3]
+2024-05-06T16:22:48.604934 unpause freqmine
+2024-05-06T16:22:48.666572 update_cores memcached [0,1]
+2024-05-06T16:22:49.206024 update_cores memcached [0]
+2024-05-06T16:22:49.208593 update_cores vips [1,2,3]
+2024-05-06T16:22:49.208612 unpause vips
+2024-05-06T16:22:49.266283 pause freqmine
+2024-05-06T16:22:49.562214 pause vips
+2024-05-06T16:22:49.597467 update_cores freqmine [2,3]
+2024-05-06T16:22:49.597494 unpause freqmine
+2024-05-06T16:22:49.660285 update_cores memcached [0,1]
+2024-05-06T16:22:50.727042 update_cores memcached [0]
+2024-05-06T16:22:50.729521 update_cores vips [1,2,3]
+2024-05-06T16:22:50.729538 unpause vips
+2024-05-06T16:22:50.788845 pause freqmine
+2024-05-06T16:22:51.079544 pause vips
+2024-05-06T16:22:51.103592 update_cores freqmine [2,3]
+2024-05-06T16:22:51.103617 unpause freqmine
+2024-05-06T16:22:51.164078 update_cores memcached [0,1]
+2024-05-06T16:22:51.701997 update_cores memcached [0]
+2024-05-06T16:22:51.704039 update_cores vips [1,2,3]
+2024-05-06T16:22:51.704057 unpause vips
+2024-05-06T16:22:51.765328 pause freqmine
+2024-05-06T16:22:52.059412 pause vips
+2024-05-06T16:22:52.086473 update_cores freqmine [2,3]
+2024-05-06T16:22:52.086493 unpause freqmine
+2024-05-06T16:22:52.142279 update_cores memcached [0,1]
+2024-05-06T16:23:17.615140 update_cores memcached [0]
+2024-05-06T16:23:17.618465 update_cores vips [1,2,3]
+2024-05-06T16:23:17.618483 unpause vips
+2024-05-06T16:23:17.683723 pause freqmine
+2024-05-06T16:23:17.980145 pause vips
+2024-05-06T16:23:18.005161 update_cores freqmine [2,3]
+2024-05-06T16:23:18.005179 unpause freqmine
+2024-05-06T16:23:18.067713 update_cores memcached [0,1]
+2024-05-06T16:23:32.619463 update_cores memcached [0]
+2024-05-06T16:23:32.622629 update_cores vips [1,2,3]
+2024-05-06T16:23:32.622644 unpause vips
+2024-05-06T16:23:32.682365 pause freqmine
+2024-05-06T16:23:32.974333 pause vips
+2024-05-06T16:23:33.001856 update_cores freqmine [2,3]
+2024-05-06T16:23:33.001875 unpause freqmine
+2024-05-06T16:23:33.061113 update_cores memcached [0,1]
+2024-05-06T16:23:33.601388 update_cores memcached [0]
+2024-05-06T16:23:33.604618 update_cores vips [1,2,3]
+2024-05-06T16:23:33.604635 unpause vips
+2024-05-06T16:23:33.661504 pause freqmine
+2024-05-06T16:23:33.943725 pause vips
+2024-05-06T16:23:33.968010 update_cores freqmine [2,3]
+2024-05-06T16:23:33.968038 unpause freqmine
+2024-05-06T16:23:34.031268 update_cores memcached [0,1]
+2024-05-06T16:23:34.572210 update_cores memcached [0]
+2024-05-06T16:23:34.574736 update_cores vips [1,2,3]
+2024-05-06T16:23:34.574752 unpause vips
+2024-05-06T16:23:34.644191 pause freqmine
+2024-05-06T16:23:34.933731 pause vips
+2024-05-06T16:23:34.959724 update_cores freqmine [2,3]
+2024-05-06T16:23:34.959782 unpause freqmine
+2024-05-06T16:23:35.024022 update_cores memcached [0,1]
+2024-05-06T16:23:35.827865 update_cores memcached [0]
+2024-05-06T16:23:35.830583 update_cores vips [1,2,3]
+2024-05-06T16:23:35.830598 unpause vips
+2024-05-06T16:23:35.909502 pause freqmine
+2024-05-06T16:23:36.208648 pause vips
+2024-05-06T16:23:36.229786 update_cores freqmine [2,3]
+2024-05-06T16:23:36.229804 unpause freqmine
+2024-05-06T16:23:36.291140 update_cores memcached [0,1]
+2024-05-06T16:23:37.093396 update_cores memcached [0]
+2024-05-06T16:23:37.096590 update_cores vips [1,2,3]
+2024-05-06T16:23:37.096610 unpause vips
+2024-05-06T16:23:37.143170 pause freqmine
+2024-05-06T16:23:37.836810 update_cores freqmine [2,3]
+2024-05-06T16:23:37.836882 unpause freqmine
+2024-05-06T16:23:37.896954 update_cores memcached [0,1]
+2024-05-06T16:23:37.901912 end vips
+2024-05-06T16:23:39.049611 update_cores memcached [0]
+2024-05-06T16:23:39.053120 start dedup [1,2,3] 3
+2024-05-06T16:23:39.362447 pause freqmine
+2024-05-06T16:23:39.648988 pause dedup
+2024-05-06T16:23:39.679237 update_cores freqmine [2,3]
+2024-05-06T16:23:39.679257 unpause freqmine
+2024-05-06T16:23:39.739666 update_cores memcached [0,1]
+2024-05-06T16:23:40.274182 update_cores memcached [0]
+2024-05-06T16:23:40.277067 update_cores dedup [1,2,3]
+2024-05-06T16:23:40.277088 unpause dedup
+2024-05-06T16:23:40.335742 pause freqmine
+2024-05-06T16:23:40.622852 pause dedup
+2024-05-06T16:23:40.642685 update_cores freqmine [2,3]
+2024-05-06T16:23:40.642700 unpause freqmine
+2024-05-06T16:23:40.699944 update_cores memcached [0,1]
+2024-05-06T16:23:41.235201 update_cores memcached [0]
+2024-05-06T16:23:41.237555 update_cores dedup [1,2,3]
+2024-05-06T16:23:41.237588 unpause dedup
+2024-05-06T16:23:41.284210 pause freqmine
+2024-05-06T16:23:41.571717 pause dedup
+2024-05-06T16:23:41.593561 update_cores freqmine [2,3]
+2024-05-06T16:23:41.593589 unpause freqmine
+2024-05-06T16:23:41.654282 update_cores memcached [0,1]
+2024-05-06T16:23:42.193406 update_cores memcached [0]
+2024-05-06T16:23:42.195888 update_cores dedup [1,2,3]
+2024-05-06T16:23:42.195906 unpause dedup
+2024-05-06T16:23:42.245887 pause freqmine
+2024-05-06T16:23:42.530479 pause dedup
+2024-05-06T16:23:42.550197 update_cores freqmine [2,3]
+2024-05-06T16:23:42.550218 unpause freqmine
+2024-05-06T16:23:42.610921 update_cores memcached [0,1]
+2024-05-06T16:23:43.145752 update_cores memcached [0]
+2024-05-06T16:23:43.148077 update_cores dedup [1,2,3]
+2024-05-06T16:23:43.148095 unpause dedup
+2024-05-06T16:23:43.207085 pause freqmine
+2024-05-06T16:23:43.484136 pause dedup
+2024-05-06T16:23:43.504546 update_cores freqmine [2,3]
+2024-05-06T16:23:43.504567 unpause freqmine
+2024-05-06T16:23:43.563216 update_cores memcached [0,1]
+2024-05-06T16:23:44.360159 update_cores memcached [0]
+2024-05-06T16:23:44.362246 update_cores dedup [1,2,3]
+2024-05-06T16:23:44.362264 unpause dedup
+2024-05-06T16:23:44.409860 pause freqmine
+2024-05-06T16:23:44.691186 pause dedup
+2024-05-06T16:23:44.710468 update_cores freqmine [2,3]
+2024-05-06T16:23:44.710486 unpause freqmine
+2024-05-06T16:23:44.773541 update_cores memcached [0,1]
+2024-05-06T16:23:45.570274 update_cores memcached [0]
+2024-05-06T16:23:45.573638 update_cores dedup [1,2,3]
+2024-05-06T16:23:45.573656 unpause dedup
+2024-05-06T16:23:45.626912 pause freqmine
+2024-05-06T16:23:46.208449 pause dedup
+2024-05-06T16:23:46.399581 update_cores freqmine [2,3]
+2024-05-06T16:23:46.399605 unpause freqmine
+2024-05-06T16:23:46.463826 update_cores memcached [0,1]
+2024-05-06T16:23:47.001317 update_cores memcached [0]
+2024-05-06T16:23:47.003496 update_cores dedup [1,2,3]
+2024-05-06T16:23:47.003514 unpause dedup
+2024-05-06T16:23:47.048382 pause freqmine
+2024-05-06T16:23:47.324625 pause dedup
+2024-05-06T16:23:47.353584 update_cores freqmine [2,3]
+2024-05-06T16:23:47.353603 unpause freqmine
+2024-05-06T16:23:47.416098 update_cores memcached [0,1]
+2024-05-06T16:23:47.954457 update_cores memcached [0]
+2024-05-06T16:23:47.957722 update_cores dedup [1,2,3]
+2024-05-06T16:23:47.957744 unpause dedup
+2024-05-06T16:23:48.005981 pause freqmine
+2024-05-06T16:23:48.297872 pause dedup
+2024-05-06T16:23:48.330230 update_cores freqmine [2,3]
+2024-05-06T16:23:48.330257 unpause freqmine
+2024-05-06T16:23:48.391490 update_cores memcached [0,1]
+2024-05-06T16:23:49.186596 update_cores memcached [0]
+2024-05-06T16:23:49.189184 update_cores dedup [1,2,3]
+2024-05-06T16:23:49.189201 unpause dedup
+2024-05-06T16:23:49.246284 pause freqmine
+2024-05-06T16:23:49.534298 pause dedup
+2024-05-06T16:23:49.565134 update_cores freqmine [2,3]
+2024-05-06T16:23:49.565155 unpause freqmine
+2024-05-06T16:23:49.622639 update_cores memcached [0,1]
+2024-05-06T16:23:50.165769 update_cores memcached [0]
+2024-05-06T16:23:50.168681 update_cores dedup [1,2,3]
+2024-05-06T16:23:50.168699 unpause dedup
+2024-05-06T16:23:50.222617 pause freqmine
+2024-05-06T16:23:50.498349 pause dedup
+2024-05-06T16:23:50.530799 update_cores freqmine [2,3]
+2024-05-06T16:23:50.530817 unpause freqmine
+2024-05-06T16:23:50.591952 update_cores memcached [0,1]
+2024-05-06T16:23:51.646932 update_cores memcached [0]
+2024-05-06T16:23:51.649040 update_cores dedup [1,2,3]
+2024-05-06T16:23:51.649056 unpause dedup
+2024-05-06T16:23:53.387030 pause freqmine
+2024-05-06T16:23:54.430804 pause dedup
+2024-05-06T16:23:55.221983 update_cores freqmine [2,3]
+2024-05-06T16:23:55.222004 unpause freqmine
+2024-05-06T16:23:56.668102 update_cores memcached [0,1]
+2024-05-06T16:24:02.426182 update_cores memcached [0]
+2024-05-06T16:24:02.428449 update_cores dedup [1,2,3]
+2024-05-06T16:24:02.428466 unpause dedup
+2024-05-06T16:24:02.477869 pause freqmine
+2024-05-06T16:24:02.764921 pause dedup
+2024-05-06T16:24:02.793982 update_cores freqmine [2,3]
+2024-05-06T16:24:02.794001 unpause freqmine
+2024-05-06T16:24:02.849511 update_cores memcached [0,1]
+2024-05-06T16:24:03.384274 update_cores memcached [0]
+2024-05-06T16:24:03.386320 update_cores dedup [1,2,3]
+2024-05-06T16:24:03.386337 unpause dedup
+2024-05-06T16:24:03.434293 pause freqmine
+2024-05-06T16:24:03.710983 pause dedup
+2024-05-06T16:24:03.739868 update_cores freqmine [2,3]
+2024-05-06T16:24:03.739887 unpause freqmine
+2024-05-06T16:24:03.797882 update_cores memcached [0,1]
+2024-05-06T16:24:04.071978 update_cores memcached [0]
+2024-05-06T16:24:04.074075 update_cores dedup [1,2,3]
+2024-05-06T16:24:04.074095 unpause dedup
+2024-05-06T16:24:04.116874 pause freqmine
+2024-05-06T16:24:04.395840 pause dedup
+2024-05-06T16:24:04.424488 update_cores freqmine [2,3]
+2024-05-06T16:24:04.424507 unpause freqmine
+2024-05-06T16:24:04.481572 update_cores memcached [0,1]
+2024-05-06T16:24:04.754766 update_cores memcached [0]
+2024-05-06T16:24:04.757102 update_cores dedup [1,2,3]
+2024-05-06T16:24:04.757125 unpause dedup
+2024-05-06T16:24:04.809349 pause freqmine
+2024-05-06T16:24:05.098896 pause dedup
+2024-05-06T16:24:05.118836 update_cores freqmine [2,3]
+2024-05-06T16:24:05.118853 unpause freqmine
+2024-05-06T16:24:05.175688 update_cores memcached [0,1]
+2024-05-06T16:24:05.707970 update_cores memcached [0]
+2024-05-06T16:24:05.709950 update_cores dedup [1,2,3]
+2024-05-06T16:24:05.709966 unpause dedup
+2024-05-06T16:24:05.752946 pause freqmine
+2024-05-06T16:24:06.041542 pause dedup
+2024-05-06T16:24:06.059891 update_cores freqmine [2,3]
+2024-05-06T16:24:06.059910 unpause freqmine
+2024-05-06T16:24:06.115132 update_cores memcached [0,1]
+2024-05-06T16:24:06.645845 update_cores memcached [0]
+2024-05-06T16:24:06.648589 update_cores dedup [1,2,3]
+2024-05-06T16:24:06.648617 unpause dedup
+2024-05-06T16:24:06.697414 pause freqmine
+2024-05-06T16:24:06.977606 pause dedup
+2024-05-06T16:24:07.007395 update_cores freqmine [2,3]
+2024-05-06T16:24:07.007419 unpause freqmine
+2024-05-06T16:24:07.063784 update_cores memcached [0,1]
+2024-05-06T16:24:07.859802 update_cores memcached [0]
+2024-05-06T16:24:07.862510 update_cores dedup [1,2,3]
+2024-05-06T16:24:07.862526 unpause dedup
+2024-05-06T16:24:07.913626 pause freqmine
+2024-05-06T16:24:08.197221 pause dedup
+2024-05-06T16:24:08.216594 update_cores freqmine [2,3]
+2024-05-06T16:24:08.216609 unpause freqmine
+2024-05-06T16:24:08.270478 update_cores memcached [0,1]
+2024-05-06T16:24:08.801448 update_cores memcached [0]
+2024-05-06T16:24:08.803451 update_cores dedup [1,2,3]
+2024-05-06T16:24:08.803467 unpause dedup
+2024-05-06T16:24:08.860532 pause freqmine
+2024-05-06T16:24:09.150461 pause dedup
+2024-05-06T16:24:09.172554 update_cores freqmine [2,3]
+2024-05-06T16:24:09.172577 unpause freqmine
+2024-05-06T16:24:09.224845 update_cores memcached [0,1]
+2024-05-06T16:24:09.755745 update_cores memcached [0]
+2024-05-06T16:24:09.758582 update_cores dedup [1,2,3]
+2024-05-06T16:24:09.758598 unpause dedup
+2024-05-06T16:24:09.809543 pause freqmine
+2024-05-06T16:24:10.346250 pause dedup
+2024-05-06T16:24:10.375936 update_cores freqmine [2,3]
+2024-05-06T16:24:10.375955 unpause freqmine
+2024-05-06T16:24:10.428669 update_cores memcached [0,1]
+2024-05-06T16:24:10.961879 update_cores memcached [0]
+2024-05-06T16:24:10.963912 update_cores dedup [1,2,3]
+2024-05-06T16:24:10.963929 unpause dedup
+2024-05-06T16:24:11.017908 pause freqmine
+2024-05-06T16:24:11.315466 pause dedup
+2024-05-06T16:24:11.337834 update_cores freqmine [2,3]
+2024-05-06T16:24:11.337863 unpause freqmine
+2024-05-06T16:24:11.397208 update_cores memcached [0,1]
+2024-05-06T16:24:12.192387 update_cores memcached [0]
+2024-05-06T16:24:12.197336 update_cores dedup [1,2,3]
+2024-05-06T16:24:12.197358 unpause dedup
+2024-05-06T16:24:12.265903 pause freqmine
+2024-05-06T16:24:12.558523 pause dedup
+2024-05-06T16:24:12.586185 update_cores freqmine [2,3]
+2024-05-06T16:24:12.586204 unpause freqmine
+2024-05-06T16:24:12.662558 update_cores memcached [0,1]
+2024-05-06T16:24:34.164829 update_cores memcached [0]
+2024-05-06T16:24:34.167288 update_cores dedup [1,2,3]
+2024-05-06T16:24:34.167325 unpause dedup
+2024-05-06T16:24:34.234620 pause freqmine
+2024-05-06T16:24:34.528557 pause dedup
+2024-05-06T16:24:34.549060 update_cores freqmine [2,3]
+2024-05-06T16:24:34.549084 unpause freqmine
+2024-05-06T16:24:34.614248 update_cores memcached [0,1]
+2024-05-06T16:24:35.413289 update_cores memcached [0]
+2024-05-06T16:24:35.415740 update_cores dedup [1,2,3]
+2024-05-06T16:24:35.415758 unpause dedup
+2024-05-06T16:24:35.470806 pause freqmine
+2024-05-06T16:24:35.771363 pause dedup
+2024-05-06T16:24:35.802336 update_cores freqmine [2,3]
+2024-05-06T16:24:35.802356 unpause freqmine
+2024-05-06T16:24:35.866390 update_cores memcached [0,1]
+2024-05-06T16:24:37.709028 update_cores memcached [0]
+2024-05-06T16:24:37.712181 update_cores dedup [1,2,3]
+2024-05-06T16:24:37.712198 unpause dedup
+2024-05-06T16:24:37.765914 pause freqmine
+2024-05-06T16:24:38.046587 pause dedup
+2024-05-06T16:24:38.089479 update_cores freqmine [2,3]
+2024-05-06T16:24:38.089497 unpause freqmine
+2024-05-06T16:24:38.151841 update_cores memcached [0,1]
+2024-05-06T16:24:38.947559 update_cores memcached [0]
+2024-05-06T16:24:38.950019 update_cores dedup [1,2,3]
+2024-05-06T16:24:38.950036 unpause dedup
+2024-05-06T16:24:39.010347 pause freqmine
+2024-05-06T16:24:39.310491 pause dedup
+2024-05-06T16:24:39.334897 update_cores freqmine [2,3]
+2024-05-06T16:24:39.334914 unpause freqmine
+2024-05-06T16:24:39.398121 update_cores memcached [0,1]
+2024-05-06T16:24:39.935756 update_cores memcached [0]
+2024-05-06T16:24:39.939661 update_cores dedup [1,2,3]
+2024-05-06T16:24:39.939679 unpause dedup
+2024-05-06T16:24:39.993917 pause freqmine
+2024-05-06T16:24:40.284698 pause dedup
+2024-05-06T16:24:40.314723 update_cores freqmine [2,3]
+2024-05-06T16:24:40.314742 unpause freqmine
+2024-05-06T16:24:40.378435 update_cores memcached [0,1]
+2024-05-06T16:24:41.700034 update_cores memcached [0]
+2024-05-06T16:24:41.703183 update_cores dedup [1,2,3]
+2024-05-06T16:24:41.703200 unpause dedup
+2024-05-06T16:24:41.762503 pause freqmine
+2024-05-06T16:24:42.076704 pause dedup
+2024-05-06T16:24:42.099354 update_cores freqmine [2,3]
+2024-05-06T16:24:42.099410 unpause freqmine
+2024-05-06T16:24:42.157859 update_cores memcached [0,1]
+2024-05-06T16:24:52.659144 update_cores memcached [0]
+2024-05-06T16:24:52.661534 update_cores dedup [1,2,3]
+2024-05-06T16:24:52.661551 unpause dedup
+2024-05-06T16:24:52.730847 pause freqmine
+2024-05-06T16:24:53.008352 pause dedup
+2024-05-06T16:24:53.045685 update_cores freqmine [2,3]
+2024-05-06T16:24:53.045703 unpause freqmine
+2024-05-06T16:24:53.104947 update_cores memcached [0,1]
+2024-05-06T16:24:53.639617 update_cores memcached [0]
+2024-05-06T16:24:53.641596 update_cores dedup [1,2,3]
+2024-05-06T16:24:53.641611 unpause dedup
+2024-05-06T16:24:55.609241 pause freqmine
+2024-05-06T16:24:56.602322 pause dedup
+2024-05-06T16:24:56.634150 update_cores freqmine [2,3]
+2024-05-06T16:24:56.634167 unpause freqmine
+2024-05-06T16:24:56.692364 update_cores memcached [0,1]
+2024-05-06T16:24:57.228111 update_cores memcached [0]
+2024-05-06T16:24:57.231217 update_cores dedup [1,2,3]
+2024-05-06T16:24:57.231234 unpause dedup
+2024-05-06T16:24:57.294450 pause freqmine
+2024-05-06T16:24:57.577468 pause dedup
+2024-05-06T16:24:57.609696 update_cores freqmine [2,3]
+2024-05-06T16:24:57.609744 unpause freqmine
+2024-05-06T16:24:57.667163 update_cores memcached [0,1]
+2024-05-06T16:24:58.204916 update_cores memcached [0]
+2024-05-06T16:24:58.206712 update_cores dedup [1,2,3]
+2024-05-06T16:24:58.206727 unpause dedup
+2024-05-06T16:24:58.250851 pause freqmine
+2024-05-06T16:24:58.529484 pause dedup
+2024-05-06T16:24:58.548828 update_cores freqmine [2,3]
+2024-05-06T16:24:58.548853 unpause freqmine
+2024-05-06T16:24:58.604813 update_cores memcached [0,1]
+2024-05-06T16:24:58.880140 update_cores memcached [0]
+2024-05-06T16:24:58.883086 update_cores dedup [1,2,3]
+2024-05-06T16:24:58.883102 unpause dedup
+2024-05-06T16:24:58.928811 pause freqmine
+2024-05-06T16:24:59.227228 pause dedup
+2024-05-06T16:24:59.246180 update_cores freqmine [2,3]
+2024-05-06T16:24:59.246196 unpause freqmine
+2024-05-06T16:24:59.306606 update_cores memcached [0,1]
+2024-05-06T16:24:59.840706 update_cores memcached [0]
+2024-05-06T16:24:59.842738 update_cores dedup [1,2,3]
+2024-05-06T16:24:59.842754 unpause dedup
+2024-05-06T16:24:59.886176 pause freqmine
+2024-05-06T16:25:00.166842 pause dedup
+2024-05-06T16:25:00.186243 update_cores freqmine [2,3]
+2024-05-06T16:25:00.186263 unpause freqmine
+2024-05-06T16:25:00.240166 update_cores memcached [0,1]
+2024-05-06T16:25:00.772913 update_cores memcached [0]
+2024-05-06T16:25:00.774842 update_cores dedup [1,2,3]
+2024-05-06T16:25:00.774857 unpause dedup
+2024-05-06T16:25:00.817220 pause freqmine
+2024-05-06T16:25:01.097810 pause dedup
+2024-05-06T16:25:01.117491 update_cores freqmine [2,3]
+2024-05-06T16:25:01.117509 unpause freqmine
+2024-05-06T16:25:01.179335 update_cores memcached [0,1]
+2024-05-06T16:25:01.712904 update_cores memcached [0]
+2024-05-06T16:25:01.715405 update_cores dedup [1,2,3]
+2024-05-06T16:25:01.715422 unpause dedup
+2024-05-06T16:25:01.766418 pause freqmine
+2024-05-06T16:25:02.048163 pause dedup
+2024-05-06T16:25:02.070229 update_cores freqmine [2,3]
+2024-05-06T16:25:02.070251 unpause freqmine
+2024-05-06T16:25:02.129744 update_cores memcached [0,1]
+2024-05-06T16:25:32.146148 end freqmine
+2024-05-06T16:25:32.484403 start radix [2,3] 2
+2024-05-06T16:25:52.741994 update_cores memcached [0]
+2024-05-06T16:25:52.744076 update_cores dedup [1,2,3]
+2024-05-06T16:25:52.744116 unpause dedup
+2024-05-06T16:25:52.786362 pause radix
+2024-05-06T16:25:53.059584 pause dedup
+2024-05-06T16:25:53.077738 update_cores radix [2,3]
+2024-05-06T16:25:53.077760 unpause radix
+2024-05-06T16:25:53.134904 update_cores memcached [0,1]
+2024-05-06T16:25:53.661887 update_cores memcached [0]
+2024-05-06T16:25:53.663931 update_cores dedup [1,2,3]
+2024-05-06T16:25:53.663949 unpause dedup
+2024-05-06T16:25:53.709971 pause radix
+2024-05-06T16:25:53.983943 pause dedup
+2024-05-06T16:25:54.002623 update_cores radix [2,3]
+2024-05-06T16:25:54.002638 unpause radix
+2024-05-06T16:25:54.053155 update_cores memcached [0,1]
+2024-05-06T16:25:54.328923 update_cores memcached [0]
+2024-05-06T16:25:54.331252 update_cores dedup [1,2,3]
+2024-05-06T16:25:54.331272 unpause dedup
+2024-05-06T16:25:54.379586 pause radix
+2024-05-06T16:25:54.658674 pause dedup
+2024-05-06T16:25:54.686593 update_cores radix [2,3]
+2024-05-06T16:25:54.686611 unpause radix
+2024-05-06T16:25:54.743889 update_cores memcached [0,1]
+2024-05-06T16:25:55.279942 update_cores memcached [0]
+2024-05-06T16:25:55.282367 update_cores dedup [1,2,3]
+2024-05-06T16:25:55.282386 unpause dedup
+2024-05-06T16:25:55.332342 pause radix
+2024-05-06T16:25:56.565558 end dedup
+2024-05-06T16:25:57.111100 update_cores radix [2,3]
+2024-05-06T16:25:57.111123 unpause radix
+2024-05-06T16:25:57.174135 update_cores memcached [0,1]
+2024-05-06T16:25:57.702186 update_cores memcached [0]
+2024-05-06T16:25:57.979352 update_cores memcached [0,1]
+2024-05-06T16:25:58.253284 update_cores memcached [0]
+2024-05-06T16:25:58.533833 update_cores memcached [0,1]
+2024-05-06T16:25:59.063745 update_cores memcached [0]
+2024-05-06T16:25:59.341645 update_cores memcached [0,1]
+2024-05-06T16:25:59.612458 update_cores memcached [0]
+2024-05-06T16:25:59.884706 update_cores memcached [0,1]
+2024-05-06T16:26:00.199544 end radix
+2024-05-06T16:26:00.225727 update_cores memcached [0,1]
+2024-05-06T16:27:02.284813 end memcached
+2024-05-06T16:27:02.284847 end scheduler
+
