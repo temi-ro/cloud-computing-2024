@@ -71,16 +71,16 @@ def plot_latency(mcperf_data, pods_data, run_number):
 
     # Plotting the batch jobs
     job_height = 0.07  # Height of the batch job bands
-    y_offset = 0.05  # Start height of the first batch job
+    y_offset = 0.65  # Start height of the first batch job
     for index, row in pods_data.iterrows():
         job_name = row['name']
         color = color_map.get(job_name.split('-')[0], 'grey')
-        plt.fill_betweenx(y=[y_offset, y_offset + job_height],
+        plt.fill_betweenx(y=[y_offset, y_offset - job_height],
                           x1=row['start_time_rel'], x2=row['end_time_rel'],
                           color=color, alpha=0.5, label=f"{job_name} on {row['node']}")
 
         # Update the offset for the next job
-        y_offset += job_height + 0.02
+        y_offset -= job_height + 0.02
 
     # Customize the plot
     plt.title(f'Memcached 95th Percentile Latency and Batch Jobs Over Time (Run {run_number})')
