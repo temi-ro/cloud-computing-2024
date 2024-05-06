@@ -53,7 +53,6 @@ def init_memcached_config(logger):
 #     return pid, no_of_cpus
 
 def set_memcached_core(pid, n_core, logger):
-    n_core =1
     n_core_format = ",".join(map(str, range(0, n_core)))
     cmd = f"sudo taskset -a -cp {n_core_format} {pid}"
     subprocess.run(cmd.split(" "), stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
@@ -66,7 +65,7 @@ def set_memcached_core(pid, n_core, logger):
 dedup = ("0,1,2,3",
          "dedup",
          "anakli/cca:parsec_dedup",
-         "./run -a run -S parsec -p dedup -i native -n 2")
+         "./run -a run -S parsec -p dedup -i native -n 3")
 radix = ("0,1,2,3",
          "radix",
          "anakli/cca:splash2x_radix",
@@ -78,7 +77,7 @@ blackscholes = ("0,1,2,3",
 canneal = ("0,1,2,3",
            "canneal",
            "anakli/cca:parsec_canneal",
-           "./run -a run -S parsec -p canneal -i native -n 3")
+           "./run -a run -S parsec -p canneal -i native -n 2")
 freqmine = ("0,1,2,3",
             "freqmine",
             "anakli/cca:parsec_freqmine",
@@ -90,7 +89,7 @@ ferret = ("0,1,2,3",
 vips = ("0,1,2,3",
         "vips",
         "anakli/cca:parsec_vips",
-        "./run -a run -S parsec -p vips -i native -n 2")
+        "./run -a run -S parsec -p vips -i native -n 3")
 
 def main():
     #command = "sudo systemctl restart docker"
@@ -99,8 +98,8 @@ def main():
     q1 = [dedup, radix]
     q2 = [canneal, blackscholes, vips]
     q3 = [ferret, freqmine]
-    q2=[vips, ferret, dedup, freqmine, radix]
-    q3=[blackscholes, canneal]
+    q2=[canneal, ferret, freqmine, radix]
+    q3=[blackscholes, vips, dedup  ]
     q1=[]
 
 
@@ -133,13 +132,11 @@ def main():
             cpu_utilization_1 = cpu_utilizations[1] # utilization of core 1
 
             # memcache can run only on core 0
-            if cpu_utilization_0 + cpu_utilization_1 < 31.5 and loadLevel == HIGH:
+            if cpu_utilization_0 + cpu_utilization_1 < 31.2 and loadLevel == HIGH: #35 good
                 loadLevel = NORMAL
                 # set memcache n_core to 1
                 pid, mc_n_core = set_memcached_core(mc_pid, 1, logger)
-    
-            # memcache needs to be on core 0 and 1
-            if cpu_utilization_0 > 10.5 and loadLevel == NORMAL:
+            elif cpu_utilization_0 > 12 and loadLevel == NORMAL: ##15 good
                 loadLevel = HIGH
 
 
@@ -176,15 +173,15 @@ def main():
             if(loadLevel == HIGH):
                 nb_high += 1
 
-            f.write(f"{nb_normal} {nb_high}\n")
-
+            f.write(f" normal : {nb_normal}, high : {nb_high}\n")
+            print("loadLevel", loadLevel)
             # Start containers.
             # sched.SCHEDULE_NEXT()
 
             if sched.DONE():
                 print("all other jobs have been completed")
                 # set_memcached_core(mc_pid, 4, logger) # Should we give all core to memcached?
-
+                pid, mc_n_core = set_memcached_core(mc_pid, 2, logger)
                 sleep(62)
                 logger.job_end(Job.MEMCACHED)
                 logger.end()

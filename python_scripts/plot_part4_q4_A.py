@@ -123,6 +123,8 @@ def main(run):
 
     logger_filename = f'./part4/actual_logger_{run}_interval_10.txt'
     mcperf_filename = f'./part4/actual_mcperf_{run}_interval_10.txt'
+    logger_filename = f'./part4/goat_logger_{run}_interval_5.txt'
+    mcperf_filename = f'./part4/goat_mcperf_{run}_interval_5.txt'
     start_time, end_time = read_time_logger(logger_filename)
     
     # num of interval
@@ -192,4 +194,4 @@ def main(run):
     plt.show()
 
 if __name__ == '__main__':
-    main(3)
+    main(2)

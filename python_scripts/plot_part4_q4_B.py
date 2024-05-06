@@ -131,6 +131,8 @@ def main(run):
 
     logger_filename = f'./part4/logger_{run}_interval_10.txt'
     mcperf_filename = f'./part4/mcperf_{run}_interval_10.txt'
+    logger_filename = f'./part4/goat_logger_{run}_interval_10.txt'
+    mcperf_filename = f'./part4/goat_mcperf_{run}_interval_10.txt'
     
     start_time, end_time = read_time_logger(logger_filename)
     
