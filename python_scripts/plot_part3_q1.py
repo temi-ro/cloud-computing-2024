@@ -70,7 +70,7 @@ def plot_latency(mcperf_data, pods_data, run_number):
                 alpha=0.3)
 
     # Plotting the batch jobs
-    job_height = 0.02  # Height of the batch job bands
+    job_height = 0.07  # Height of the batch job bands
     y_offset = 0.05  # Start height of the first batch job
     for index, row in pods_data.iterrows():
         job_name = row['name']
@@ -80,7 +80,7 @@ def plot_latency(mcperf_data, pods_data, run_number):
                           color=color, alpha=0.5, label=f"{job_name} on {row['node']}")
 
         # Update the offset for the next job
-        y_offset += job_height
+        y_offset += job_height + 0.02
 
     # Customize the plot
     plt.title(f'Memcached 95th Percentile Latency and Batch Jobs Over Time (Run {run_number})')
@@ -88,11 +88,11 @@ def plot_latency(mcperf_data, pods_data, run_number):
     plt.ylabel('Latency (ms)')
     plt.ylim(0, 0.7)  # Adjust based on your data range
     # plt.xlim(mcperf_data['ts_start_rel'].min(), mcperf_data['ts_end_rel'].max())
-    plt.xlim(0,200)
-    # Create a custom legend
+    plt.xlim(0, 190)
+
     handles, labels = plt.gca().get_legend_handles_labels()
     by_label = dict(zip(labels, handles))
-    plt.legend(by_label.values(), by_label.keys(), loc='upper right', bbox_to_anchor=(1.1, 1))
+    plt.legend(by_label.values(), by_label.keys(), loc='upper right')
     plt.grid(True)
     plt.savefig(f'../plots/plot_part3_run_{run_number}.png')
     plt.show()
@@ -114,4 +114,4 @@ for i in range(1, 4):
 
 # Calculate and print the final average and standard deviation across all runs
 final_stats = final_statistics(all_runs_stats)
-print("Final Statistics across All Runs:", final_stats)
+print("Final statistics across all runs:", final_stats)
