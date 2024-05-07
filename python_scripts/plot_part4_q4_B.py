@@ -38,12 +38,13 @@ def read_core_memcached(filename, start_time, end_time):
             time = convert_time_to_seconds(time) - start_time
             if task == "memcached":
                 if action == "start" or action == "update_cores":
-                    print(len(ast.literal_eval(line.split()[3])), time)
+                    print(time, len(ast.literal_eval(line.split()[3])))
                     cores.append(len(ast.literal_eval(line.split()[3])))
                     time_cores.append(time)
 
     cores = cores + [cores[-1]]
-    time_cores = time_cores + [end_time]
+    time_cores = time_cores + [end_time-start_time]
+    
     return cores, time_cores
 
 # Function to read time values from a file (logger)
@@ -72,7 +73,7 @@ def convert_time_to_seconds(timestamp):
 
     # Convert datetime object to seconds
     time_sec = timestamp_dt.timestamp()
-    return int(time_sec)
+    return (time_sec)
 
 def plot_gantt_chart(ax, tasks, colors):
         # Example colors for tasks
@@ -123,16 +124,15 @@ def get_tasks(filename, start_time):
 
     return tasks
 
-INTERVAL = 10
 
 def main(run):
     # Plotting
     fig, ax1 = plt.subplots(figsize=(10, 6))
 
-    logger_filename = f'./part4/logger_{run}_interval_10.txt'
-    mcperf_filename = f'./part4/mcperf_{run}_interval_10.txt'
-    logger_filename = f'./part4/goat_logger_{run}_interval_10.txt'
-    mcperf_filename = f'./part4/goat_mcperf_{run}_interval_10.txt'
+    # logger_filename = f'./part4/logger_{run}_interval_10.txt'
+    # mcperf_filename = f'./part4/mcperf_{run}_interval_10.txt'
+    logger_filename = f'./part4/goat_logger_{run}_interval_{INTERVAL}.txt'
+    mcperf_filename = f'./part4/goat_mcperf_{run}_interval_{INTERVAL}.txt'
     
     start_time, end_time = read_time_logger(logger_filename)
     
@@ -146,8 +146,8 @@ def main(run):
     total_time = end_time - start_time
     time_qps = range(0, total_time, INTERVAL)
 
-    # Plot 95th percentile latency on the left y-axis 
-    handles1, = ax1.step(time_cores, cores, '-', label=f"Cores to Memcached", color='orange', zorder=5, alpha=0.8)
+    # Plot number of cores on the left y-axis 
+    handles1, = ax1.step(time_cores, cores, '-', where='post', label=f"Cores to Memcached", color='orange', zorder=5, alpha=0.8)
     ax1.set_ylabel('CPU Cores Allocated to Memcached', color='orange', fontweight='bold')
     ax1.set_yticks(np.arange(0, 3.1, 1))
     ax1.set_ylim(0,3)
@@ -202,5 +202,9 @@ def main(run):
     plt.grid(True)
     plt.show()
 
+
+INTERVAL = 10
+
 if __name__ == '__main__':
+    # Change here the run number
     main(3)
