@@ -9,12 +9,15 @@ import psutil
 import scheduler_logger
 from scheduler_logger import Job
 
+# Define the State enum that characterizes the load level of memcached
 class State(Enum):
     HIGH = "high"
-    NORMAL = "normal"
+    LOW = "low"
 
 #create docker client
 docker_client = docker.from_env()
+#map that stores the cores of each job
+cores_map ={}
 
 #fill the queue with containers
 def fill_queue(docker_client, q , q_containers):
@@ -23,6 +26,7 @@ def fill_queue(docker_client, q , q_containers):
         container = docker_client.containers.create(name=ctnr["name"], cpuset_cpus=ctnr["cpus"], image=ctnr["image"], command=ctnr["command"], detach=True, auto_remove=False)
         container.reload()
         q.append(container)
+        cores_map[ctnr["name"]] = ctnr["cpus"]
 
 #remove previous containers (that currently exits)
 def remove_previous_containers(docker_client):
@@ -40,15 +44,16 @@ def force_removal(container):
         container.reload()
         if container.status == "paused":
             container.unpause()
-        container.reload()
+            container.reload()
         if container.status == "running":
             container.kill()
         container.remove()
-    except:
-        print("issue with container removal")
+    except Exception as e:
+        # Provide more specific error message with exception details.
+        print(f"Issue with container removal for {container.name}: {e}")
 
 #handle ctrl+c
-def signal_handler(sig, frame):
+def signal_handler(signal, f):
     # Remove all containers
     remove_previous_containers(docker_client)
     sys.exit(0)
@@ -93,6 +98,7 @@ def map_from_string_to_job(name):
 
 #reschedule the containers based on the load level
 def reschedule(load, q2,q3, logger):
+    
     #print all status
     print("q2")
     for container in q2:
@@ -102,32 +108,35 @@ def reschedule(load, q2,q3, logger):
         print(container.name, container.status)
     print("reschedule with load ", load)
     #determine what job to run with what queue
-    to_run=[] 
-    cores = []
-    if(load == State.NORMAL):
+    to_run=()
+    cores = ()
+    if(load == State.LOW):
         if(len(q3) >0):
-            to_run= [3]
-            cores=["1,2,3"]
+            to_run= (3,)
+            cores=("1,2,3",)
         elif(len(q2) >1):
-            to_run = [2, 2]
-            cores = ["1","2,3"] 
+            to_run = (2, 2)
+            cores = ("1","2,3")
         elif(len(q2) ==1):
-            to_run = [2]
-            cores = ["1,2,3"]
+            to_run = (2,)
+            cores = ("1,2,3",)
         else:
-            to_run = []
-            cores = []
+            to_run = ()
+            cores = ()
     elif(load == State.HIGH):
         if(len(q2) >0):
-            to_run = [2]
-            cores = ["2,3"]
+            to_run = (2,)
+            cores = ("2,3",)
         elif(len(q3)):
-            to_run = [3]
-            cores = ["2,3"]
-    else:
-            to_run =[]
-            cores =[]
-    print("what to run: ", to_run)
+            to_run = (3,)
+            cores = ("2,3",)
+        else:
+                to_run = ()
+                cores = ()
+    else : 
+        to_run = ()
+        cores = ()
+    print("to run ", to_run)
     #run the containers previously decided to run 
     i=0
     for (q, nb) in [(q2,2), (q3,3)]: 
@@ -142,6 +151,7 @@ def reschedule(load, q2,q3, logger):
             container_pause(q[j], logger)
             j+=1
 
+
 #make a container run 
 def container_run(cores, container, q, logger):
     container.reload()
@@ -150,12 +160,22 @@ def container_run(cores, container, q, logger):
         print( container.name + "is started")
         container.update(cpuset_cpus=cores)
         container.start()
+        cores_map[container.name] = cores
     elif container.status == "paused":
-        logger.update_cores(map_from_string_to_job( container.name), [int(num) for num in cores.split(',')])
         container.update(cpuset_cpus=cores)
+        if(cores_map[container.name] != cores):
+            logger.update_cores(map_from_string_to_job( container.name), [int(num) for num in cores.split(',')])
+            print("update " + container.name)
+            cores_map[container.name] = cores
         logger.job_unpause(map_from_string_to_job( container.name))
         container.unpause()
         print("unpause " + container.name)
+    elif container.status =="running":
+        if(cores_map[container.name] != cores):
+            logger.update_cores(map_from_string_to_job( container.name), [int(num) for num in cores.split(',')])
+            container.update(cpuset_cpus=cores)
+            print("update " + container.name)
+            cores_map[container.name] = cores
     else:
         return
 
@@ -196,7 +216,7 @@ def experiment():
             "cpus": "0,1,2,3",
             "name": "dedup",
             "image": "anakli/cca:parsec_dedup",
-            "command": "./run -a run -S parsec -p dedup -i native -n 2"
+            "command": "./run -a run -S parsec -p dedup -i native -n 3"
         },
         "radix": {
             "cpus": "0,1,2,3",
@@ -226,26 +246,25 @@ def experiment():
             "cpus": "0,1,2,3",
             "name": "ferret",
             "image": "anakli/cca:parsec_ferret",
-            "command": "./run -a run -S parsec -p ferret -i native -n 3"
+            "command": "./run -a run -S parsec -p ferret -i native -n 2"
         },
         "vips": {
             "cpus": "0,1,2,3",
             "name": "vips",
             "image": "anakli/cca:parsec_vips",
-            "command": "./run -a run -S parsec -p vips -i native -n 2"
+            "command": "./run -a run -S parsec -p vips -i native -n 3"
         }
     }
     #remove previous containers
     remove_previous_containers(docker_client)
     #fill the queues with containers
     q2 = []
-    q3 = []
-    fill_queue(docker_client, q2 , [containers["vips"], containers["ferret"], containers["dedup"], containers["freqmine"], containers["radix"]])
-    fill_queue(docker_client, q3 , [containers["blackscholes"], containers["canneal"]])
-    #fill_queue(docker_client, q2 , [containers["vips"], containers["radix"]])
-    #fill_queue(docker_client, q3 , [containers["dedup"], containers["ferret"]])
+    q3=[]
+    fill_queue(docker_client, q2 , [containers["canneal"], containers["ferret"], containers["freqmine"], containers["radix"]])
+    fill_queue(docker_client, q3 , [containers["blackscholes"], containers["vips"], containers["dedup"]])
+    
     #initialize load level and logger
-    load_level=State.NORMAL
+    load_level=State.LOW
     logger = scheduler_logger.SchedulerLogger()
 
     #handle ctrl+c
@@ -270,23 +289,22 @@ def experiment():
         cpu_usages = psutil.cpu_percent(interval=None, percpu=True)
         cpu_usage_0 = cpu_usages[0] # utilization of core 0
         cpu_usage_1 = cpu_usages[1] # utilization of core 1
-
+        
         # memcache can run only on core 0
-        if cpu_usage_0 + cpu_usage_1 < 75 and load_level == State.HIGH:  #31.5 et 10.5
-            #back to NORMAL level
-            load_level = State.NORMAL
+        if cpu_usage_0 + cpu_usage_1 < 31.2 and load_level == State.HIGH:  
+            #back to LOW level
+            load_level = State.LOW
             # set memcache n_core to 1
             memcache_cores= "0"
             set_cores_memcached(logger, memcache_pid, memcache_cores)
-
         # memcache needs to be on core 0 and 1
-        if cpu_usage_0 > 35 and load_level == State.NORMAL: #a 35 et 75 ca passe bien 
+        elif cpu_usage_0 > 12 and load_level == State.LOW: 
             #back to high level
             load_level = State.HIGH
 
         # reschedule the jobs according to the load level
         reschedule(load_level, q2,q3, logger)
-        # if we just changed the load from NORMAL to HIGH, set memcache n_core to 2 after having rescheduled the jobs (and therefore having freed core 1)
+        # if we just changed the load from LOW to HIGH, set memcache n_core to 2 after having rescheduled the jobs (and therefore having freed core 1)
         if load_level == State.HIGH and memcache_cores == "0":
             memcache_cores= "0,1"
             set_cores_memcached(logger, memcache_pid, memcache_cores)
@@ -297,21 +315,23 @@ def experiment():
 
         #check if we are done
         if len(q2)==0 and len(q3)==0:
-            # set memcache n_core to 2 for the end
-            memcache_cores = "0,1"
-            set_cores_memcached(logger, memcache_pid, memcache_cores)
-            print("we are done, waiting 1 minute for memcahed before ending completely")
-            sleep(62)
-            logger.job_end(Job.MEMCACHED)
-            logger.end()
             break
 
         if print_index % 40== 0:
             print_content_queues(q2,q3)
         print_index+=1
 
-        sleep(0.3)
+        #reenter the wild loop every 0.24 seconds
+        sleep(0.24)
 
+    # set memcache n_core to 2 for the end
+    memcache_cores = "0,1"
+    set_cores_memcached(logger, memcache_pid, memcache_cores)
+    print("we are done, waiting 1 minute for memcahed before ending completely")
+    #wait 1 minute before ending
+    sleep(62)
+    logger.job_end(Job.MEMCACHED)
+    logger.end()
 
 if __name__ == "__main__":
     experiment()

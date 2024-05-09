@@ -5,19 +5,19 @@ HIGH = "high"
 
 
 class Scheduler:
-    def __init__(logger, self, q2_containers, q3_containers, load_level=NORMAL):
+    def __init__(self,logger,  q2_containers, q3_containers, load_level=NORMAL):
         self.docker_client = docker.from_env()
         self.remove_previous_containers()
         self.q2 = []
         self.q3 = []
         self.fill_queue(self.q2 , q2_containers)
-        self.fill_queue(self.q2 , q3_containers)
+        self.fill_queue(self.q3 , q3_containers)
         self.__load_level = load_level  
         self.__logger = logger
 
 
     def clean_all_queues(self):
-        for q in [self.q1,self.q2]:
+        for q in [self.q2,self.q3]:
             index_to_remove = 0
             for _ in range(0, len(q)):
                 if self.cleaned(q[index_to_remove]):
@@ -82,10 +82,11 @@ class Scheduler:
             print(queue_name, container_names)
         
 
-    # Container management helpers.
+    #fill the queue with containers
     def fill_queue(self, q , q_containers):
+        # Create the containers and add them to the queue
         for ctnr in q_containers:
-            container = self.docker_client.containers.create(name=ctnr[1], cpuset_cpus=ctnr[0], image=ctnr[2], command=ctnr[3], detach=True, auto_remove=False)
+            container = self.docker_client.containers.create(name=ctnr["name"], cpuset_cpus=ctnr["cpus"], image=ctnr["image"], command=ctnr["command"], detach=True, auto_remove=False)
             container.reload()
             q.append(container)
 
@@ -110,7 +111,6 @@ class Scheduler:
             container.reload()
             if container.status == "exited":
                 self.__logger.job_end(map_from_string_to_job( container.name))
-                self.container_clean_exited(container)
                 try:
                     container.remove()
                 except:

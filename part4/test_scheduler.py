@@ -115,7 +115,7 @@ def main():
 
     # mc_process = psutil.Process(mc_pid)
     i = 0
-    loadLevel = NORMAL
+    loadLevel = HIGH
     file_path = 'example.txt'
     nb_high = 0
     nb_normal = 0
@@ -132,12 +132,7 @@ def main():
             cpu_utilization_1 = cpu_utilizations[1] # utilization of core 1
 
             # memcache can run only on core 0
-            if cpu_utilization_0 + cpu_utilization_1 < 31.2 and loadLevel == HIGH: #35 good
-                loadLevel = NORMAL
-                # set memcache n_core to 1
-                pid, mc_n_core = set_memcached_core(mc_pid, 1, logger)
-            elif cpu_utilization_0 > 12 and loadLevel == NORMAL: ##15 good
-                loadLevel = HIGH #new 36.15 et 70.2
+
 
 
             # if cpu_utilization_0 < 100 and sched.get_core_usage() <= 1:
