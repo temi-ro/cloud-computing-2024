@@ -52,12 +52,6 @@ def force_removal(container):
         # Provide more specific error message with exception details.
         print(f"Issue with container removal for {container.name}: {e}")
 
-#handle ctrl+c
-def signal_handler(signal, f):
-    # Remove all containers
-    remove_previous_containers(docker_client)
-    sys.exit(0)
-
 #set the cores of memcached
 def set_cores_memcached(logger, pid, n_core):
     cmd = f"sudo taskset -a -cp {n_core} {pid}"
@@ -267,12 +261,9 @@ def experiment():
     load_level=State.LOW
     logger = scheduler_logger.SchedulerLogger()
 
-    #handle ctrl+c
-    signal.signal(signal.SIGINT, signal_handler)
-
-
     #first measure is wrong
     psutil.cpu_percent(interval=None, percpu=True)
+    
     #initiate memcached
     memcache_pid = 0
     for proc in psutil.process_iter():

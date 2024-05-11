@@ -69,7 +69,7 @@ def get_execution_time(filename, start_time, tasks):
 
     return {task: execution_time[task][0] for task in tasks}
 
-INTERVAL = 10
+INTERVAL = 5
 TASKS = [
         'vips',
         'radix',
@@ -82,8 +82,8 @@ TASKS = [
 def main():
     execution_time_runs = defaultdict(list)
     for run in range(1, 4):
-        logger_filename = f'./part4/actual_logger_{run}_interval_{INTERVAL}.txt'
-        mcperf_filename = f'./part4/actual_mcperf_{run}_interval_{INTERVAL}.txt'
+        logger_filename = f'./part4/goat_logger_{run}_interval_{INTERVAL}.txt'
+        mcperf_filename = f'./part4/goat_mcperf_{run}_interval_{INTERVAL}.txt'
 
         start_time, end_time = read_time_logger(logger_filename)
 

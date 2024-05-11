@@ -102,11 +102,11 @@ def plot_gantt_chart(ax, tasks, colors):
     ax.xaxis.set_visible(False)
 
 def get_tasks(filename, start_time):
-    task = []    
     with open(filename, 'r') as f:
         lines = f.readlines()
         tasks = defaultdict(list)
         cores = defaultdict(list)
+        running = defaultdict(bool)
 
         for line in lines[:-1]:
             time, action, task = line.split()[0:3]
@@ -114,13 +114,28 @@ def get_tasks(filename, start_time):
             if task == "scheduler" or task == "memcached":
                 continue
 
+
             if action == "start":
                 cores[task] = ast.literal_eval(line.split()[3])
                 tasks[task].append((time, cores[task]))
+                running[task] = True
             elif action == "update_cores":
                 cores[task] = ast.literal_eval(line.split()[3])
-            else: # pause or unpause or end
+                
+                # Stop the previous task
+                if running[task]:
+                    tasks[task].append((time, cores[task]))
+
+                    # Update the cores
+                    tasks[task].append((time, cores[task]))
+            elif action == "unpause":
+                running[task] = True
                 tasks[task].append((time, cores[task]))
+            else: # pause or end
+                tasks[task].append((time, cores[task]))
+                running[task] = False
+
+            print(time, task, action, cores[task], running[task])
 
     return tasks
 
@@ -131,8 +146,8 @@ def main(run):
 
     # logger_filename = f'./part4/logger_{run}_interval_10.txt'
     # mcperf_filename = f'./part4/mcperf_{run}_interval_10.txt'
-    logger_filename = f'./part4/goat_logger_{run}_interval_{INTERVAL}.txt'
-    mcperf_filename = f'./part4/goat_mcperf_{run}_interval_{INTERVAL}.txt'
+    logger_filename = f'./part4/new_goat_logger_{run}_interval_{INTERVAL}.txt'
+    mcperf_filename = f'./part4/new_goat_mcperf_{run}_interval_{INTERVAL}.txt'
     
     start_time, end_time = read_time_logger(logger_filename)
     
@@ -144,7 +159,7 @@ def main(run):
     cores, time_cores = read_core_memcached(logger_filename, start_time, end_time)
 
     total_time = end_time - start_time
-    time_qps = range(0, total_time, INTERVAL)
+    time_qps = range(0, total_time+1, INTERVAL)
 
     # Plot number of cores on the left y-axis 
     handles1, = ax1.step(time_cores, cores, '-', where='post', label=f"Cores to Memcached", color='orange', zorder=5, alpha=0.8)
@@ -158,7 +173,8 @@ def main(run):
     ax1.patch.set_visible(False)
     # Plot QPS on the right y-axis
     # ax2.plot(time_qps, qps, formats[0], label=f"Achieved Thousands of QPS", color='tab:blue')
-    handles2 = ax2.bar(time_qps, qps, width=10, label=f"QPS", color='tab:blue', alpha=0.8, zorder=1)
+    width = total_time / len(time_qps) + 0.1
+    handles2 = ax2.bar(time_qps, qps, width=width, label=f"QPS", color='tab:blue', alpha=0.8, zorder=1)
     ax2.set_ylabel(f"Achieved Thousands of QPS (kQPS)", color='tab:blue', fontweight='bold')
     ax2.set_ylim(bottom=0, top=120)
     ax2.set_yticks(np.arange(0, 115, 20))
@@ -203,8 +219,9 @@ def main(run):
     plt.show()
 
 
-INTERVAL = 10
+INTERVAL = 4
 
 if __name__ == '__main__':
     # Change here the run number
-    main(3)
+    for i in range(1, 4):
+        main(i)
