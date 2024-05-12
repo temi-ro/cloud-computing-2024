@@ -1,6 +1,5 @@
 import sys
 import signal
-import functools
 import subprocess
 from time import sleep
 from enum import Enum
