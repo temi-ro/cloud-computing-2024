@@ -1319,7 +1319,7 @@
                             "terminated": {
                                 "containerID": "containerd://fe737d2752bcd4edd77e6af6e11c2624e363590bcc3b412b0a93995795081dac",
                                 "exitCode": 0,
-                                "finishedAt": "2024-04-15T21:09:21Z",
+                                "finishedAt": "2024-04-15T21:09:11Z",
                                 "reason": "Completed",
                                 "startedAt": "2024-04-15T21:07:16Z"
                             }
