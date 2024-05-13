@@ -1154,7 +1154,7 @@
                 "annotations": {
                     "kubernetes.io/limit-ranger": "LimitRanger plugin set: cpu request for container parsec-vips"
                 },
-                "creationTimestamp": "2024-04-27T16:39:18Z",
+                "creationTimestamp": "2024-04-27T16:39:28Z",
                 "generateName": "parsec-vips-",
                 "labels": {
                     "batch.kubernetes.io/controller-uid": "11f31043-3931-40d3-880c-46c11801315a",
@@ -1279,28 +1279,28 @@
                 "conditions": [
                     {
                         "lastProbeTime": null,
-                        "lastTransitionTime": "2024-04-27T16:39:19Z",
+                        "lastTransitionTime": "2024-04-27T16:39:29Z",
                         "reason": "PodCompleted",
                         "status": "True",
                         "type": "Initialized"
                     },
                     {
                         "lastProbeTime": null,
-                        "lastTransitionTime": "2024-04-27T16:41:12Z",
+                        "lastTransitionTime": "2024-04-27T16:41:18Z",
                         "reason": "PodCompleted",
                         "status": "False",
                         "type": "Ready"
                     },
                     {
                         "lastProbeTime": null,
-                        "lastTransitionTime": "2024-04-27T16:41:12Z",
+                        "lastTransitionTime": "2024-04-27T16:41:18Z",
                         "reason": "PodCompleted",
                         "status": "False",
                         "type": "ContainersReady"
                     },
                     {
                         "lastProbeTime": null,
-                        "lastTransitionTime": "2024-04-27T16:39:18Z",
+                        "lastTransitionTime": "2024-04-27T16:39:34Z",
                         "status": "True",
                         "type": "PodScheduled"
                     }
@@ -1319,9 +1319,9 @@
                             "terminated": {
                                 "containerID": "containerd://62afcc1d6403ee6c2da774787843775f14b72b7cbd4d3be71c3b51cca7a2545a",
                                 "exitCode": 0,
-                                "finishedAt": "2024-04-27T16:41:16Z",
+                                "finishedAt": "2024-04-27T16:41:22Z",
                                 "reason": "Completed",
-                                "startedAt": "2024-04-27T16:39:20Z"
+                                "startedAt": "2024-04-27T16:40:30Z"
                             }
                         }
                     }
@@ -1335,7 +1335,7 @@
                     }
                 ],
                 "qosClass": "Burstable",
-                "startTime": "2024-04-27T16:39:19Z"
+                "startTime": "2024-04-27T16:39:29Z"
             }
         },
         {
