@@ -94,7 +94,7 @@ def plot_latency(mcperf_data, pods_data, run_number):
     by_label = dict(zip(labels, handles))
     plt.legend(by_label.values(), by_label.keys(), loc='upper right')
     plt.grid(True)
-    plt.savefig(f'../plots/plot_part3_run_{run_number}.png')
+    plt.savefig(f'./plots/plot_part3_run_{run_number}.png')
     plt.show()
 
 
@@ -102,8 +102,8 @@ def plot_latency(mcperf_data, pods_data, run_number):
 all_runs_stats = []
 
 for i in range(1, 4):
-    mcperf_file = f'../part3/mcperf_{i}.txt'
-    pods_file = f'../part3/pods_{i}.json'
+    mcperf_file = f'./part3/mcperf_{i}.txt'
+    pods_file = f'./part3/pods_{i}.json'
     mcperf_data = load_mcperf(mcperf_file)
     pods_data = load_pods(pods_file)
     mcperf_data_adj, pods_data_adj = adjust_timestamps(mcperf_data, pods_data)

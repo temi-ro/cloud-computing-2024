@@ -6,6 +6,8 @@ from datetime import datetime
 from collections import defaultdict
 import ast
 import matplotlib.patches as mpatches
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning) 
 
 # Function to read time values from a file (logger)
 def read_time_logger(filename):
@@ -13,7 +15,6 @@ def read_time_logger(filename):
         lines = f.readlines()
         l_start = lines[0]
         l_end = lines[-5] # last job is done
-        print("l_end:", l_end)
         start_time = convert_time_to_seconds(l_start.split()[0])
         end_time = convert_time_to_seconds(l_end.split()[0])
 
@@ -69,21 +70,21 @@ def get_execution_time(filename, start_time, tasks):
 
     return {task: execution_time[task][0] for task in tasks}
 
-INTERVAL = 5
+INTERVAL = 10
 TASKS = [
-        'vips',
-        'radix',
-        'freqmine',
         'blackscholes',
+        'canneal',
         'dedup',
         'ferret',
-        'canneal'
+        'freqmine',
+        'radix',
+        'vips'
     ]
 def main():
     execution_time_runs = defaultdict(list)
     for run in range(1, 4):
-        logger_filename = f'./part4/goat_logger_{run}_interval_{INTERVAL}.txt'
-        mcperf_filename = f'./part4/goat_mcperf_{run}_interval_{INTERVAL}.txt'
+        logger_filename = f'./part4/new_goat_logger_{run}_interval_{INTERVAL}.txt'
+        mcperf_filename = f'./part4/new_goat_mcperf_{run}_interval_{INTERVAL}.txt'
 
         start_time, end_time = read_time_logger(logger_filename)
 
@@ -111,7 +112,10 @@ def main():
         print("Number of violations:", num_violations)
         print("Total number of QPS:", num_total_qps)
         print("Ratio SLO:", (num_violations / num_total_qps)*100)
+        print("\n")
+
     rounding = 2
+    print("Task: Average Execution Time (s) Standard Deviation (s)")
     for task in TASKS:
         print(f'{task}: {round(sum(execution_time_runs[task])/3, rounding)} {round(np.std(execution_time_runs[task]), rounding)}')
     print(f'Total: {round(sum(execution_time_runs["total"])/3, rounding)} {round(np.std(execution_time_runs["total"]),rounding)}')
