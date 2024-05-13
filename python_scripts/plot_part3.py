@@ -34,10 +34,12 @@ def convert_time_to_seconds(timestamp):
     time_sec = timestamp_dt.timestamp()
     return (time_sec)
 
-def read_pods(pods, start_time):
+def read_pods(pods, x):
     with open(pods) as f:
         data = json.load(f)
     pods = []
+    start_time = convert_time_to_seconds(min([data['items'][i]['status']['startTime'] for i in range(len(data['items'])) if 'parsec-' in data['items'][i]['metadata']['name']]))
+    print(start_time, x)
     for item in data['items']:
         if 'parsec-' in item['metadata']['name']:
             pod_info = {
@@ -49,6 +51,7 @@ def read_pods(pods, start_time):
                             convert_time_to_seconds(item['status']['startTime']))
             }
             pods.append(pod_info)
+
     return pods
 
 def plot_gantt_chart(ax_vm4, ax_vm8, tasks, colors):
@@ -108,7 +111,6 @@ def main(i):
 
     # Read the data from the file
     p95, qps, start_time, end_time, overall_start_time = read_time_qps(mcperf_filename, 1000)
-    
     # Read the pods data
     pods_data = read_pods(pods_filename, overall_start_time)
     overall_end_time = max([pod['end_time'] for pod in pods_data])
@@ -173,4 +175,5 @@ def main(i):
     plt.show()
 
 if __name__ == '__main__':
-    main(1)
+    for i in range(1, 4):
+        main(i)
