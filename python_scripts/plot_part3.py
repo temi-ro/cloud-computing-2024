@@ -34,10 +34,13 @@ def convert_time_to_seconds(timestamp):
     time_sec = timestamp_dt.timestamp()
     return (time_sec)
 
+
 def read_pods(pods, x):
     with open(pods) as f:
         data = json.load(f)
     pods = []
+    start_time = convert_time_to_seconds(min([data['items'][i]['status']['startTime'] for i in range(len(data['items'])) if 'parsec-' in data['items'][i]['metadata']['name']]))
+    print(start_time, x)
     start_time = convert_time_to_seconds(min([data['items'][i]['status']['startTime'] for i in range(len(data['items'])) if 'parsec-' in data['items'][i]['metadata']['name']]))
     print(start_time, x)
     for item in data['items']:
@@ -50,11 +53,13 @@ def read_pods(pods, x):
                 'runtime': (convert_time_to_seconds(item['status']['containerStatuses'][0]['state']['terminated']['finishedAt']) -
                             convert_time_to_seconds(item['status']['startTime']))
             }
+            
             pods.append(pod_info)
+
 
     return pods
 
-def plot_gantt_chart(ax_vm4, ax_vm8, tasks, colors):
+def plot_gantt_chart(ax_memcached, ax_vm4, ax_vm8, tasks, colors):
     n_cores = {
         "vips": 2,
         "radix": 2,
@@ -62,7 +67,8 @@ def plot_gantt_chart(ax_vm4, ax_vm8, tasks, colors):
         "blackscholes": 2,
         "dedup": 2,
         "ferret": 2,
-        "canneal": 2
+        "canneal": 2,
+        "memcached": 2
     }
     cores = {
         "vips": [4,5],
@@ -71,7 +77,8 @@ def plot_gantt_chart(ax_vm4, ax_vm8, tasks, colors):
         "blackscholes": [6,7],
         "dedup": [4,5],
         "ferret": [0,1], # 8 or 10 which finishes first? canneal or vips
-        "canneal": [2,3]
+        "canneal": [2,3],
+        "memcached": [0, 1]
     }
     for i, task in enumerate(tasks):
         # if task["name"] == "vips":
@@ -84,6 +91,9 @@ def plot_gantt_chart(ax_vm4, ax_vm8, tasks, colors):
             ax_vm8.barh(cores[task["name"]], task["end_time"]-task["start_time"], left=task['start_time'], color=colors[task['name']], label=task['name'])
     x = list(range(0,4)) + list(range(0,8)) + list(range(0,4))
     print(x)
+    ax_memcached.barh(cores["memcached"], 180, left=0, color='#CCCCCC', label="memcached")
+    ax_memcached.set_yticklabels([0, 1])
+    ax_memcached.set_yticks(list(range(0,2)))
 
     ax_vm4.set_yticklabels([0, 1, 2, 3])
     ax_vm4.set_yticks(list(range(0,4)))
@@ -96,12 +106,14 @@ def plot_gantt_chart(ax_vm4, ax_vm8, tasks, colors):
     # ax.set_ylim(0, 12)
     # ax_vm4.legend(loc='center left', bbox_to_anchor=(1, 0.5))
     # ax_vm8.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+    ax_memcached.xaxis.set_visible(False)
     ax_vm4.xaxis.set_visible(False)
     ax_vm8.xaxis.set_visible(False)
     
-    ax_vm4.set_ylabel('4-core VM')
+    ax_vm4.set_ylabel('   4core VM')
+    ax_memcached.set_ylabel('2core VM')
 
-    ax_vm8.set_ylabel('8-core VM')
+    ax_vm8.set_ylabel('8core VM')
 
 
 def main(i):
@@ -126,7 +138,7 @@ def main(i):
     ax1.set_ylim(0, 1.5)
     ax1.set_yticks(np.arange(0, 0.8, 0.1))
     ax1.set_xlabel('Time (s)')
-    ax1.set_ylabel('p95 latency (ms)', color="orange")
+    ax1.set_ylabel('p95 latency (ms)                                                       ', color="orange")
 
     # Plot the QPS vs time
     ax2 = ax1.twinx()
@@ -134,13 +146,14 @@ def main(i):
     # ax2.plot(start_time, qps, "-o", label='QPS vs time', color="orange")
     ax2.set_ylim(0, 70)
     ax2.set_yticks(np.arange(0, 36, 5))
-    ax2.set_ylabel('Achieved Thousands of Queries per Second (KQPS)', color="tab:blue")
+    ax2.set_ylabel('Achieved KQPS                                                       ', color="tab:blue")
     
     ax2.tick_params(axis='y', colors='tab:blue')
     ax1.tick_params(axis='y', colors='orange')
 
-    ax_vm4 = fig.add_subplot(4, 1, 1, sharex=ax1)
-    ax_vm8 = fig.add_subplot(4, 1, 2, sharex=ax1)
+    ax_memcached = fig.add_subplot(15, 1, 7, sharex=ax1)
+    ax_vm4 = fig.add_subplot(8, 1, 3, sharex=ax1)
+    ax_vm8 = fig.add_subplot(4, 1, 1, sharex=ax1)
     colors = {
         'vips': '#CC0A00',
         'radix': '#00CCA0',
@@ -148,25 +161,30 @@ def main(i):
         'blackscholes': '#CCA000',
         'dedup': '#CCACCA',
         'ferret': '#AACCCA',
-        'canneal': '#CCCCAA'
+        'canneal': '#CCCCAA',
+        'memcached': '#CCCCCC'
     }
 
     # Plot the Gantt chart
-    plot_gantt_chart(ax_vm4, ax_vm8, pods_data, colors)
+    plot_gantt_chart(ax_memcached, ax_vm4, ax_vm8, pods_data, colors)
     
+    # Create a dummy task for memcached for the legend
+    memcached_legend = mpatches.Patch(color=colors['memcached'], label='memcached')
+
     tasks_handles = [mpatches.Patch(color=colors[task["name"]], label=task["name"]) for task in pods_data]
-    # plt.tight_layout()
-    plt.suptitle('p95 latency vs time', y=0.95)
+    tasks_handles.append(memcached_legend)  # Add memcached to the legend
+
+    plt.suptitle('p95 latency, achieved QPS and job schdeuling vs time', y=0.95)
     handles = tasks_handles + [handle1] + [handle2]
     print(handles)
     leg = plt.legend(handles=handles, ncol=2)
     plt.draw()
 
     bb = leg.get_bbox_to_anchor().transformed(ax1.transAxes.inverted())
-    offset = -0.05
+    offset = -0.02
     bb.x0 += offset
     bb.x1 += offset
-    yoffset = 0.5
+    yoffset = 0.75
     bb.y0 -= yoffset
     bb.y1 -= yoffset
     leg.set_bbox_to_anchor(bb, transform = ax1.transAxes)
