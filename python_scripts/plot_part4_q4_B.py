@@ -219,8 +219,7 @@ def main(run):
     plt.show()
 
 
-INTERVAL = 4
-
+INTERVAL = 10
 if __name__ == '__main__':
     # Change here the run number
     for i in range(1, 4):
