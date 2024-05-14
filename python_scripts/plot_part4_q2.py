@@ -34,6 +34,14 @@ def interpolate_qps(time_values, qps_values):
     interpolation_function = interp1d(time_values, qps_values, kind='linear', fill_value='extrapolate')
     return interpolation_function
 
+def interpolate_cpu(time_values, cpu_values):
+    func_cpu = interp1d(time_values, cpu_values, kind='linear', fill_value='extrapolate')
+    return func_cpu
+
+def interpolate_time(time_values, qps_values):
+    interpolation_function = interp1d(qps_values, time_values, kind='linear', fill_value='extrapolate')
+    return interpolation_function
+
 def main(config="2"):
     # Plotting
     fig, ax1 = plt.subplots(figsize=(10, 6))
@@ -49,7 +57,9 @@ def main(config="2"):
 
     # Interpolate QPS values
     toQps = interpolate_qps(t_start, qps)
-    
+    cpu_func = interpolate_cpu(t, cpu_utils)
+    fromQpsToTime = interpolate_time(t_start, qps)
+
     # Plot 95th percentile latency on the left y-axis 
     ax1.plot(qps, p95, formats[1], label=f"95th percentile latency for {config} core{"s" if config == "2" else ""} and 2 threads", color='orange')
     ax1.set_ylabel('95th Percentile Latency (ms)', color='orange', fontweight='bold')
@@ -59,8 +69,9 @@ def main(config="2"):
     ax2 = ax1.twinx()
 
     # Plot CPU utilization on the right y-axis
-    
-    ax2.plot(toQps(t), cpu_utils, formats[0], label=f"CPU Utilisation for {config} core{"s" if config == "2" else ""} and 2 threads", color='tab:blue')
+    qps_range = np.array(range(0, int(toQps(t_end[-1])) + 5, 5))
+
+    ax2.plot(qps_range, cpu_func(fromQpsToTime(qps_range)), formats[0], label=f"CPU Utilisation for {config} core{"s" if config == "2" else ""} and 2 threads", color='tab:blue')
     ax2.set_ylabel('CPU Utilisation (%)', color='tab:blue', fontweight='bold')
     ax2.set_ylim(bottom=0, top=200 if config == "2" else 100)
 
@@ -80,10 +91,11 @@ def main(config="2"):
     fig.tight_layout()
     fig.legend(loc='upper left', bbox_to_anchor=(0.08, 0.9))
 
-    plt.title('CPU Utilisation and 95th Percentile Latency vs Achieved QPS for Memcached Configurations', fontweight='bold')
+    plt.title(f'CPU Utilisation and 95th Percentile Latency vs Achieved QPS using {config} core{"s" if config=="2" else ""}', fontweight='bold')
     plt.grid(True)
     plt.show()
 
 if __name__ == '__main__':
     # "1" if 1 core, "2" if 2 cores
-    main("1")
+    for i in range(1, 3):
+        main(str(i))
